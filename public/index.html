@@ -198,6 +198,19 @@ ol.fasen li{padding:2px 10px;border-radius:99px;border:1px solid var(--rule);col
 ol.fasen li.voor{border-color:transparent;background:var(--soft)}
 ol.fasen li.nu{background:var(--acc);border-color:var(--acc);color:var(--bg);font-weight:500}
 ol.fasen li.na{opacity:.75}
+
+.fig .hl{fill:var(--soft)}
+.fig .tip{position:absolute;z-index:3;pointer-events:none;background:var(--bg);border:1px solid var(--rule);border-radius:6px;padding:8px 10px;font-size:13px;line-height:1.4;min-width:170px;max-width:260px;box-shadow:0 4px 14px rgba(0,0,0,.12)}
+.fig .tip .th{font-weight:600;margin-bottom:4px}
+.fig .tip .tr{display:grid;grid-template-columns:10px minmax(0,1fr) auto;gap:8px;align-items:center;padding:1px 0}
+.fig .tip .tr i{width:10px;height:10px;border-radius:2px}
+.fig .tip .tr span{color:var(--mut);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.fig .tip .tr b{font-weight:500;font-variant-numeric:tabular-nums;white-space:nowrap}
+.fig .tip .tt{border-top:1px solid var(--rule);margin-top:4px;padding-top:4px}
+.fig .tip .tt span,.fig .tip .tt b{color:var(--ink);font-weight:600}
+.fig .tip .td i.dl{height:0;border-top:2px dashed var(--ink);opacity:.6;border-radius:0}
+.fig .tip .tn{color:var(--mut);margin-top:4px;font-size:12px}
+.fig{cursor:default}
 </style>
 </head>
 <body>
@@ -291,7 +304,19 @@ else if(group){const gw=Math.min(band*.8,ks.length*30),bw=gw/ks.length;ms.forEac
 else{const bw=Math.min(44,band*.62);ms.forEach((r,n)=>{const cx=L+band*n+band/2,x=cx-bw/2;let acc=0;
 (stack?ks:[ks[0]]).forEach((k,c)=>{const v=r.waarden?.[k];if(v==null)return;const y0=y(acc),y1=y(acc+v);s+=`<rect x="${x}" y="${Math.min(y0,y1)}" width="${bw}" height="${Math.max(1,Math.abs(y0-y1))}" fill="${stack?colOf(i,k,c):'var(--acc)'}"/>`;acc+=v});
 const tv=stack?total(i,r):r.waarden?.[ks[0]];if(tv!=null&&band>=30)s+=`<text x="${cx}" y="${y(tv)-6}" text-anchor="middle" class="vl">${esc(vt(tv))}</text>`})}
-el.innerHTML=`<svg width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" role="img" aria-label="${esc(i.naam)}">${s}</svg>`;el.style.height=H+'px'}
+el.innerHTML=`<svg width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" role="img" aria-label="${esc(i.naam)}"><rect class="hl" x="0" y="${T-14}" width="${band}" height="${ih+14}" rx="4" visibility="hidden"/>${s}</svg><div class="tip" hidden></div>`;el.style.height=H+'px';
+const svg=el.firstChild,hl=svg.querySelector('.hl'),tip=el.querySelector('.tip');let at=-1;
+const show=(x,yy)=>{const n=Math.floor((x-L)/band);if(n<0||n>=ms.length){hide();return}
+if(n!==at){at=n;const r=ms[n];hl.setAttribute('x',L+band*n+2);hl.setAttribute('width',band-4);hl.setAttribute('visibility','visible');
+const ord=ks.map((k,c)=>[k,c]);if(stack)ord.reverse();const rows=multi?ord.map(([k,c])=>r.waarden?.[k]==null?'':`<div class="tr"><i style="background:${colOf(i,k,c)}"></i><span>${esc(k)}</span><b>${esc(fval(r.waarden[k],i.eenheid))}</b></div>`).join(''):`<div class="tr"><i style="background:var(--acc)"></i><span>Waarde</span><b>${esc(fval(r.waarden?.[''],i.eenheid))}</b></div>`;
+const tot=stack?`<div class="tr tt"><i></i><span>Totaal</span><b>${esc(fval(total(i,r),i.eenheid))}</b></div>`:'';
+const dl=i.doel!=null?`<div class="tr td"><i class="dl"></i><span>Doel</span><b>${esc(fval(i.doel,i.eenheid))}</b></div>`:'';
+tip.innerHTML=`<div class="th">${esc(r.periode)}</div>${rows}${tot}${dl}${r.toelichting?`<div class="tn">${esc(r.toelichting)}</div>`:''}`;tip.hidden=false}
+const tw=tip.offsetWidth,th=tip.offsetHeight;let lx=x+14;if(lx+tw>W)lx=Math.max(0,x-tw-14);let ty=Math.min(Math.max(0,yy-th/2),H-th);tip.style.left=lx+'px';tip.style.top=ty+'px'};
+const hide=()=>{at=-1;tip.hidden=true;hl.setAttribute('visibility','hidden')};
+const pos=e=>{const b=svg.getBoundingClientRect();return [e.clientX-b.left,e.clientY-b.top]};
+el.onpointermove=e=>{if(e.pointerType==='mouse')show(...pos(e))};el.onpointerleave=e=>{if(e.pointerType==='mouse')hide()};
+el.onclick=e=>{const [x,y]=pos(e);const n=Math.floor((x-L)/band);if(n===at&&!tip.hidden)hide();else{at=-1;show(x,y)}}}
 const drawCharts=()=>document.querySelectorAll('[data-chart]').forEach(drawChart);
 function tableHtml(i){const ms=series(i);if(!ms.length)return '';const ks=keysOf(i);const multi=ks.length>1;
 return `<details class="tbl"><summary>Tabel met ${ms.length} meting${ms.length>1?'en':''}</summary><div class="scroll"><table><tr><th>Periode</th>${multi?ks.map(k=>`<th class="num">${esc(k)}</th>`).join(''):`<th class="num">Waarde${i.eenheid?` (${esc(i.eenheid)})`:''}</th>`}${i.optelbaar?'<th class="num">Totaal</th>':''}</tr>
