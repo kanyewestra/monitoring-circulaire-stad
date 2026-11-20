@@ -298,6 +298,8 @@ async function handle(req, res) {
       const i = { id, subdoel: sub, nr: old?.nr || Math.max(0, ...Object.values(data.indicatoren).map(x => x.nr || 0)) + 1 };
       for (const k of IND_FIELDS) i[k] = str(body[k] ?? old?.[k], 4000);
       i.categorieen = cats; i.optelbaar = !!body.optelbaar && cats.length > 1;
+      const KLEUREN = ['blauw', 'turquoise', 'groen', 'geel', 'oranje', 'rood', 'paars', 'grijs'];
+      i.kleuren = Object.fromEntries(cats.map(c => [c, body.kleuren?.[c]]).filter(([, k]) => KLEUREN.includes(k)));
       i.doel = typeof body.doel === 'number' && isFinite(body.doel) ? body.doel : null;
       i.metingen = metingen; i.bijgewerkt = now; i.door = door;
       data.indicatoren[id] = i; save();
