@@ -8,9 +8,9 @@
   {
    "id": "oi",
    "naam": "Opdrachtgeven & inkoop",
-   "invloed": "direct",
+   "invloed": "Direct",
    "transitiedoel": "Circulair opdrachtgeven en circulair inkopen de standaard maken. We werken naar een (lineaire) reductie van primaire grondstoffen van 50% in 2030 (ten opzichte van 2019) en 100% circulair opdrachtgeven & inkoop in 2050.",
-   "fase": "We gaan in deze programmalijn van de verbredingsfase naar de fase van borging in de organisatie.",
+   "fase": "verbreding",
    "sub": [
     {
      "id": "OI-S1",
@@ -276,14 +276,15 @@
      ],
      "aan": "Meten maakt bijsturen mogelijk. Deze maatregel werkt dus via de andere maatregelen en niet rechtstreeks.\nOok buiten de GWW is data over materiaalgebruik te verzamelen."
     }
-   ]
+   ],
+   "rol": "Regulerend, faciliterend, stimulerend en richtinggevend"
   },
   {
    "id": "bg",
    "naam": "Bouw & gebiedsontwikkeling",
-   "invloed": "indirect",
+   "invloed": "Indirect",
    "transitiedoel": "Circulariteit wordt in 2030 standaard meegenomen in alle fasen van bouw- en gebiedsontwikkeling. We werken daarbij toe naar minimaal CO₂-neutrale nieuwbouw in 2030, waarbij we zowel kijken naar materiaalgebruik als energie. We dragen daardoor bij aan de landelijke doelstelling voor reductie van primaire grondstoffen van 50% in 2030 (ten opzichte van 2019) en 100% in 2050.",
-   "fase": "We willen in deze programmalijn de stap zetten van pilot naar verbreding, waarbij circulaire principes standaard worden meegewogen in alle fasen van een gebiedsontwikkeling.",
+   "fase": "verbreding",
    "sub": [
     {
      "id": "BG-S1",
@@ -626,14 +627,15 @@
      ],
      "aan": "De beschikbare beleidsinstrumenten zijn sterk genoeg, ook al mag de gemeente geen bouwtechnische eisen stellen boven het Bbl.\nCirculair ontwerpen leidt over meerdere levenscycli tot minder vraag naar primaire grondstoffen."
     }
-   ]
+   ],
+   "rol": "Faciliterend, stimulerend en richting gevend"
   },
   {
    "id": "be",
    "naam": "Bedrijvigheid",
-   "invloed": "indirect",
+   "invloed": "Indirect",
    "transitiedoel": "Het vergroten van het aantal circulaire bedrijven en bedrijfsactiviteiten in Amersfoort, door het creëren van de juiste randvoorwaarden.",
-   "fase": "Daarbij komt dat de transitie van bedrijvigheid zich in de fase van bewustwording bevindt.",
+   "fase": "bewustwording",
    "sub": [
     {
      "id": "BE-S1",
@@ -827,14 +829,15 @@
      ],
      "aan": "Netwerken leiden tot kennisuitwisseling en gezamenlijke initiatieven.\nPioniers en mkb versterken elkaar (circulaire kennis tegenover ondernemerschap)."
     }
-   ]
+   ],
+   "rol": "Faciliterend en stimulerend"
   },
   {
    "id": "cg",
    "naam": "Consumptiegoederen",
-   "invloed": "indirect",
+   "invloed": "Indirect",
    "transitiedoel": "Het actief samenwerken met partijen in de stad, regio en landelijk met als doel minimaal gebruik van primaire grondstoffen en hoogwaardig hergebruik van materiaal en reststromen te stimuleren.",
-   "fase": "Deze programmalijn zit in de fase van pilots. Komende jaren zullen we verder verbreden en waar mogelijk al borgen in beleid.",
+   "fase": "pilots",
    "sub": [
     {
      "id": "CG-S1",
@@ -1036,7 +1039,8 @@
      ],
      "aan": "Lessen uit de VSNS-pilots zijn breder toe te passen.\nInwoners zijn te stimuleren producten niet weg te gooien."
     }
-   ]
+   ],
+   "rol": "Faciliterend, stimulerend, richtinggevend en regulerend"
   },
   {
    "id": "rv",
@@ -1110,7 +1114,8 @@
      "randvoorwaarde": true
     }
    ],
-   "tdKop": "Circulaire randvoorwaarden"
+   "tdKop": "Circulaire randvoorwaarden",
+   "rol": ""
   }
  ],
  "aandacht": [
@@ -1150,5 +1155,12 @@
    "Aannames staan niet in het programma",
    "Het programma noemt per maatregel het verwachte resultaat, de termijn en de impact, maar niet waarom de maatregel tot dat resultaat leidt. De aannames hier zijn een eerste opzet om aan te scherpen."
   ]
+ ],
+ "fasen": [
+  "bewustwording",
+  "pilots",
+  "verbreding",
+  "borging (o.a. in beleid)",
+  "leiderschap"
  ]
 }

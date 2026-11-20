@@ -190,6 +190,14 @@ body.fullmode header,body.fullmode nav,body.fullmode footer{display:none}
 .full textarea{max-width:760px}
 .full .acts,.full details.actd .ab{max-width:820px}
 @media print{.pnav,.openp,details:not([open])>summary~*{display:none}.detail.full{padding-top:0}textarea{border:0;resize:none}}
+
+.lijninfo{display:flex;flex-wrap:wrap;gap:12px 32px;margin:14px 0 4px;font-size:14px}
+.lijninfo .li-l{display:block;color:var(--mut);font-size:13px;margin-bottom:4px}
+ol.fasen{display:flex;flex-wrap:wrap;gap:4px;list-style:none;margin:0;padding:0}
+ol.fasen li{padding:2px 10px;border-radius:99px;border:1px solid var(--rule);color:var(--mut);font-size:13px;white-space:nowrap}
+ol.fasen li.voor{border-color:transparent;background:var(--soft)}
+ol.fasen li.nu{background:var(--acc);border-color:var(--acc);color:var(--bg);font-weight:500}
+ol.fasen li.na{opacity:.75}
 </style>
 </head>
 <body>
@@ -387,7 +395,7 @@ sel=lastSel&&valid(lastSel)?lastSel:null;
 if(cur==='aandacht'){main.innerHTML=`<ol class="list">${M.aandacht.map(a=>`<li><b>${esc(a[0])}.</b> ${esc(a[1])}</li>`).join('')}</ol>`;return}
 const l=lijn();
 const subCol=l.sub.length?l.sub.map(s=>`<button type="button" class="card" data-s="${s.id}"><span class="n">Subdoel ${s.k}</span><span class="t">${esc(s.t)}</span><span class="chips" data-chips="${s.id}"></span></button>`).join(''):[...new Set(l.mt.flatMap(m=>m.sub))].map(sid=>{const s=allSub[sid];return `<button type="button" class="card" data-s="${sid}"><span class="n">${esc(s.lijn)}, subdoel ${s.k}</span><span class="t">${esc(s.t)}</span></button>`}).join('');
-main.innerHTML=`<div class="tdoel"><h2>${esc(l.tdKop||'Transitiedoel')}</h2><p>${esc(l.transitiedoel)}</p>${l.fase||l.invloed?`<p class="fase">${l.fase?`Fase: “${esc(l.fase)}”`:''}${l.fase&&l.invloed?' ':''}${l.invloed?`Invloed van de gemeente: ${esc(l.invloed)}.`:''}</p>`:''}</div>
+main.innerHTML=`<div class="tdoel"><h2>${esc(l.tdKop||'Transitiedoel')}</h2><p>${esc(l.transitiedoel)}</p>${l.fase?`<div class="lijninfo"><div><span class="li-l">Fase in het uitvoeringsprogramma 2025–2030</span><ol class="fasen">${(M.fasen||[]).map((f,n,arr)=>{const k=arr.indexOf(l.fase);return `<li class="${n<k?'voor':n===k?'nu':'na'}"${n===k?' aria-current="step"':''}>${esc(f)}</li>`}).join('')}</ol></div><div><span class="li-l">Invloed</span>${esc(l.invloed)}</div><div><span class="li-l">Rol van de gemeente</span>${esc(l.rol)}</div></div>`:''}</div>
 <div class="board"><svg aria-hidden="true"></svg>
 <div class="col"><h3>Maatregelen</h3>${l.mt.map(m=>`<button type="button" class="card" data-m="${m.id}"><span class="n">Maatregel ${m.k}</span><span class="t">${esc(m.t)}</span><span class="meta"><span><span class="dots">${IMP[m.imp][0]}</span> ${IMP[m.imp][1]}</span></span><span class="meta" data-acts="${m.id}"></span>${m.randvoorwaarde?'':`<span class="mob meta">Draagt bij aan: ${m.viaDoel?'transitiedoel (indirect)':m.sub.map(s=>allSub[clean(s)].k).join(', ')}</span>`}</button>`).join('')}</div>
 <div class="col"><h3>${l.sub.length?'Subdoelen en indicatoren':'Subdoelen'}</h3>${!l.sub.length&&!subCol?'<p class="note">De randvoorwaarden zijn niet direct aan subdoelen gekoppeld. Ze maken de uitvoering van de andere programmalijnen mogelijk.</p>':''}${l.mt.some(m=>m.viaDoel)?`<div class="card tdk" style="cursor:default"><span class="n">Transitiedoel</span><span class="t">Indirect, zonder subdoel</span></div>`:''}${subCol}</div>
