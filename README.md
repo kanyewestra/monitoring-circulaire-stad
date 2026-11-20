@@ -8,6 +8,7 @@ Wat je in de app kunt invullen:
 - **Per maatregel als geheel:** evaluatie en bijdrage en effect.
 - Bij elke activiteit staan ook de omschrijving en de dekking uit het uitvoeringsprogramma.
 - **Per subdoel:** indicatoren toevoegen en bewerken, en een duiding van de voortgang. Een indicator kan categorieën hebben, bijvoorbeeld banen per R-strategie of weggooigedrag per productgroep. Per periode vul je dan een waarde per categorie in. Tellen de categorieën op tot een totaal, dan toont de app gestapelde staven met het totaal; anders gegroepeerde staven of lijnen. Een doellijn kan als stippellijn in de grafiek.
+- **Paginaweergave:** klik op de titel in het rechterpaneel (of op "Open als pagina") voor een volledige pagina van een maatregel of subdoel, met een eigen adres zoals `#bg/BG-M3` en een knop om af te drukken. Met "Terug" of de terugknop van de browser kom je in het overzicht.
 - **Historie:** elke wijziging wordt met tijd en naam vastgelegd.
 - **Export:** de knoppen onderaan downloaden alles als Excel (een tabblad per onderdeel) of als JSON.
 

@@ -152,6 +152,28 @@ input.bad{border-color:var(--bad)}
 .btns.end{margin-top:20px}
 button.del{color:var(--bad)}
 @media(max-width:600px){.g3{grid-template-columns:minmax(0,1fr)}.g3>div{grid-column:auto!important}dialog{padding:16px}}
+
+h2 a.tl{color:inherit;text-decoration:none}
+h2 a.tl:hover{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px}
+a.openp{display:inline-block;font-size:13px;color:var(--acc);margin:-2px 0 8px;text-decoration:none}
+a.openp::after{content:" ↗"}
+a.openp:hover{text-decoration:underline}
+dd ul.mlist{margin-top:-4px}
+body.fullmode header,body.fullmode nav,body.fullmode footer{display:none}
+.pnav{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:20px 0 0;border-bottom:1px solid var(--rule);padding-bottom:12px}
+.pnav a.back{color:var(--acc);text-decoration:none;font-size:15px;min-height:44px;display:flex;align-items:center}
+.pnav a.back:hover{text-decoration:underline}
+.detail.full{border:0;padding:24px 0 64px;max-width:980px;margin:0 auto}
+.full .eyebrow{color:var(--mut);font-size:15px;margin:8px 0 6px}
+.full h2.ptitle{font-size:clamp(28px,3.4vw,40px);line-height:1.12;letter-spacing:-.02em;margin:0 0 18px;text-wrap:balance}
+.full dl{font-size:16px;max-width:760px}
+.full h3{font-size:15px;margin-top:32px;padding-top:12px;border-top:1px solid var(--rule)}
+.full .inds{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,420px),1fr));gap:8px 40px}
+.full .inds .ind{border-top:1px solid var(--rule)}
+.full .inds .ind:first-of-type{border-top:1px solid var(--rule)}
+.full textarea{max-width:760px}
+.full .acts,.full details.actd .ab{max-width:820px}
+@media print{.pnav,.openp,details:not([open])>summary~*{display:none}.detail.full{padding-top:0}textarea{border:0;resize:none}}
 </style>
 </head>
 <body>
@@ -179,7 +201,7 @@ button.del{color:var(--bad)}
 const IMP={z:['●●●','zeer veel impact'],a:['●●○','aanzienlijke impact'],b:['●○○','beperkte impact']};
 const STATUS=['niet ingevuld','niet gestart','loopt','vertraagd','afgerond','gestopt'];
 const ISTATUS=['data','nulmeting','in opbouw','nog geen data'];
-let M=null,DATA={notities:{},indicatoren:{}},cur='oi',sel=null,ro=null,allSub={},inflight=0,draft=null;
+let M=null,DATA={notities:{},indicatoren:{}},cur='oi',sel=null,ro=null,allSub={},inflight=0,draft=null,full=false,lastSel=null;
 const openActs=new Set();
 const $=id=>document.getElementById(id);
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -301,19 +323,22 @@ ${statusSel(a.id,'Stand van uitvoering')}
 ${field(a.id,'evaluatie','Evaluatie','wat is er gebeurd?')}
 ${field(a.id,'effect','Bijdrage','wat heeft het opgeleverd voor de maatregel?')}
 <p class="note" id="upd-${a.id}">${updLine(DATA.notities[a.id])}</p>${histBlock(a.id)}</div></details>`}
+const allMt=()=>M.lijnen.flatMap(l=>l.mt.map(m=>({...m,lijn:l})));
+function titleHtml(id,label,txt){return full?`<p class="eyebrow">${esc(lijn().naam)} · ${label}</p><h2 class="ptitle">${txt}</h2>`:`<h2><a class="tl" href="#${cur}/${id}" title="Open als pagina">${txt}</a></h2><a class="openp" href="#${cur}/${id}">Open als pagina</a>`}
+const goto=(id,txt)=>`<button type="button" class="l mlink" data-goto="${id}">${txt}</button>`;
 function detail(){
 const l=lijn(),box=$('det');if(!box)return;
 if(!sel){box.innerHTML=`<p class="empty">Kies een maatregel of subdoel.</p><h3>Fase van de transitie</h3><p>${esc(l.fase)}</p><h3>Invloed van de gemeente</h3><p>${esc(l.invloed)}</p>`;return}
 const m=l.mt.find(x=>x.id===sel);
-if(m){box.innerHTML=`<h2>${m.k}. ${esc(m.t)}</h2><dl><dt>Rol</dt><dd>${esc(m.rol)}</dd><dt>Verwacht resultaat</dt><dd>${esc(m.res)}</dd><dt>Termijn</dt><dd>${esc(m.term)}</dd><dt>Verwachte impact</dt><dd><span class="dots">${IMP[m.imp][0]}</span> ${IMP[m.imp][1]}</dd><dt>Draagt bij aan</dt><dd>${m.randvoorwaarde?'Geen directe koppeling met subdoelen: voorwaarde voor de andere programmalijnen':m.viaDoel?'Indirect aan het transitiedoel (geen subdoel genoemd)':m.sub.map(clean).map(s=>`${allSub[s].lijn===l.naam?'':esc(allSub[s].lijn)+' '}subdoel ${allSub[s].k}`).join(', ')}</dd></dl>
+if(m){box.innerHTML=`${titleHtml(m.id,'Maatregel '+m.k,`${m.k}. ${esc(m.t)}`)}<dl><dt>Rol</dt><dd>${esc(m.rol)}</dd><dt>Verwacht resultaat</dt><dd>${esc(m.res)}</dd><dt>Termijn</dt><dd>${esc(m.term)}</dd><dt>Verwachte impact</dt><dd><span class="dots">${IMP[m.imp][0]}</span> ${IMP[m.imp][1]}</dd><dt>Draagt bij aan</dt><dd>${m.randvoorwaarde?'Geen directe koppeling met subdoelen: voorwaarde voor de andere programmalijnen':m.viaDoel?'Indirect aan het transitiedoel (geen subdoel genoemd)':`<ul class="mlist">${m.sub.map(clean).map(s=>`<li>${goto(s,`Subdoel ${allSub[s].k}. ${esc(allSub[s].t)}`)}</li>`).join('')}</ul>`}</dd></dl>
 <h3>Activiteiten (uitvoeringsprogramma)</h3><p class="note" style="margin-top:-2px">Klik op een activiteit om aannames, uitvoering, evaluatie en bijdrage in te vullen.</p><div class="acts">${m.act.map(actHtml).join('')}</div>
 <h3>Maatregel als geheel</h3>
 ${field(m.id,'evaluatie','Evaluatie','wat is er gebeurd?')}
 ${field(m.id,'effect','Bijdrage en effect','wat heeft het opgeleverd voor de subdoelen, en klopten de aannames?')}
 <p class="note" id="upd-${m.id}">${updLine(DATA.notities[m.id])}</p>${histBlock(m.id)}`;grow();return}
 const s=allSub[sel];const ms=M.lijnen.flatMap(x=>x.mt).filter(x=>x.sub.map(clean).includes(sel));const inds=indsOf(sel);
-box.innerHTML=`<h2>Subdoel ${s.k}</h2><p>${esc(s.t)}</p><h3>Maatregelen die bijdragen</h3>${ms.length?`<ul class="mlist">${ms.map(x=>`<li><button type="button" class="l mlink" data-goto="${x.id}">Maatregel ${x.k}. ${esc(x.t)}</button></li>`).join('')}</ul>`:'<p>Geen maatregel gekoppeld.</p>'}
-<h3>Indicatoren</h3>${inds.map(indHtml).join('')||'<p class="note">Nog geen indicatoren.</p>'}
+box.innerHTML=`${titleHtml(s.id,'Subdoel '+s.k,`Subdoel ${s.k}. ${esc(s.t)}`)}<h3>Maatregelen die bijdragen</h3>${ms.length?`<ul class="mlist">${ms.map(x=>`<li><button type="button" class="l mlink" data-goto="${x.id}">Maatregel ${x.k}. ${esc(x.t)}</button></li>`).join('')}</ul>`:'<p>Geen maatregel gekoppeld.</p>'}
+<h3>Indicatoren</h3>${inds.length?`<div class="inds">${inds.map(indHtml).join('')}</div>`:'<p class="note">Nog geen indicatoren.</p>'}
 <div class="btns"><button class="b" type="button" data-a="aind">Indicator toevoegen</button></div>
 ${field(s.id,'toelichting','Duiding','wat zeggen de indicatoren over de voortgang?')}<p class="note" id="upd-${s.id}">${updLine(DATA.notities[s.id])}</p>${histBlock(s.id)}`;grow();drawCharts()}
 function grow(){document.querySelectorAll('#det textarea').forEach(t=>{if(!t.offsetParent)return;t.style.height='auto';t.style.height=Math.max(84,t.scrollHeight+2)+'px'})}
@@ -330,10 +355,15 @@ function chips(){document.querySelectorAll('[data-chips]').forEach(e=>{e.innerHT
 function mark(){const l=lijn();const rel=new Set();if(sel){rel.add(sel);l.mt.forEach(m=>{const ss=m.sub.map(clean);if(m.id===sel)ss.forEach(s=>rel.add(s));if(ss.includes(sel))rel.add(m.id)})}
 document.querySelectorAll('.board .card').forEach(c=>{const id=c.dataset.m||c.dataset.s;c.classList.toggle('on',!!id&&id===sel);c.classList.toggle('dim',!!sel&&!rel.has(id));if(id)c.setAttribute('aria-pressed',id===sel)});detail();lines()}
 function render(){
-const h=(location.hash||'').slice(1);cur=tabs().some(t=>t[0]===h)?h:'oi';sel=null;
+const [h,pid]=decodeURIComponent((location.hash||'').slice(1)).split('/');cur=tabs().some(t=>t[0]===h)?h:'oi';
 $('nav').innerHTML=tabs().map(t=>`<a href="#${t[0]}"${t[0]===cur?' aria-current="page"':''}>${esc(t[1])}</a>`).join('');
 if(ro){ro.disconnect();ro=null}
 const main=$('main');
+const valid=id=>cur!=='aandacht'&&(lijn().mt.some(m=>m.id===id)||lijn().sub.some(x=>x.id===id));
+full=!!pid&&valid(pid);document.body.classList.toggle('fullmode',full);
+if(full){sel=pid;lastSel=pid;main.innerHTML=`<div class="pnav"><a href="#${cur}" class="back">← Terug naar ${esc(lijn().naam)}</a><button class="b" id="printbtn" type="button">Afdrukken</button></div><article class="detail full" id="det"></article>`;
+detail();window.scrollTo(0,0);ro=new ResizeObserver(()=>drawCharts());ro.observe($('det'));return}
+sel=lastSel&&valid(lastSel)?lastSel:null;
 if(cur==='aandacht'){main.innerHTML=`<ol class="list">${M.aandacht.map(a=>`<li><b>${esc(a[0])}.</b> ${esc(a[1])}</li>`).join('')}</ol>`;return}
 const l=lijn();
 const subCol=l.sub.length?l.sub.map(s=>`<button type="button" class="card" data-s="${s.id}"><span class="n">Subdoel ${s.k}</span><span class="t">${esc(s.t)}</span><span class="chips" data-chips="${s.id}"></span></button>`).join(''):[...new Set(l.mt.flatMap(m=>m.sub))].map(sid=>{const s=allSub[sid];return `<button type="button" class="card" data-s="${sid}"><span class="n">${esc(s.lijn)}, subdoel ${s.k}</span><span class="t">${esc(s.t)}</span></button>`}).join('');
@@ -343,14 +373,15 @@ main.innerHTML=`<div class="tdoel"><h2>Transitiedoel</h2><p>${esc(l.transitiedoe
 <div class="col"><h3>${l.sub.length?'Subdoelen en indicatoren':'Subdoelen'}</h3>${!l.sub.length&&!subCol?'<p class="note">De randvoorwaarden zijn niet direct aan subdoelen gekoppeld. Ze maken de uitvoering van de andere programmalijnen mogelijk.</p>':''}${l.mt.some(m=>m.viaDoel)?`<div class="card tdk" style="cursor:default"><span class="n">Transitiedoel</span><span class="t">Indirect, zonder subdoel</span></div>`:''}${subCol}</div>
 <aside class="detail" id="det" aria-live="polite"></aside></div>`;
 cardStatus();chips();
-ro=new ResizeObserver(()=>{lines();drawCharts()});ro.observe(main.querySelector('.board'));mark()}
+ro=new ResizeObserver(()=>{lines();drawCharts()});ro.observe(main.querySelector('.board'));mark();if(sel){const c=document.querySelector(`.card[data-m="${sel}"],.card[data-s="${sel}"]`);c&&c.scrollIntoView({block:'center'})}}
 
 // ---------- gebeurtenissen ----------
 const main=$('main');
 main.addEventListener('click',e=>{
 const c=e.target.closest('.card[data-m],.card[data-s]');
-if(c){const id=c.dataset.m||c.dataset.s;sel=sel===id?null:id;mark();if(sel&&innerWidth<900)$('det').scrollIntoView({block:'start'});return}
-const g=e.target.closest('[data-goto]');if(g){sel=g.dataset.goto;mark();const c=document.querySelector(`.card[data-m="${sel}"]`);(innerWidth<900?$('det'):c||$('det')).scrollIntoView({block:'start',behavior:'smooth'});return}
+if(c){const id=c.dataset.m||c.dataset.s;sel=sel===id?null:id;lastSel=sel;mark();if(sel&&innerWidth<900)$('det').scrollIntoView({block:'start'});return}
+const g=e.target.closest('[data-goto]');if(g){if(full){location.hash=cur+'/'+g.dataset.goto;return}sel=lastSel=g.dataset.goto;mark();const c=document.querySelector(`.card[data-m="${sel}"],.card[data-s="${sel}"]`);(innerWidth<900?$('det'):c||$('det')).scrollIntoView({block:'start',behavior:'smooth'});return}
+if(e.target.closest('#printbtn')){window.print();return}
 const b=e.target.closest('button[data-a]');if(!b)return;const a=b.dataset.a;
 if(a==='eind'){openDlg(DATA.indicatoren[b.closest('[data-ind]').dataset.ind]);return}
 if(a==='aind'){openDlg(null);return}});
