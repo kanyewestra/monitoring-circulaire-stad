@@ -136,6 +136,7 @@ th.num,td.num{text-align:right;white-space:nowrap;font-variant-numeric:tabular-n
 details.actd{margin:0;border-bottom:1px solid var(--rule)}
 details.actd>summary{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:2px 10px;padding:8px 0;color:var(--ink);font-size:15px;list-style-position:outside}
 details.actd>summary .anr{color:var(--mut);font-variant-numeric:tabular-nums;margin-right:8px}
+details.actd>summary .ap.long{grid-column:1/-1;white-space:normal;padding-left:calc(2.4em + 8px)}
 details.actd>summary .ap{color:var(--mut);font-size:13px;white-space:nowrap}
 details.actd>summary [data-ast]{grid-column:1/-1}
 details.actd>summary [data-ast]:empty{display:none}
@@ -335,7 +336,7 @@ dlg.addEventListener('close',()=>{draft=null});
 function goal(){$('goal').innerHTML=`<span><b>Hoofddoel 2050</b> ${esc(M.hoofddoel)}</span><span><b>Tussendoel 2030</b> ${esc(M.tussendoel)}</span><span><b>Monitoring</b> ${esc(M.monitoring)}</span>`;$('bron').textContent='Bron: '+M.bron+'. De aannames zijn een eerste opzet, afgeleid uit de programmatekst.'}
 function histBlock(item){return `<details data-hist="${item}"><summary>Historie van wijzigingen</summary><ul class="hist" style="padding-left:18px"><li>Laden…</li></ul></details>`}
 async function loadHist(d){try{const r=await api('GET','/api/historie?item='+encodeURIComponent(d.dataset.hist));d.querySelector('ul').innerHTML=r.length?r.map(h=>`<li>${fmt(h.t)} · <b>${esc(h.door||'onbekend')}</b> · ${esc(h.actie)} ${esc(String(h.item).split('/').slice(1).join('/'))}${typeof h.waarde==='string'&&h.waarde?`: ${esc(h.waarde.length>140?h.waarde.slice(0,140)+'…':h.waarde)}`:''}</li>`).join(''):'<li>Nog geen wijzigingen.</li>'}catch(e){d.querySelector('ul').innerHTML='<li class="err">Historie niet beschikbaar.</li>'}}
-function actHtml(a){return `<details class="actd" data-aid="${a.id}"${openActs.has(a.id)?' open':''}><summary><span class="an">${(([,nr,t])=>nr?`<span class="anr">${esc(nr)}</span>${esc(t)}`:esc(a.naam))(a.naam.match(/^(\d+\.\d+)\s+(.*)$/)||[])}</span><span class="ap">${esc(a.periode)}</span><span data-ast="${a.id}">${badge(a.id)}</span></summary><div class="ab">
+function actHtml(a){return `<details class="actd" data-aid="${a.id}"${openActs.has(a.id)?' open':''}><summary><span class="an">${(([,nr,t])=>nr?`<span class="anr">${esc(nr)}</span>${esc(t)}`:esc(a.naam))(a.naam.match(/^(\d+\.\d+)\s+(.*)$/)||[])}</span><span class="ap${a.periode.length>16?' long':''}">${esc(a.periode)}</span><span data-ast="${a.id}">${badge(a.id)}</span></summary><div class="ab">
 ${a.omschrijving?`<details class="omsch"><summary>Omschrijving uit het uitvoeringsprogramma</summary><p>${esc(a.omschrijving)}</p></details>`:''}${a.dekking?`<p class="note"><b>Dekking en uitvoering:</b> ${esc(a.dekking)}</p>`:''}
 ${field(a.id,'aannames','Aannames','waarom draagt deze activiteit bij aan de maatregel?')}
 ${statusSel(a.id,'Stand van uitvoering')}
