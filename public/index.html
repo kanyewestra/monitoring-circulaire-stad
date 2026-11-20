@@ -348,7 +348,7 @@ function titleHtml(id,label,txt){return full?`<p class="eyebrow">${esc(lijn().na
 const goto=(id,txt)=>`<button type="button" class="l mlink" data-goto="${id}">${txt}</button>`;
 function detail(){
 const l=lijn(),box=$('det');if(!box)return;
-if(!sel){box.innerHTML=`<p class="empty">Kies een maatregel of subdoel.</p><h3>Fase van de transitie</h3><p>${esc(l.fase)}</p><h3>Invloed van de gemeente</h3><p>${esc(l.invloed)}</p>`;return}
+if(!sel){box.innerHTML=`<p class="empty">Kies een maatregel of subdoel.</p>`;return}
 const m=l.mt.find(x=>x.id===sel);
 if(m){box.innerHTML=`${titleHtml(m.id,'Maatregel '+m.k,`${m.k}. ${esc(m.t)}`)}<dl><dt>Rol</dt><dd>${esc(m.rol)}</dd><dt>Verwacht resultaat</dt><dd>${esc(m.res)}</dd><dt>Termijn</dt><dd>${esc(m.term)}</dd><dt>Verwachte impact</dt><dd><span class="dots">${IMP[m.imp][0]}</span> ${IMP[m.imp][1]}</dd><dt>Draagt bij aan</dt><dd>${m.randvoorwaarde?'Geen directe koppeling met subdoelen: voorwaarde voor de andere programmalijnen':m.viaDoel?'Indirect aan het transitiedoel (geen subdoel genoemd)':`<ul class="mlist">${m.sub.map(clean).map(s=>`<li>${goto(s,`Subdoel ${allSub[s].k}. ${esc(allSub[s].t)}`)}</li>`).join('')}</ul>`}</dd></dl>
 <h3>Activiteiten</h3><p class="note">Uit het uitvoeringsprogramma. Klik op een activiteit om aannames, uitvoering, evaluatie en bijdrage in te vullen.</p><div class="acts">${m.act.map(actHtml).join('')}</div>
@@ -387,7 +387,7 @@ sel=lastSel&&valid(lastSel)?lastSel:null;
 if(cur==='aandacht'){main.innerHTML=`<ol class="list">${M.aandacht.map(a=>`<li><b>${esc(a[0])}.</b> ${esc(a[1])}</li>`).join('')}</ol>`;return}
 const l=lijn();
 const subCol=l.sub.length?l.sub.map(s=>`<button type="button" class="card" data-s="${s.id}"><span class="n">Subdoel ${s.k}</span><span class="t">${esc(s.t)}</span><span class="chips" data-chips="${s.id}"></span></button>`).join(''):[...new Set(l.mt.flatMap(m=>m.sub))].map(sid=>{const s=allSub[sid];return `<button type="button" class="card" data-s="${sid}"><span class="n">${esc(s.lijn)}, subdoel ${s.k}</span><span class="t">${esc(s.t)}</span></button>`}).join('');
-main.innerHTML=`<div class="tdoel"><h2>Transitiedoel</h2><p>${esc(l.transitiedoel)}</p><p class="fase">Fase: ${esc(l.fase)}. Invloed van de gemeente: ${esc(l.invloed)}.</p></div>
+main.innerHTML=`<div class="tdoel"><h2>${esc(l.tdKop||'Transitiedoel')}</h2><p>${esc(l.transitiedoel)}</p>${l.fase||l.invloed?`<p class="fase">${l.fase?`Fase: “${esc(l.fase)}”`:''}${l.fase&&l.invloed?' ':''}${l.invloed?`Invloed van de gemeente: ${esc(l.invloed)}.`:''}</p>`:''}</div>
 <div class="board"><svg aria-hidden="true"></svg>
 <div class="col"><h3>Maatregelen</h3>${l.mt.map(m=>`<button type="button" class="card" data-m="${m.id}"><span class="n">Maatregel ${m.k}</span><span class="t">${esc(m.t)}</span><span class="meta"><span><span class="dots">${IMP[m.imp][0]}</span> ${IMP[m.imp][1]}</span></span><span class="meta" data-acts="${m.id}"></span>${m.randvoorwaarde?'':`<span class="mob meta">Draagt bij aan: ${m.viaDoel?'transitiedoel (indirect)':m.sub.map(s=>allSub[clean(s)].k).join(', ')}</span>`}</button>`).join('')}</div>
 <div class="col"><h3>${l.sub.length?'Subdoelen en indicatoren':'Subdoelen'}</h3>${!l.sub.length&&!subCol?'<p class="note">De randvoorwaarden zijn niet direct aan subdoelen gekoppeld. Ze maken de uitvoering van de andere programmalijnen mogelijk.</p>':''}${l.mt.some(m=>m.viaDoel)?`<div class="card tdk" style="cursor:default"><span class="n">Transitiedoel</span><span class="t">Indirect, zonder subdoel</span></div>`:''}${subCol}</div>

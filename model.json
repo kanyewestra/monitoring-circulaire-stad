@@ -9,13 +9,13 @@
    "id": "oi",
    "naam": "Opdrachtgeven & inkoop",
    "invloed": "direct",
-   "transitiedoel": "Circulair opdrachtgeven en circulair inkopen de standaard maken. Lineaire reductie van primaire grondstoffen van 50% in 2030 (t.o.v. 2019) en 100% circulair opdrachtgeven en inkopen in 2050.",
-   "fase": "Van verbreding naar borging in de organisatie",
+   "transitiedoel": "Circulair opdrachtgeven en circulair inkopen de standaard maken. We werken naar een (lineaire) reductie van primaire grondstoffen van 50% in 2030 (ten opzichte van 2019) en 100% circulair opdrachtgeven & inkoop in 2050.",
+   "fase": "We gaan in deze programmalijn van de verbredingsfase naar de fase van borging in de organisatie.",
    "sub": [
     {
      "id": "OI-S1",
      "k": "1",
-     "t": "Totale grondstoffengebruik verminderen door producten bewust niet aan te schaffen en de levensduur te verlengen",
+     "t": "Het verminderen van ons totale grondstoffengebruik door producten bewust niet aan te schaffen en de levensduur hiervan te verlengen.",
      "ind": [
       {
        "t": "Verdeling grondstofgebruik over inkoopcategorieën",
@@ -28,7 +28,7 @@
     {
      "id": "OI-S2",
      "k": "2",
-     "t": "Hoogwaardig hergebruik van bestaand en hernieuwbaar materiaal: in 2030 55% van de materiaalbehoefte uit hergebruikte of biobased materialen",
+     "t": "Hoogwaardig hergebruik van bestaand en hernieuwbaar materiaal, zodat we in 2030 55% van onze materiaalbehoefte kunnen voorzien in hergebruikte of biobased materialen.",
      "ind": [
       {
        "t": "Aandeel hergebruikte en aandeel biobased materialen",
@@ -60,7 +60,7 @@
     {
      "id": "OI-S3",
      "k": "3",
-     "t": "Milieu-impact verlagen",
+     "t": "Het verlagen van onze milieu-impact.",
      "ind": [
       {
        "t": "CO₂-uitstoot grond-, weg- en waterbouw",
@@ -97,14 +97,14 @@
      "id": "OI-M1",
      "k": "1",
      "t": "Circulariteit is de norm",
-     "rol": "Regulerend, stimulerend",
+     "rol": "Regulerend en stimulerend.",
      "sub": [
       "OI-S1",
       "OI-S2",
       "OI-S3"
      ],
-     "res": "100% circulair opdrachtgeven en inkopen is onderdeel van cultuur, organisatie en werkprocessen (HIOR, ‘pas toe of leg uit’).",
-     "term": "Direct tot lange termijn",
+     "res": "100% circulair opdrachtgeven en inkopen is onderdeel van onze cultuur, organisatie en werkprocessen, waardoor we in 2030 50% minder primaire grondstoffen gebruiken en in 2050 100% circulair zijn.",
+     "term": "Heeft direct, op korte tot middellange termijn (2-5 jaar) en op lange termijn (vanaf 5 jaar) effect.",
      "imp": "z",
      "act": [
       {
@@ -134,15 +134,15 @@
     {
      "id": "OI-M2",
      "k": "2",
-     "t": "Circulaire principes bij maatschappelijk vastgoed",
-     "rol": "Regulerend, stimulerend, faciliterend",
+     "t": "Toepassen circulaire principes bij ontwikkeling, beheer en onderhoud van maatschappelijk vastgoed",
+     "rol": "Regulerend, stimulerend en faciliterend.",
      "sub": [
       "OI-S1",
       "OI-S2",
       "OI-S3"
      ],
-     "res": "Ontwikkeling, beheer en onderhoud van maatschappelijk vastgoed worden steeds vaker circulair en CO₂-neutraal opgedragen en ingekocht.",
-     "term": "Direct tot lange termijn",
+     "res": "Bij ontwikkeling, beheer en onderhoud van maatschappelijk vastgoed wordt in toenemende mate circulair en CO₂-neutraal opdracht gegeven en ingekocht waardoor we in 2030 50% minder primaire grondstoffen gebruiken en in 2050 100% circulair zijn.",
+     "term": "Heeft direct, op korte tot middellange termijn (2-5 jaar) en op lange termijn (vanaf 5 jaar) effect.",
      "imp": "z",
      "act": [
       {
@@ -166,14 +166,14 @@
      "id": "OI-M3",
      "k": "3",
      "t": "Strategische marktbenadering",
-     "rol": "Regulerend, stimulerend, faciliterend",
+     "rol": "Regulerend, stimulerend en faciliterend.",
      "sub": [
       "OI-S1",
       "OI-S2",
       "OI-S3"
      ],
-     "res": "Primair grondstoffengebruik en milieu-impact dalen door strategisch in te kopen, met focus op dominante stromen.",
-     "term": "Direct tot lange termijn",
+     "res": "We reduceren ons primair grondstoffengebruik en onze milieu-impact door op strategische wijze in te kopen.",
+     "term": "Heeft direct, op korte tot middellange termijn (2-5 jaar) en op lange termijn (vanaf 5 jaar) effect.",
      "imp": "z",
      "act": [
       {
@@ -204,14 +204,14 @@
      "id": "OI-M4",
      "k": "4",
      "t": "Aanpak Duurzaam GWW",
-     "rol": "Regulerend",
+     "rol": "Regulerend.",
      "sub": [
       "OI-S1",
       "OI-S2",
       "OI-S3"
      ],
-     "res": "Een jaarlijks actieplan van het expertteam verlaagt de milieu-impact van projecten in de openbare ruimte.",
-     "term": "Direct tot lange termijn",
+     "res": "Jaarlijks opstellen van een gericht actieplan, waarmee de milieu-impact van projecten in de openbare ruimte wordt verminderd, we in 2030 50% minder primaire grondstoffen gebruiken en in 2050 100% circulair zijn.",
+     "term": "Heeft direct, op korte tot middellange termijn (2-5 jaar) en op lange termijn (vanaf 5 jaar) effect.",
      "imp": "z",
      "act": [
       {
@@ -242,14 +242,14 @@
      "id": "OI-M5",
      "k": "5",
      "t": "Monitoren van milieu-impact",
-     "rol": "Regulerend",
+     "rol": "Regulerend.",
      "sub": [
       "OI-S1",
       "OI-S2",
       "OI-S3"
      ],
-     "res": "Er is informatie over de milieu-impact van de meest ingekochte materialen, producten en diensten, en een monitoringsmethodiek.",
-     "term": "Direct tot lange termijn",
+     "res": "Beschikbare informatie over milieu-impact van de meest voorkomende materialen, producten en diensten die worden ingekocht door gemeente Amersfoort en een monitoringsmethodiek.",
+     "term": "Heeft direct, op korte tot middellange termijn (2-5 jaar) en op lange termijn (vanaf 5 jaar) effect.",
      "imp": "z",
      "act": [
       {
@@ -282,13 +282,13 @@
    "id": "bg",
    "naam": "Bouw & gebiedsontwikkeling",
    "invloed": "indirect",
-   "transitiedoel": "Circulariteit wordt in 2030 standaard meegenomen in alle fasen van bouw- en gebiedsontwikkeling, met minimaal CO₂-neutrale nieuwbouw in 2030 (materiaal en energie). Bijdrage aan 50% minder primaire grondstoffen in 2030 en 100% in 2050. Lineair betekent dat 9% reductie per jaar.",
-   "fase": "Van pilot naar verbreding",
+   "transitiedoel": "Circulariteit wordt in 2030 standaard meegenomen in alle fasen van bouw- en gebiedsontwikkeling. We werken daarbij toe naar minimaal CO₂-neutrale nieuwbouw in 2030, waarbij we zowel kijken naar materiaalgebruik als energie. We dragen daardoor bij aan de landelijke doelstelling voor reductie van primaire grondstoffen van 50% in 2030 (ten opzichte van 2019) en 100% in 2050.",
+   "fase": "We willen in deze programmalijn de stap zetten van pilot naar verbreding, waarbij circulaire principes standaard worden meegewogen in alle fasen van een gebiedsontwikkeling.",
    "sub": [
     {
      "id": "BG-S1",
      "k": "1",
-     "t": "Totale grondstoffengebruik bij gebiedsontwikkeling verminderen door anders te ontwerpen en levensduurverlenging",
+     "t": "Het verminderen van het totale grondstoffengebruik bij gebiedsontwikkeling (indicator: grondstoffengebruik (Mton/jaar) door anders te ontwerpen en levensduurverlenging.",
      "ind": [
       {
        "t": "Grondstofgebruik bouw en gebiedsontwikkeling (Mton/jaar)",
@@ -301,7 +301,7 @@
     {
      "id": "BG-S2a",
      "k": "2a",
-     "t": "Aandeel secundaire materialen in woningbouw vergroten",
+     "t": "Het vergroten aandeel van secundaire materialen bij de bouw van woningen.",
      "ind": [
       {
        "t": "Secundair als onderdeel van de MPG-berekening",
@@ -314,7 +314,7 @@
     {
      "id": "BG-S2b",
      "k": "2b",
-     "t": "Aandeel biobased materialen in woningbouw vergroten",
+     "t": "Het vergroten van het aandeel biobased materialen bij de bouw van woningen.",
      "ind": [
       {
        "t": "Aandeel biobased materialen",
@@ -341,7 +341,7 @@
     {
      "id": "BG-S3a",
      "k": "3a",
-     "t": "Aandeel secundaire materialen in utiliteitsbouw vergroten",
+     "t": "Het vergroten van het aandeel secundaire materialen bij utiliteitsbouw.",
      "ind": [
       {
        "t": "Aandeel secundaire materialen",
@@ -354,7 +354,7 @@
     {
      "id": "BG-S3b",
      "k": "3b",
-     "t": "Aandeel biobased materialen in utiliteitsbouw vergroten",
+     "t": "Het vergroten van het aandeel van biobased materialen bij utiliteitsbouw.",
      "ind": [
       {
        "t": "Aandeel biobased materialen",
@@ -367,7 +367,7 @@
     {
      "id": "BG-S4",
      "k": "4",
-     "t": "Milieu-impact van de gebouwde omgeving verlagen",
+     "t": "Het verlagen van de milieu-impact van de gebouwde omgeving.",
      "ind": [
       {
        "t": "MKI (in de monitor nog met vraagteken)",
@@ -382,8 +382,8 @@
     {
      "id": "BG-M1",
      "k": "1",
-     "t": "Benutten van tijdelijk braakliggende gronden en leegstaande panden",
-     "rol": "Faciliterend, richtinggevend, regulerend waar nodig",
+     "t": "Benutten tijdelijk braakliggende gronden en leegstaande panden",
+     "rol": "Faciliterend, richtingevend en regulerend (waar nodig en mogelijk).",
      "sub": [
       "BG-S1",
       "BG-S2a",
@@ -391,8 +391,8 @@
       "BG-S3a",
       "BG-S3b"
      ],
-     "res": "Tijdelijk gebruik van braakliggende grond en leegstaande panden voor de circulaire economie (2025–2027).",
-     "term": "2–5 jaar",
+     "res": "Tijdelijk gebruik van de braakliggende gronden en leegstaande panden ter bevordering van een circulaire economie (2025-2027).",
+     "term": "Effect op korte tot middellange termijn (2-5 jaar).",
      "imp": "a",
      "act": [
       {
@@ -430,11 +430,11 @@
      "id": "BG-M2",
      "k": "2",
      "t": "Sturen op circulariteit op gebiedsniveau",
-     "rol": "Faciliterend, richtinggevend, stimulerend, regulerend waar nodig",
+     "rol": "Faciliterend, richtinggevend, stimulerend en regulerend (waar nodig en mogelijk).",
      "sub": [],
      "viaDoel": true,
-     "res": "Circulaire principes worden optimaal toegepast, met de meest effectieve verdeling van maatregelen over openbare ruimte, kavels en gebouwen.",
-     "term": "2–5 jaar",
+     "res": "Een optimale toepassing van circulaire principes, waarbij de combinatie van de samenwerking met stakeholders, sturing op gebiedsniveau en een integrale benadering leidt tot de meest effectieve verdeling van maatregelen tussen openbare ruimte, kavels en gebouwen.",
+     "term": "Effect op korte tot middellange termijn (2-5 jaar).",
      "imp": "z",
      "act": [
       {
@@ -486,7 +486,7 @@
      "id": "BG-M3",
      "k": "3",
      "t": "Biobased bouwen normaliseren en stimuleren",
-     "rol": "Faciliterend, richtinggevend, regulerend waar nodig",
+     "rol": "Faciliterend, richtinggevend en regulerend (waar nodig en mogelijk).",
      "sub": [
       "BG-S1",
       "BG-S2a",
@@ -494,8 +494,8 @@
       "BG-S3a",
       "BG-S3b"
      ],
-     "res": "Biobased bouwen is de norm geworden.",
-     "term": "2–5 jaar",
+     "res": "Biobased bouwen is uitgegroeid tot de norm.",
+     "term": "Effect op korte tot middellange termijn (2-5 jaar).",
      "imp": "z",
      "act": [
       {
@@ -518,15 +518,15 @@
     {
      "id": "BG-M4",
      "k": "4",
-     "t": "Hoogwaardig toepassen van secundaire materialen over meerdere levenscycli",
-     "rol": "Faciliterend, richtinggevend, stimulerend, regulerend waar nodig",
+     "t": "Hoogwaardig toepassen van secundaire materialen over meerdere levenscycli normaliseren",
+     "rol": "Faciliterende, richtinggevend, stimulerend en regulerend (waar nodig en mogelijk).",
      "sub": [
       "BG-S1",
       "BG-S3a",
       "BG-S3b"
      ],
-     "res": "Hoogwaardig hergebruik van secundaire materialen over meerdere levenscycli is genormaliseerd en opgeschaald.",
-     "term": "Direct",
+     "res": "De normalisatie en opschaling van het hoogwaardig hergebruik van secundaire materialen over meerdere levenscycli, waardoor het gebruik van primaire grondstoffen aanzienlijk wordt teruggedrongen.",
+     "term": "Heeft direct effect.",
      "imp": "z",
      "act": [
       {
@@ -543,7 +543,7 @@
      "id": "BG-M5",
      "k": "5",
      "t": "Renoveren en transformeren van bestaande bouw",
-     "rol": "Faciliterend, richtinggevend, stimulerend",
+     "rol": "Faciliterend, richtinggevend en stimulerend.",
      "sub": [
       "BG-S1",
       "BG-S2a",
@@ -551,8 +551,8 @@
       "BG-S3a",
       "BG-S3b"
      ],
-     "res": "Bestaande bouw slimmer en efficiënter benutten leidt tot aanzienlijk minder primair grondstoffengebruik.",
-     "term": "Lange termijn (vanaf 5 jaar)",
+     "res": "Het slimmer en efficiënter benutten van bestaande bouw, leidt tot aanzienlijke verminderen van primair grondstoffen gebruik.",
+     "term": "Heeft effect op lange termijn (vanaf 5 jaar).",
      "imp": "z",
      "act": [
       {
@@ -576,7 +576,7 @@
      "id": "BG-M6",
      "k": "6",
      "t": "Circulaire nieuwbouw",
-     "rol": "Faciliterend, richtinggevend, stimulerend, regulerend waar nodig",
+     "rol": "Faciliterend, richtinggevend, stimulerend en regulerend (waar nodig en mogelijk).",
      "sub": [
       "BG-S1",
       "BG-S2a",
@@ -584,8 +584,8 @@
       "BG-S3a",
       "BG-S3b"
      ],
-     "res": "Circulaire nieuwbouw is de norm, met gebouwen ontworpen als toekomstige materialenbanken.",
-     "term": "Direct",
+     "res": "Circulaire nieuwbouw is de norm geworden, waarbij gebouwen ontworpen worden als toekomstige materialenbanken. Bovendien doorlopen materialen meerdere levenscycli, waardoor de afhankelijkheid van het schaarste aan grondstoffen aanzienlijk verminderd.",
+     "term": "Heeft direct effect.",
      "imp": "z",
      "act": [
       {
@@ -632,13 +632,13 @@
    "id": "be",
    "naam": "Bedrijvigheid",
    "invloed": "indirect",
-   "transitiedoel": "Het aantal circulaire bedrijven en bedrijfsactiviteiten in Amersfoort vergroten, door de juiste randvoorwaarden te creëren.",
-   "fase": "Bewustwording",
+   "transitiedoel": "Het vergroten van het aantal circulaire bedrijven en bedrijfsactiviteiten in Amersfoort, door het creëren van de juiste randvoorwaarden.",
+   "fase": "Daarbij komt dat de transitie van bedrijvigheid zich in de fase van bewustwording bevindt.",
    "sub": [
     {
      "id": "BE-S1",
      "k": "1",
-     "t": "Een aantrekkelijk ondernemersklimaat voor circulaire bedrijvigheid creëren",
+     "t": "Het creëren van een aantrekkelijk ondernemersklimaat voor circulaire bedrijvigheid.",
      "ind": [
       {
        "t": "Aantal en aandeel circulaire arbeidsplaatsen (KVK, naar R-strategie)",
@@ -715,12 +715,12 @@
      "id": "BE-M1",
      "k": "1",
      "t": "Subsidies verstrekken en onder de aandacht brengen",
-     "rol": "Stimulerend",
+     "rol": "Stimulerend.",
      "sub": [
       "BE-S1"
      ],
-     "res": "Circulaire initiatieven zijn over de financiële drempel geholpen en kunnen starten of opschalen.",
-     "term": "Direct",
+     "res": "Circulaire initiatieven zijn over de (financiële) drempel geholpen en kunnen daarna starten of opschalen.",
+     "term": "Heeft direct effect.",
      "imp": "b",
      "act": [
       {
@@ -750,13 +750,13 @@
     {
      "id": "BE-M2",
      "k": "2",
-     "t": "Community van circulaire pioniers faciliteren",
-     "rol": "Faciliterend",
+     "t": "Faciliteren community circulaire pioniers",
+     "rol": "Faciliterend.",
      "sub": [
       "BE-S1"
      ],
-     "res": "Huidige circulaire pioniers zijn in staat gesteld hun productie op te schalen.",
-     "term": "Direct",
+     "res": "Huidige circulaire pioniers zijn in staat gesteld om hun productie op te schalen.",
+     "term": "Heeft direct effect.",
      "imp": "b",
      "act": [
       {
@@ -779,13 +779,13 @@
     {
      "id": "BE-M3",
      "k": "3",
-     "t": "Ondernemers met een concrete hulpvraag ondersteunen",
-     "rol": "Faciliterend",
+     "t": "Ondersteunen ondernemers met concrete hulpvraag",
+     "rol": "Faciliterend.",
      "sub": [
       "BE-S1"
      ],
-     "res": "Bestaande circulaire initiatieven worden versterkt en versneld, en de lessen worden gedeeld met andere ondernemers.",
-     "term": "Direct",
+     "res": "We versterken en versnellen bestaande circulaire initiatieven en nemen - waar mogelijk - de geleerde lessen mee, zodat andere ondernemers hier ook van kunnen leren.",
+     "term": "Heeft direct effect.",
      "imp": "b",
      "act": [
       {
@@ -801,13 +801,13 @@
     {
      "id": "BE-M4",
      "k": "4",
-     "t": "Regionale circulaire ondernemersnetwerken inzetten",
-     "rol": "Faciliterend",
+     "t": "Inzetten (regionale) circulaire ondernemersnetwerken",
+     "rol": "Faciliterend.",
      "sub": [
       "BE-S1"
      ],
-     "res": "Circulaire initiatieven zijn via (regionale) netwerken versterkt in netwerk, kennis of samenwerking.",
-     "term": "Direct",
+     "res": "Circulaire initiatieven in Amersfoort zijn door de (regionale) netwerken versterkt in netwerk, kennis en/of samenwerkingen.",
+     "term": "Heeft direct effect.",
      "imp": "b",
      "act": [
       {
@@ -833,13 +833,13 @@
    "id": "cg",
    "naam": "Consumptiegoederen",
    "invloed": "indirect",
-   "transitiedoel": "Actief samenwerken met partijen in stad, regio en land om minimaal gebruik van primaire grondstoffen en hoogwaardig hergebruik van materiaal en reststromen te stimuleren.",
-   "fase": "Pilots, met verbreding en waar mogelijk borging in beleid",
+   "transitiedoel": "Het actief samenwerken met partijen in de stad, regio en landelijk met als doel minimaal gebruik van primaire grondstoffen en hoogwaardig hergebruik van materiaal en reststromen te stimuleren.",
+   "fase": "Deze programmalijn zit in de fase van pilots. Komende jaren zullen we verder verbreden en waar mogelijk al borgen in beleid.",
    "sub": [
     {
      "id": "CG-S1",
      "k": "1",
-     "t": "Bewustwording creëren en inspiratie bieden met het circulaire alternatief",
+     "t": "Bewustwording creëren en inspiratie bieden met het circulaire initiatief.",
      "ind": [
       {
        "t": "Aandeel inwoners dat bewust is van circulaire initiatieven",
@@ -872,7 +872,7 @@
     {
      "id": "CG-S2",
      "k": "2",
-     "t": "Hoogwaardige verwerking",
+     "t": "Hoogwaardige verwerking.",
      "ind": [
       {
        "t": "Kg huishoudelijk restafval per inwoner",
@@ -916,12 +916,12 @@
      "id": "CG-M1",
      "k": "1",
      "t": "Bewustwordingscampagnes",
-     "rol": "Richtinggevend",
+     "rol": "Richtinggevend.",
      "sub": [
       "CG-S1"
      ],
-     "res": "Een aantrekkelijke, positieve boodschap nodigt Amersfoorters uit circulaire alternatieven te proberen.",
-     "term": "Direct",
+     "res": "Amersfoorters zijn door de aantrekkelijke en positieve boodschap uitgenodigd om circulaire alternatieven te proberen.",
+     "term": "Heeft direct effect.",
      "imp": "b",
      "act": [
       {
@@ -944,13 +944,13 @@
     {
      "id": "CG-M2",
      "k": "2",
-     "t": "Digital kiosks (deelkasten)",
-     "rol": "Stimulerend",
+     "t": "Digital kiosks",
+     "rol": "Stimulerend.",
      "sub": [
       "CG-S1"
      ],
-     "res": "We leren welke producten, locaties en doelgroepen geschikt zijn voor deelkasten en welke rol de gemeente daarin kan nemen.",
-     "term": "Direct",
+     "res": "We leren welke producten, locaties en doelgroepen geschikt zijn voor deelkasten en welke rol we als gemeente hierin kunnen nemen.",
+     "term": "Heeft direct effect.",
      "imp": "b",
      "act": [
       {
@@ -967,12 +967,12 @@
      "id": "CG-M3",
      "k": "3",
      "t": "Toekomstbestendig milieubrengstation",
-     "rol": "Richtinggevend (inwoner), regulerend (afvalinzamelaar)",
+     "rol": "Richtinggevend (naar inwoner). Regulerend (naar afvalinzamelaar).",
      "sub": [
       "CG-S2"
      ],
-     "res": "Consumptiegoederen die bij het milieubrengstation worden ingeleverd, worden hoogwaardiger hergebruikt.",
-     "term": "Direct tot lange termijn",
+     "res": "Hoogwaardiger hergebruik van consumptiegoederen die worden ingeleverd bij het milieubrengstation.",
+     "term": "Heeft direct, op korte tot middellange termijn (2-5 jaar) en op lange termijn (vanaf 5 jaar) effect.",
      "imp": "z",
      "act": [
       {
@@ -995,13 +995,13 @@
     {
      "id": "CG-M4",
      "k": "4",
-     "t": "Vraag en aanbod van circulaire (sub)grondstofstromen afstemmen",
-     "rol": "Stimulerend",
+     "t": "Afstemming vraag en aanbod van circulaire (sub)grondstofstromen",
+     "rol": "Stimulerend.",
      "sub": [
       "CG-S2"
      ],
-     "res": "Voor stromen met een business case is fysieke ruimte gereserveerd op de nieuwe milieustraat.",
-     "term": "Direct",
+     "res": "Voor de stromen waarvoor een business case is zorgen we dat we fysieke ruimte reserveren op de nieuwe milieustraat, zodat ze hoogwaardiger kunnen worden hergebruikt.",
+     "term": "Heeft direct effect.",
      "imp": "a",
      "act": [
       {
@@ -1017,13 +1017,13 @@
     {
      "id": "CG-M5",
      "k": "5",
-     "t": "Verbeteren van inzameling verkennen",
-     "rol": "Faciliterend",
+     "t": "Verkennen verbeteren inzamelen",
+     "rol": "Faciliterend.",
      "sub": [
       "CG-S2"
      ],
-     "res": "Consumptiegoederen die niet (meer) bij het milieubrengstation worden ingeleverd, worden hoogwaardiger hergebruikt.",
-     "term": "Direct",
+     "res": "Hoogwaardiger hergebruik van consumptiegoederen die (niet meer) worden ingeleverd bij het milieubrengstation.",
+     "term": "Heeft direct effect.",
      "imp": "b",
      "act": [
       {
@@ -1041,19 +1041,19 @@
   {
    "id": "rv",
    "naam": "Randvoorwaarden",
-   "invloed": "—",
-   "transitiedoel": "Geen eigen doelen: dit zijn de voorwaarden om de andere programmalijnen uit te kunnen voeren (ruimte, digitalisering, kennis en gedrag).",
-   "fase": "Doorsnijdend",
+   "invloed": "",
+   "transitiedoel": "Zoals de titel al suggereert vormen circulaire randvoorwaarden geen aparte programmalijn, maar beschrijft het condities die in orde moeten zijn om andere programmalijnen uit te kunnen voeren. Om die reden zijn er geen aparte transitiedoel en subdoelen opgesteld in dit hoofdstuk.",
+   "fase": "",
    "sub": [],
    "mt": [
     {
      "id": "RV-M1",
      "k": "1",
      "t": "Inrichting grondstoffendepot",
-     "rol": "Regulerend",
+     "rol": "Regulerend.",
      "sub": [],
-     "res": "Er is een grondstoffendepot voor de dominante vrijkomende materialen uit de openbare ruimte, met tools om ze te koppelen aan de projectprogrammering.",
-     "term": "Direct tot lange termijn",
+     "res": "We beschikken over een grondstoffendepot, waardoor we de dominante vrijkomende materialen uit de openbare ruimte kunnen hergebruiken. Om dit effectief te kunnen doen beschikken we over tools die ons helpen vrijkomende materialen te koppelen aan de programmering van projecten.",
+     "term": "Heeft direct, op korte tot middellange termijn (2-5 jaar) en op lange termijn (vanaf 5 jaar) effect.",
      "imp": "z",
      "act": [
       {
@@ -1078,10 +1078,10 @@
      "id": "RV-M2",
      "k": "2",
      "t": "Samenwerken en ruimte reserveren",
-     "rol": "Richtinggevend",
+     "rol": "Richtinggevend.",
      "sub": [],
-     "res": "Aanbevelingen (CE Delft, ‘Ruimte voor CE’) zijn waar mogelijk opgenomen in omgevingsplannen en -programma’s en ontwikkelkaders. Het kavel bij het nieuwe milieubrengstation (Wieken-Vinkenhoef) is gereserveerd voor circulaire bedrijvigheid (amendement).",
-     "term": "Direct tot lange termijn",
+     "res": "Aanbevelingen - waar mogelijk - meenemen in Omgevingsplannen/-programma’s en ontwikkelkaders- en strategieën.",
+     "term": "Heeft direct, op korte tot middellange termijn (2-5 jaar) en op lange termijn (vanaf 5 jaar) effect.",
      "imp": "a",
      "act": [
       {
@@ -1109,7 +1109,8 @@
      "aan": "Zonder reservering is de ruimte later niet meer beschikbaar (tot 2050 is 0–22 ha extra nodig; uitgeefbaar is nu 11 ha).\nProvincie en buurgemeenten willen samen ruimte vinden.",
      "randvoorwaarde": true
     }
-   ]
+   ],
+   "tdKop": "Circulaire randvoorwaarden"
   }
  ],
  "aandacht": [
