@@ -1,0 +1,995 @@
+{
+ "titel": "Monitoring Omgevingsprogramma Circulaire Stad",
+ "bron": "Omgevingsprogramma Circulaire Stad, gemeente Amersfoort (vastgesteld maart 2026), bijlage 7 Uitvoeringsprogramma en de monitor",
+ "hoofddoel": "Volledig circulaire stad in 2050 (Omgevingsvisie, opgave duurzame CO₂-neutrale stad)",
+ "tussendoel": "50% minder primaire grondstoffen in 2030 t.o.v. 2019 (NPCE)",
+ "monitoring": "Elke twee jaar",
+ "lijnen": [
+  {
+   "id": "oi",
+   "naam": "Opdrachtgeven & inkoop",
+   "invloed": "direct",
+   "transitiedoel": "Circulair opdrachtgeven en circulair inkopen de standaard maken. Lineaire reductie van primaire grondstoffen van 50% in 2030 (t.o.v. 2019) en 100% circulair opdrachtgeven en inkopen in 2050.",
+   "fase": "Van verbreding naar borging in de organisatie",
+   "sub": [
+    {
+     "id": "OI-S1",
+     "k": "1",
+     "t": "Totale grondstoffengebruik verminderen door producten bewust niet aan te schaffen en de levensduur te verlengen",
+     "ind": [
+      {
+       "t": "Verdeling grondstofgebruik over inkoopcategorieën",
+       "st": "nog geen data",
+       "bron": "Spend-impactanalyse (activiteit 3.1)",
+       "id": "OI-S1-I1"
+      }
+     ]
+    },
+    {
+     "id": "OI-S2",
+     "k": "2",
+     "t": "Hoogwaardig hergebruik van bestaand en hernieuwbaar materiaal: in 2030 55% van de materiaalbehoefte uit hergebruikte of biobased materialen",
+     "ind": [
+      {
+       "t": "Aandeel hergebruikte en aandeel biobased materialen",
+       "st": "data",
+       "bron": "Eco Monitor, alleen grond-, weg- en waterbouw",
+       "rows": [
+        [
+         "Baseline, primair",
+         "ca. 113.000 ton"
+        ],
+        [
+         "Baseline, totaal",
+         "ca. 533.000 ton"
+        ],
+        [
+         "Optimalisatie, primair",
+         "ca. 90.000 ton"
+        ],
+        [
+         "Biobased",
+         "vrijwel 0"
+        ]
+       ],
+       "noot": "Afgelezen uit de grafiek in de monitor, dus bij benadering.",
+       "id": "OI-S2-I1"
+      }
+     ]
+    },
+    {
+     "id": "OI-S3",
+     "k": "3",
+     "t": "Milieu-impact verlagen",
+     "ind": [
+      {
+       "t": "CO₂-uitstoot grond-, weg- en waterbouw",
+       "st": "data",
+       "bron": "Eco Monitor",
+       "rows": [
+        [
+         "Baseline",
+         "ca. 13.300 ton"
+        ],
+        [
+         "Optimalisatie",
+         "ca. 9.700 ton (−27%)"
+        ],
+        [
+         "Doel: >50% reductie",
+         "ca. 6.650 ton"
+        ]
+       ],
+       "noot": "Afgelezen uit de grafiek in de monitor, dus bij benadering.",
+       "id": "OI-S3-I1"
+      },
+      {
+       "t": "CO₂-prestatieladder",
+       "st": "nog geen data",
+       "bron": "Nog niet uitgewerkt",
+       "id": "OI-S3-I2"
+      }
+     ]
+    }
+   ],
+   "mt": [
+    {
+     "id": "OI-M1",
+     "k": "1",
+     "t": "Circulariteit is de norm",
+     "rol": "Regulerend, stimulerend",
+     "sub": [
+      "OI-S1",
+      "OI-S2",
+      "OI-S3"
+     ],
+     "res": "100% circulair opdrachtgeven en inkopen is onderdeel van cultuur, organisatie en werkprocessen (HIOR, ‘pas toe of leg uit’).",
+     "term": "Direct tot lange termijn",
+     "imp": "z",
+     "act": [
+      [
+       "1.1 Goed voorbeeld doet goed volgen",
+       "2025–2030"
+      ],
+      [
+       "1.2 Kennisdeling en trainingen",
+       "2025–2030"
+      ],
+      [
+       "1.3 Circulaire gronduitgifte",
+       "2025–2030"
+      ]
+     ],
+     "aan": "Als circulariteit in het HIOR en in opdrachtformulering het uitgangspunt is, kiezen projectleiders en inkopers vaker de circulaire variant.\nMeer kennis en urgentie leidt ook buiten de openbare ruimte tot andere inkoopkeuzes.\nCirculaire keuzes zijn vaak ook financieel aantrekkelijk (zo stelt het programma)."
+    },
+    {
+     "id": "OI-M2",
+     "k": "2",
+     "t": "Circulaire principes bij maatschappelijk vastgoed",
+     "rol": "Regulerend, stimulerend, faciliterend",
+     "sub": [
+      "OI-S1",
+      "OI-S2",
+      "OI-S3"
+     ],
+     "res": "Ontwikkeling, beheer en onderhoud van maatschappelijk vastgoed worden steeds vaker circulair en CO₂-neutraal opgedragen en ingekocht.",
+     "term": "Direct tot lange termijn",
+     "imp": "z",
+     "act": [
+      [
+       "2.1 Samen leren met verbonden partijen",
+       "vanaf 2027"
+      ],
+      [
+       "2.2 Circulaire principes bij ontwikkeling, beheer en onderhoud",
+       "vanaf 2025"
+      ]
+     ],
+     "aan": "Als opdrachtgever en bij verbonden partijen heeft de gemeente genoeg invloed om keuzes te sturen.\nHet goede voorbeeld bij voorzieningen in nieuwe gebieden werkt door naar andere opdrachtgevers."
+    },
+    {
+     "id": "OI-M3",
+     "k": "3",
+     "t": "Strategische marktbenadering",
+     "rol": "Regulerend, stimulerend, faciliterend",
+     "sub": [
+      "OI-S1",
+      "OI-S2",
+      "OI-S3"
+     ],
+     "res": "Primair grondstoffengebruik en milieu-impact dalen door strategisch in te kopen, met focus op dominante stromen.",
+     "term": "Direct tot lange termijn",
+     "imp": "z",
+     "act": [
+      [
+       "3.1 Spend-impactanalyse",
+       "2025"
+      ],
+      [
+       "3.2 Gemeentebrede inkoopstrategie",
+       "2025–2030"
+      ],
+      [
+       "3.3 Maatschappelijk verantwoord opdrachtgeven en inkopen",
+       "2026–2030"
+      ]
+     ],
+     "aan": "Gebundeld inkoopvolume (raamovereenkomsten, samen inkopen) geeft leveranciers ruimte voor innovatie en drukt de meerkosten.\nDe dominante stromen leveren de meeste winst op.\nEen eenduidige vraag van meerdere opdrachtgevers beweegt de markt."
+    },
+    {
+     "id": "OI-M4",
+     "k": "4",
+     "t": "Aanpak Duurzaam GWW",
+     "rol": "Regulerend",
+     "sub": [
+      "OI-S1",
+      "OI-S2",
+      "OI-S3"
+     ],
+     "res": "Een jaarlijks actieplan van het expertteam verlaagt de milieu-impact van projecten in de openbare ruimte.",
+     "term": "Direct tot lange termijn",
+     "imp": "z",
+     "act": [
+      [
+       "4.1 Schoon en emissieloos bouwen",
+       "2025–2030"
+      ],
+      [
+       "4.2 Expertteam GWW (1× per 3 weken)",
+       "2025–2030"
+      ],
+      [
+       "4.3 Ketenoverleg (1× per 6 weken)",
+       "2025–2030"
+      ]
+     ],
+     "aan": "Een vast multidisciplinair team met een jaarlijks actieplan versnelt de verduurzaming van projecten.\nKetenpartners passen hun werkwijze aan via structureel overleg."
+    },
+    {
+     "id": "OI-M5",
+     "k": "5",
+     "t": "Monitoren van milieu-impact",
+     "rol": "Regulerend",
+     "sub": [
+      "OI-S1",
+      "OI-S2",
+      "OI-S3"
+     ],
+     "res": "Er is informatie over de milieu-impact van de meest ingekochte materialen, producten en diensten, en een monitoringsmethodiek.",
+     "term": "Direct tot lange termijn",
+     "imp": "z",
+     "act": [
+      [
+       "5.1 Monitoren, rapporteren en evalueren MKI",
+       "2025–2028"
+      ],
+      [
+       "5.2 Areaalmodel (opdracht Eco Monitor, € 7.000)",
+       "2025–2028"
+      ],
+      [
+       "5.3 Inzicht in materiaalgebruik en milieu-impact",
+       "2026–2030"
+      ]
+     ],
+     "aan": "Meten maakt bijsturen mogelijk. Deze maatregel werkt dus via de andere maatregelen en niet rechtstreeks.\nOok buiten de GWW is data over materiaalgebruik te verzamelen."
+    }
+   ]
+  },
+  {
+   "id": "bg",
+   "naam": "Bouw & gebiedsontwikkeling",
+   "invloed": "indirect",
+   "transitiedoel": "Circulariteit wordt in 2030 standaard meegenomen in alle fasen van bouw- en gebiedsontwikkeling, met minimaal CO₂-neutrale nieuwbouw in 2030 (materiaal en energie). Bijdrage aan 50% minder primaire grondstoffen in 2030 en 100% in 2050. Lineair betekent dat 9% reductie per jaar.",
+   "fase": "Van pilot naar verbreding",
+   "sub": [
+    {
+     "id": "BG-S1",
+     "k": "1",
+     "t": "Totale grondstoffengebruik bij gebiedsontwikkeling verminderen door anders te ontwerpen en levensduurverlenging",
+     "ind": [
+      {
+       "t": "Grondstofgebruik bouw en gebiedsontwikkeling (Mton/jaar)",
+       "st": "nog geen data",
+       "bron": "Nog niet ingevuld in de monitor",
+       "id": "BG-S1-I1"
+      }
+     ]
+    },
+    {
+     "id": "BG-S2a",
+     "k": "2a",
+     "t": "Aandeel secundaire materialen in woningbouw vergroten",
+     "ind": [
+      {
+       "t": "Secundair als onderdeel van de MPG-berekening",
+       "st": "nog geen data",
+       "bron": "MPG-berekeningen",
+       "id": "BG-S2a-I1"
+      }
+     ]
+    },
+    {
+     "id": "BG-S2b",
+     "k": "2b",
+     "t": "Aandeel biobased materialen in woningbouw vergroten",
+     "ind": [
+      {
+       "t": "Aandeel biobased materialen",
+       "st": "nulmeting",
+       "bron": "Benchmark Biobased Bouwen (juni 2025)",
+       "rows": [
+        [
+         "Nieuwbouwwoningen met ≥30% biobased, 2024",
+         "1,2%"
+        ],
+        [
+         "Streefwaarde 2030, grondgebonden",
+         "50%"
+        ],
+        [
+         "Streefwaarde 2030, gestapeld",
+         "30%"
+        ]
+       ],
+       "id": "BG-S2b-I1"
+      }
+     ]
+    },
+    {
+     "id": "BG-S3a",
+     "k": "3a",
+     "t": "Aandeel secundaire materialen in utiliteitsbouw vergroten",
+     "ind": [
+      {
+       "t": "Aandeel secundaire materialen",
+       "st": "nog geen data",
+       "bron": "Nog niet bepaald",
+       "id": "BG-S3a-I1"
+      }
+     ]
+    },
+    {
+     "id": "BG-S3b",
+     "k": "3b",
+     "t": "Aandeel biobased materialen in utiliteitsbouw vergroten",
+     "ind": [
+      {
+       "t": "Aandeel biobased materialen",
+       "st": "nog geen data",
+       "bron": "Nog niet bepaald",
+       "id": "BG-S3b-I1"
+      }
+     ]
+    },
+    {
+     "id": "BG-S4",
+     "k": "4",
+     "t": "Milieu-impact van de gebouwde omgeving verlagen",
+     "ind": [
+      {
+       "t": "MKI (in de monitor nog met vraagteken)",
+       "st": "nog geen data",
+       "bron": "MKI of MPG, nog te kiezen",
+       "id": "BG-S4-I1"
+      }
+     ]
+    }
+   ],
+   "mt": [
+    {
+     "id": "BG-M1",
+     "k": "1",
+     "t": "Benutten van tijdelijk braakliggende gronden en leegstaande panden",
+     "rol": "Faciliterend, richtinggevend, regulerend waar nodig",
+     "sub": [
+      "BG-S1",
+      "BG-S2a*",
+      "BG-S2b*",
+      "BG-S3a*",
+      "BG-S3b*"
+     ],
+     "res": "Tijdelijk gebruik van braakliggende grond en leegstaande panden voor de circulaire economie (2025–2027).",
+     "term": "2–5 jaar",
+     "imp": "a",
+     "act": [
+      [
+       "1.1 Quickscan tijdelijk gebruik bij start nieuwe ontwikkeling",
+       "2026–2030"
+      ],
+      [
+       "1.2 Actualisatie leidraad circulair slopen",
+       "2026–2028"
+      ],
+      [
+       "1.3 Leidraad circulariteit bouwrijp maken",
+       "2026–2027"
+      ],
+      [
+       "1.4 Sloopmelding als instrument",
+       "2026–2027"
+      ]
+     ],
+     "aan": "Tijdelijk gebruik (grondstoffendepots, bouwgewassen, ruimte voor circulaire bedrijven) verlaagt de vraag naar primaire grondstoffen.\nParticuliere eigenaren willen meewerken."
+    },
+    {
+     "id": "BG-M2",
+     "k": "2",
+     "t": "Sturen op circulariteit op gebiedsniveau",
+     "rol": "Faciliterend, richtinggevend, stimulerend, regulerend waar nodig",
+     "sub": [],
+     "viaDoel": true,
+     "res": "Circulaire principes worden optimaal toegepast, met de meest effectieve verdeling van maatregelen over openbare ruimte, kavels en gebouwen.",
+     "term": "2–5 jaar",
+     "imp": "z",
+     "act": [
+      [
+       "2.1 Robuust kader circulariteit op gebiedsniveau",
+       "2026–2028"
+      ],
+      [
+       "2.2 Samenwerkingsagenda Toekomstbestendige Gebiedsontwikkeling",
+       "2026–2030"
+      ],
+      [
+       "2.3 Verkenning digitalisering",
+       "2025–2030"
+      ],
+      [
+       "2.4 Checklist circulaire gebiedsontwikkeling",
+       "2028–2029"
+      ],
+      [
+       "2.5 Planregels voor het omgevingsplan",
+       "2025–2028"
+      ],
+      [
+       "2.6 Onderzoek materialenpaspoort op gebiedsniveau",
+       "2026–2028"
+      ]
+     ],
+     "aan": "Sturen op gebiedsniveau is effectiever dan per kavel of gebouw.\nEén integraal afwegingskader maakt de bestaande instrumenten (MKI, MPG, convenant, leidraad, checklist) eenvoudiger en effectiever.\nDe ambities kunnen worden vastgelegd op de vaste momenten in het ontwikkelproces."
+    },
+    {
+     "id": "BG-M3",
+     "k": "3",
+     "t": "Biobased bouwen normaliseren en stimuleren",
+     "rol": "Faciliterend, richtinggevend, regulerend waar nodig",
+     "sub": [
+      "BG-S1",
+      "BG-S2a*",
+      "BG-S2b*",
+      "BG-S3a*",
+      "BG-S3b*"
+     ],
+     "res": "Biobased bouwen is de norm geworden.",
+     "term": "2–5 jaar",
+     "imp": "z",
+     "act": [
+      [
+       "3.1 Implementatie en naleving Convenant Toekomstbestendige Woningbouw",
+       "2025–2026"
+      ],
+      [
+       "3.2 Belemmeringen vergunningverlening biobased bouwen",
+       "2025–2027"
+      ]
+     ],
+     "aan": "Verankering in ontwikkelkaders en stedenbouwkundige plannen leidt tot meer biobased bouwen.\nDe markt heeft genoeg aanbod (zo stelt het programma). Het knelpunt zit in toepassing, niet in beschikbaarheid."
+    },
+    {
+     "id": "BG-M4",
+     "k": "4",
+     "t": "Hoogwaardig toepassen van secundaire materialen over meerdere levenscycli",
+     "rol": "Faciliterend, richtinggevend, stimulerend, regulerend waar nodig",
+     "sub": [
+      "BG-S1",
+      "BG-S3a*",
+      "BG-S3b*"
+     ],
+     "res": "Hoogwaardig hergebruik van secundaire materialen over meerdere levenscycli is genormaliseerd en opgeschaald.",
+     "term": "Direct",
+     "imp": "z",
+     "act": [
+      [
+       "4.1 Circulaire grondstoffencorridor",
+       "2025–2028"
+      ]
+     ],
+     "aan": "Beter inzicht in de bestaande voorraad en vrijkomende materialen leidt tot meer hoogwaardig hergebruik.\nEr komen genoeg aanbod en verwerkingscapaciteit (landelijk was in 2024 maar 0,24% van het bouw- en sloopafval hoogwaardig hergebruikt; het doel is 15% in 2030)."
+    },
+    {
+     "id": "BG-M5",
+     "k": "5",
+     "t": "Renoveren en transformeren van bestaande bouw",
+     "rol": "Faciliterend, richtinggevend, stimulerend",
+     "sub": [
+      "BG-S1",
+      "BG-S2a*",
+      "BG-S2b*",
+      "BG-S3a*",
+      "BG-S3b*"
+     ],
+     "res": "Bestaande bouw slimmer en efficiënter benutten leidt tot aanzienlijk minder primair grondstoffengebruik.",
+     "term": "Lange termijn (vanaf 5 jaar)",
+     "imp": "z",
+     "act": [
+      [
+       "5.1 Ontwikkelen strategie bestaande bouw",
+       "2028–2030"
+      ],
+      [
+       "5.2 Circulair verduurzamen bestaande bouw",
+       "2025–2027"
+      ]
+     ],
+     "aan": "Voor ontwikkelaars, corporaties en eigenaren is circulair renoveren en transformeren een reëel alternatief voor sloop en nieuwbouw.\nTot 2028 ligt de focus bewust ergens anders (zie ‘Wat doen we niet’), dus het effect komt later."
+    },
+    {
+     "id": "BG-M6",
+     "k": "6",
+     "t": "Circulaire nieuwbouw",
+     "rol": "Faciliterend, richtinggevend, stimulerend, regulerend waar nodig",
+     "sub": [
+      "BG-S1",
+      "BG-S2a*",
+      "BG-S2b*",
+      "BG-S3a*",
+      "BG-S3b*"
+     ],
+     "res": "Circulaire nieuwbouw is de norm, met gebouwen ontworpen als toekomstige materialenbanken.",
+     "term": "Direct",
+     "imp": "z",
+     "act": [
+      [
+       "6.1 Strategie nieuwbouw utiliteit",
+       "2025–2027"
+      ],
+      [
+       "6.2 Circulaire en sociale woningbouw",
+       "2026–2028"
+      ],
+      [
+       "6.3 Interne kennisdeling circulair bouwen",
+       "2027–2030"
+      ],
+      [
+       "6.4 Circulair businessmodel gemeentelijk vastgoed",
+       "2027–2030"
+      ],
+      [
+       "6.5 Ketensamenwerking",
+       "2025–2027"
+      ]
+     ],
+     "aan": "De beschikbare beleidsinstrumenten zijn sterk genoeg, ook al mag de gemeente geen bouwtechnische eisen stellen boven het Bbl.\nCirculair ontwerpen leidt over meerdere levenscycli tot minder vraag naar primaire grondstoffen."
+    }
+   ]
+  },
+  {
+   "id": "be",
+   "naam": "Bedrijvigheid",
+   "invloed": "indirect",
+   "transitiedoel": "Het aantal circulaire bedrijven en bedrijfsactiviteiten in Amersfoort vergroten, door de juiste randvoorwaarden te creëren.",
+   "fase": "Bewustwording",
+   "sub": [
+    {
+     "id": "BE-S1",
+     "k": "1",
+     "t": "Een aantrekkelijk ondernemersklimaat voor circulaire bedrijvigheid creëren",
+     "ind": [
+      {
+       "t": "Aantal en aandeel circulaire arbeidsplaatsen (KVK, naar R-strategie)",
+       "st": "data",
+       "bron": "KVK-registratie; zelfde methode als Monitor Circulaire Bedrijvigheid regio Utrecht",
+       "tab": {
+        "h": [
+         "Jaar",
+         "Rethink",
+         "Reuse",
+         "Repair",
+         "Recycle",
+         "Aandeel"
+        ],
+        "r": [
+         [
+          "2020",
+          "170",
+          "65",
+          "2.396",
+          "308",
+          "3,2%"
+         ],
+         [
+          "2021",
+          "150",
+          "68",
+          "2.487",
+          "311",
+          "3,2%"
+         ],
+         [
+          "2022",
+          "153",
+          "68",
+          "2.609",
+          "316",
+          "3,3%"
+         ],
+         [
+          "2023",
+          "146",
+          "71",
+          "2.640",
+          "331",
+          "3,2%"
+         ],
+         [
+          "2024",
+          "171",
+          "69",
+          "2.542",
+          "342",
+          "3,2%"
+         ],
+         [
+          "2025",
+          "172",
+          "65",
+          "2.560",
+          "342",
+          "3,1%"
+         ]
+        ]
+       },
+       "noot": "Van de 2.560 repair-banen in 2025 zitten er 1.549 in handel en reparatie van auto’s. Een vestiging telt helemaal mee of helemaal niet.",
+       "id": "BE-S1-I1"
+      }
+     ]
+    }
+   ],
+   "mt": [
+    {
+     "id": "BE-M1",
+     "k": "1",
+     "t": "Subsidies verstrekken en onder de aandacht brengen",
+     "rol": "Stimulerend",
+     "sub": [
+      "BE-S1"
+     ],
+     "res": "Circulaire initiatieven zijn over de financiële drempel geholpen en kunnen starten of opschalen.",
+     "term": "Direct",
+     "imp": "b",
+     "act": [
+      [
+       "1.1 Toekomstfonds Duurzame Ontwikkeling",
+       "2025–2030"
+      ],
+      [
+       "1.2 Broedplaatsensubsidie",
+       "doorlopend"
+      ],
+      [
+       "1.3 Subsidies van anderen onder de aandacht",
+       "2025–2030"
+      ]
+     ],
+     "aan": "Financiering is een belangrijke drempel voor circulaire ondernemers.\nCofinanciering tot € 50.000 is genoeg om een initiatief te laten starten of opschalen (2015–2024: 46 initiatieven gesteund, 32 circulair)."
+    },
+    {
+     "id": "BE-M2",
+     "k": "2",
+     "t": "Community van circulaire pioniers faciliteren",
+     "rol": "Faciliterend",
+     "sub": [
+      "BE-S1"
+     ],
+     "res": "Huidige circulaire pioniers zijn in staat gesteld hun productie op te schalen.",
+     "term": "Direct",
+     "imp": "b",
+     "act": [
+      [
+       "2.1 Community management (extern, € 30.000)",
+       "2025"
+      ],
+      [
+       "2.2 Impuls Programma (€ 12.500)",
+       "2025, bij succes 2026"
+      ]
+     ],
+     "aan": "Pioniers die krachten bundelen, groeien in schaal en impact.\nVia de community ontstaan verbindingen met het reguliere bedrijfsleven."
+    },
+    {
+     "id": "BE-M3",
+     "k": "3",
+     "t": "Ondernemers met een concrete hulpvraag ondersteunen",
+     "rol": "Faciliterend",
+     "sub": [
+      "BE-S1"
+     ],
+     "res": "Bestaande circulaire initiatieven worden versterkt en versneld, en de lessen worden gedeeld met andere ondernemers.",
+     "term": "Direct",
+     "imp": "b",
+     "act": [
+      [
+       "3.1 Ondersteunen ondernemers met concrete hulpvraag",
+       "2025–2030"
+      ]
+     ],
+     "aan": "Maatwerk lost concrete belemmeringen op.\nLessen uit individuele gevallen zijn overdraagbaar."
+    },
+    {
+     "id": "BE-M4",
+     "k": "4",
+     "t": "Regionale circulaire ondernemersnetwerken inzetten",
+     "rol": "Faciliterend",
+     "sub": [
+      "BE-S1"
+     ],
+     "res": "Circulaire initiatieven zijn via (regionale) netwerken versterkt in netwerk, kennis of samenwerking.",
+     "term": "Direct",
+     "imp": "b",
+     "act": [
+      [
+       "4.1 Ondernemers verbinden aan regionale netwerken",
+       "2025–2030"
+      ],
+      [
+       "4.2 Deelname Circulair Utrecht (€ 5.000 per jaar)",
+       "2025, verlenging bij succes"
+      ]
+     ],
+     "aan": "Netwerken leiden tot kennisuitwisseling en gezamenlijke initiatieven.\nPioniers en mkb versterken elkaar (circulaire kennis tegenover ondernemerschap)."
+    }
+   ]
+  },
+  {
+   "id": "cg",
+   "naam": "Consumptiegoederen",
+   "invloed": "indirect",
+   "transitiedoel": "Actief samenwerken met partijen in stad, regio en land om minimaal gebruik van primaire grondstoffen en hoogwaardig hergebruik van materiaal en reststromen te stimuleren.",
+   "fase": "Pilots, met verbreding en waar mogelijk borging in beleid",
+   "sub": [
+    {
+     "id": "CG-S1",
+     "k": "1",
+     "t": "Bewustwording creëren en inspiratie bieden met het circulaire alternatief",
+     "ind": [
+      {
+       "t": "Aandeel inwoners dat bewust is van circulaire initiatieven",
+       "st": "nog geen data",
+       "bron": "Stadspeiling, nog uit te werken",
+       "id": "CG-S1-I1"
+      },
+      {
+       "t": "Context: weggooien bij defect (Amersfoorts panel 2025)",
+       "st": "nulmeting",
+       "bron": "Omgevingsprogramma, hoofdstuk 5",
+       "rows": [
+        [
+         "Apparaten",
+         "41%"
+        ],
+        [
+         "Kleding en textiel",
+         "35%"
+        ],
+        [
+         "Meubels",
+         "40%"
+        ]
+       ],
+       "id": "CG-S1-I2"
+      }
+     ]
+    },
+    {
+     "id": "CG-S2",
+     "k": "2",
+     "t": "Hoogwaardige verwerking",
+     "ind": [
+      {
+       "t": "Kg huishoudelijk restafval per inwoner",
+       "st": "nog geen data",
+       "bron": "Afvalcijfers",
+       "id": "CG-S2-I1"
+      },
+      {
+       "t": "Kg eindverwerkt afval per inwoner",
+       "st": "nog geen data",
+       "bron": "Ingezameld (rest)afval minus vrijgekomen secundaire grondstoffen",
+       "id": "CG-S2-I2"
+      },
+      {
+       "t": "Aandeel afval dat hoogwaardig verwerkt is",
+       "st": "nog geen data",
+       "bron": "LMA",
+       "id": "CG-S2-I3"
+      },
+      {
+       "t": "Context: grof huishoudelijk afval",
+       "st": "nulmeting",
+       "bron": "Omgevingsprogramma, hoofdstuk 5",
+       "rows": [
+        [
+         "Per inwoner, 2023",
+         "27 kg"
+        ],
+        [
+         "Hergebruikt (Afvalspiegel 2022)",
+         "27%"
+        ]
+       ],
+       "id": "CG-S2-I4"
+      }
+     ]
+    }
+   ],
+   "mt": [
+    {
+     "id": "CG-M1",
+     "k": "1",
+     "t": "Bewustwordingscampagnes",
+     "rol": "Richtinggevend",
+     "sub": [
+      "CG-S1"
+     ],
+     "res": "Een aantrekkelijke, positieve boodschap nodigt Amersfoorters uit circulaire alternatieven te proberen.",
+     "term": "Direct",
+     "imp": "b",
+     "act": [
+      [
+       "1.1 Bewustwordingscampagne (€ 30.000 uit VSNS)",
+       "2027"
+      ],
+      [
+       "1.2 Aanvulling op trajecten van afdeling afval",
+       "2025–2030"
+      ]
+     ],
+     "aan": "Bewustwording is de eerste stap naar gedragsverandering.\nKoppeling aan eigen voordeel (portemonnee, gezondheid, schone stad) maakt de boodschap effectiever."
+    },
+    {
+     "id": "CG-M2",
+     "k": "2",
+     "t": "Digital kiosks (deelkasten)",
+     "rol": "Stimulerend",
+     "sub": [
+      "CG-S1"
+     ],
+     "res": "We leren welke producten, locaties en doelgroepen geschikt zijn voor deelkasten en welke rol de gemeente daarin kan nemen.",
+     "term": "Direct",
+     "imp": "b",
+     "act": [
+      [
+       "2.1 Pilots digital kiosks (EU-financiering)",
+       "2025–2026"
+      ]
+     ],
+     "aan": "Delen wordt vaker gekozen als het makkelijk is, en vermindert de aanschaf van nieuwe apparaten.\nDit is een leermaatregel: het effect is vooral kennis."
+    },
+    {
+     "id": "CG-M3",
+     "k": "3",
+     "t": "Toekomstbestendig milieubrengstation",
+     "rol": "Richtinggevend (inwoner), regulerend (afvalinzamelaar)",
+     "sub": [
+      "CG-S2"
+     ],
+     "res": "Consumptiegoederen die bij het milieubrengstation worden ingeleverd, worden hoogwaardiger hergebruikt.",
+     "term": "Direct tot lange termijn",
+     "imp": "z",
+     "act": [
+      [
+       "3.1 Bouw toekomstbestendig milieubrengstation (VSNS)",
+       "2026–2027"
+      ],
+      [
+       "3.2 Aanbesteding exploitant innamepunt",
+       "2025–2026"
+      ]
+     ],
+     "aan": "Een apart innamepunt en meer ruimte voor sorteren en demontage halen herbruikbare producten eruit voordat ze in de recycling verdwijnen.\nInwoners leveren spullen op de nieuwe manier in."
+    },
+    {
+     "id": "CG-M4",
+     "k": "4",
+     "t": "Vraag en aanbod van circulaire (sub)grondstofstromen afstemmen",
+     "rol": "Stimulerend",
+     "sub": [
+      "CG-S2"
+     ],
+     "res": "Voor stromen met een business case is fysieke ruimte gereserveerd op de nieuwe milieustraat.",
+     "term": "Direct",
+     "imp": "a",
+     "act": [
+      [
+       "4.1 Grondstoffenregisseur (VSNS)",
+       "2025–2026"
+      ]
+     ],
+     "aan": "Voor een deel van de stromen (e-waste, hout, meubels) is een positieve maatschappelijke business case te vinden.\nAfnemers voor secundaire grondstoffen zijn beschikbaar."
+    },
+    {
+     "id": "CG-M5",
+     "k": "5",
+     "t": "Verbeteren van inzameling verkennen",
+     "rol": "Faciliterend",
+     "sub": [
+      "CG-S2"
+     ],
+     "res": "Consumptiegoederen die niet (meer) bij het milieubrengstation worden ingeleverd, worden hoogwaardiger hergebruikt.",
+     "term": "Direct",
+     "imp": "b",
+     "act": [
+      [
+       "5.1 Lessen van pilots implementeren (VSNS)",
+       "2025–2027"
+      ]
+     ],
+     "aan": "Lessen uit de VSNS-pilots zijn breder toe te passen.\nInwoners zijn te stimuleren producten niet weg te gooien."
+    }
+   ]
+  },
+  {
+   "id": "rv",
+   "naam": "Randvoorwaarden",
+   "invloed": "—",
+   "transitiedoel": "Geen eigen doelen: dit zijn de voorwaarden om de andere programmalijnen uit te kunnen voeren (ruimte, digitalisering, kennis en gedrag). De maatregelen dragen bij aan subdoelen van andere lijnen.",
+   "fase": "Doorsnijdend",
+   "sub": [],
+   "mt": [
+    {
+     "id": "RV-M1",
+     "k": "1",
+     "t": "Inrichting grondstoffendepot",
+     "rol": "Regulerend",
+     "sub": [
+      "OI-S1",
+      "OI-S2",
+      "OI-S3"
+     ],
+     "res": "Er is een grondstoffendepot voor de dominante vrijkomende materialen uit de openbare ruimte, met tools om ze te koppelen aan de projectprogrammering.",
+     "term": "Direct tot lange termijn",
+     "imp": "z",
+     "act": [
+      [
+       "1.1 Onderzoek inrichting grondstoffendepot",
+       "2025–2030"
+      ],
+      [
+       "1.2 Digitale ondersteuning gebruik depot",
+       "2025–2030"
+      ]
+     ],
+     "aan": "Materialen vallen niet langer aan de aannemer toe maar komen beschikbaar voor hergebruik.\nVrijkomende materialen en projectplanning zijn op tijd op elkaar af te stemmen."
+    },
+    {
+     "id": "RV-M2",
+     "k": "2",
+     "t": "Samenwerken en ruimte reserveren",
+     "rol": "Richtinggevend",
+     "sub": [
+      "BE-S1"
+     ],
+     "res": "Aanbevelingen (CE Delft, ‘Ruimte voor CE’) zijn waar mogelijk opgenomen in omgevingsplannen en -programma’s en ontwikkelkaders. Het kavel bij het nieuwe milieubrengstation (Wieken-Vinkenhoef) is gereserveerd voor circulaire bedrijvigheid (amendement).",
+     "term": "Direct tot lange termijn",
+     "imp": "a",
+     "act": [
+      [
+       "2.1 Verkenning regionaal bedrijventerrein",
+       "2025–2030"
+      ],
+      [
+       "2.2 Trends en ontwikkelingen bij Amersfoortse bedrijven",
+       "2025–2030"
+      ],
+      [
+       "2.3 Verkennen circulariteit in Bovenduist",
+       "2025–2030"
+      ]
+     ],
+     "aan": "Zonder reservering is de ruimte later niet meer beschikbaar (tot 2050 is 0–22 ha extra nodig; uitgeefbaar is nu 11 ha).\nProvincie en buurgemeenten willen samen ruimte vinden."
+    }
+   ]
+  }
+ ],
+ "aandacht": [
+  [
+   "Bouw: subdoel 4 heeft geen maatregel",
+   "Geen enkele maatregel noemt subdoel 4 (milieu-impact gebouwde omgeving), en de indicator staat in de monitor nog als “MKI?”."
+  ],
+  [
+   "Bouw: verwijzingen naar subdoelen zijn grof",
+   "Maatregelen verwijzen naar “1, 2 en 3” terwijl er subdoelen 2a, 2b, 3a en 3b zijn. Hier heb ik “2” gelezen als 2a+2b en “3” als 3a+3b; die lijnen zijn gestippeld. Maatregel 2 noemt “Indirect” en geen subdoel; die is aan het transitiedoel gekoppeld. Maatregel 4 (secundaire materialen) noemt 1 en 3, maar niet 2 (woningbouw)."
+  ],
+  [
+   "Bouw: 2a/2b en 3a/3b zijn in de tekst omgewisseld",
+   "In het subdoelenoverzicht is 2a secundair en 2b biobased. In de toelichting op p. 24–25 is het andersom. De monitor volgt het overzicht, en dit schema ook."
+  ],
+  [
+   "Bedrijvigheid: de indicator meet een effect dat de maatregelen nauwelijks raken",
+   "Het subdoel gaat over het ondernemersklimaat, terwijl de indicator het aandeel circulaire banen meet. Dat ligt sinds 2020 stabiel op 3,1–3,3%, en ruim de helft van de repair-banen zit in de autobranche. Alle vier maatregelen hebben volgens het programma beperkte impact. Prestatie-indicatoren zoals het aantal gesteunde initiatieven, deelnemers aan de community of geholpen ondernemers laten beter zien wat de inzet oplevert."
+  ],
+  [
+   "Bedrijvigheid: tegenstrijdigheid over subsidies",
+   "Maatregel 1 zet subsidies in, terwijl ‘Wat doen we niet’ zegt dat er in deze lijn geen subsidies of vergunningen worden gebruikt om circulair gedrag te stimuleren."
+  ],
+  [
+   "Opdrachtgeven & inkoop: data alleen voor de GWW",
+   "De Eco Monitor dekt alleen grond-, weg- en waterbouw. Volgens de grafiek is het aandeel secundair materiaal daar al ruim boven de 55% (afgelezen, bij benadering). Dan zegt de 55%-doelstelling weinig over voortgang. Het aandeel biobased en het primair gebruik zijn scherpere maten. Voor subdoel 1 en de andere inkoopcategorieën is nog geen data."
+  ],
+  [
+   "Consumptiegoederen: indicatoren meten breder dan de maatregelen",
+   "Kilo’s restafval per inwoner worden door veel meer bepaald dan door het milieubrengstation. Een directe maat zoals het percentage hergebruik van ingeleverd grof huishoudelijk afval (nu 27%) sluit beter aan bij maatregel 3–5. Voor bewustwording is de indicator nog niet uitgewerkt."
+  ],
+  [
+   "Randvoorwaarden hebben geen indicatoren",
+   "Voor het grondstoffendepot en de ruimtereservering zijn de mijlpalen (depot ingericht, hectares gereserveerd) eenvoudig als indicator te volgen."
+  ],
+  [
+   "Aannames staan niet in het programma",
+   "Het programma noemt per maatregel het verwachte resultaat, de termijn en de impact, maar niet waarom de maatregel tot dat resultaat leidt. De aannames hier zijn een eerste opzet om aan te scherpen."
+  ]
+ ]
+}
