@@ -123,6 +123,12 @@ footer .row{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-botto
 .hbars i{display:block;height:10px;border-radius:2px}
 .hbars span:nth-child(3n){white-space:nowrap;color:var(--mut)}
 details.tbl{margin-top:6px}
+.toel{white-space:pre-line}
+details.toel{margin:6px 0 2px;font-size:13px}
+details.toel>summary{color:var(--mut);min-height:28px}
+details.toel>summary .tl1{color:var(--ink);font-weight:500}
+details.toel[open] .prev{display:none}
+
 th.num,td.num{text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums}
 .acts{border-top:1px solid var(--rule)}
 details.actd{margin:0;border-bottom:1px solid var(--rule)}
@@ -277,10 +283,11 @@ const drawCharts=()=>document.querySelectorAll('[data-chart]').forEach(drawChart
 function tableHtml(i){const ms=series(i);if(!ms.length)return '';const ks=keysOf(i);const multi=ks.length>1;
 return `<details class="tbl"><summary>Tabel met ${ms.length} meting${ms.length>1?'en':''}</summary><div class="scroll"><table><tr><th>Periode</th>${multi?ks.map(k=>`<th class="num">${esc(k)}</th>`).join(''):`<th class="num">Waarde${i.eenheid?` (${esc(i.eenheid)})`:''}</th>`}${i.optelbaar?'<th class="num">Totaal</th>':''}</tr>
 ${ms.map(r=>`<tr><td>${esc(r.periode)}${r.toelichting?`<div class="note">${esc(r.toelichting)}</div>`:''}</td>${ks.map(k=>`<td class="num">${esc(fnum(r.waarden?.[k]))}</td>`).join('')}${i.optelbaar?`<td class="num"><b>${esc(fnum(total(i,r)))}</b></td>`:''}</tr>`).join('')}</table></div></details>`}
+function toelHtml(t){t=String(t||'').trim();if(!t)return '';if(t.length<=160&&!t.includes('\n'))return `<p class="note toel">${esc(t)}</p>`;const first=t.split('\n')[0];const prev=first.length>90?first.slice(0,88).replace(/\s+\S*$/,'')+'…':first+(t.length>first.length?' …':'');return `<details class="toel"><summary><span class="tl1">Toelichting</span><span class="prev"> · ${esc(prev)}</span></summary><p class="note toel">${esc(t)}</p></details>`}
 function indHtml(i){const ms=i.metingen||[];
 return `<div class="ind" data-ind="${i.id}"><div class="ih"><div class="nm">${esc(i.naam)}</div><button class="l" type="button" data-a="eind">Bewerken</button></div>
 <div class="meta"><span class="badge i-${slug(i.status)}">${esc(i.status)}</span>${i.bron?`<span>${esc(i.bron)}</span>`:''}${i.streefwaarde?`<span>streefwaarde: ${esc(i.streefwaarde)}</span>`:''}</div>
-${kpi(i)}${chartHtml(i)}${i.toelichting?`<p class="note">${esc(i.toelichting)}</p>`:''}${ms.length?tableHtml(i):'<p class="note">Nog geen metingen. Kies Bewerken om ze in te vullen.</p>'}
+${kpi(i)}${chartHtml(i)}${toelHtml(i.toelichting)}${ms.length?tableHtml(i):'<p class="note">Nog geen metingen. Kies Bewerken om ze in te vullen.</p>'}
 ${i.bijgewerkt?`<p class="note">${updLine(i)}</p>`:''}</div>`}
 
 // ---------- bewerkvenster indicator ----------
