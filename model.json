@@ -110,17 +110,23 @@
       {
        "id": "OI-M1-A1-1",
        "naam": "1.1 Goed voorbeeld doet goed volgen",
-       "periode": "2025–2030"
+       "periode": "2025 - 2030",
+       "omschrijving": "We gaan in de periode 2025 - 2030 jaarlijks projecten en opdrachten aanwijzen waarin we qua circulariteit vooruitlopen op de markt. Daarmee willen we aan onze inwoners en de rest van Nederland laten zien wat wél mogelijk is, wanneer we binnen de grenzen van onze planeet leven. We streven er naar om ieder jaar één ‘goed voorbeeld- project’ te hebben en zullen hier ook bewust over communiceren. Waar mogelijk maken we daarbij gebruik van (Europese) innovatie en projectsubsidies.",
+       "dekking": "Regulier werkproces - gedekt uit interne uren (team Circulaire Stad)."
       },
       {
        "id": "OI-M1-A1-2",
        "naam": "1.2 Kennisdeling en trainingen",
-       "periode": "2025–2030"
+       "periode": "2025 - 2030",
+       "omschrijving": "Waar nodig en naar behoefte wordt voorzien in kennisdeling en trainingen van collega’s.",
+       "dekking": "Regulier werkproces - gedekt uit interne uren (team Circulaire Stad)."
       },
       {
        "id": "OI-M1-A1-3",
        "naam": "1.3 Circulaire gronduitgifte",
-       "periode": "2025–2030"
+       "periode": "2025 - 2030",
+       "omschrijving": "In de omgevingsvisie is benadrukt dat de gemeente bij grondeigendom het goede voorbeeld geeft op circulariteit en circulaire principes hanteert bij de uitgifte daarvan (p. 51). Bij gronduitgifte werken we vanuit circulaire principes en zoeken we partijen die in lijn met de ambities en doelstellingen van de gemeente wil ontwikkelen. Bij uitgifte in erfpacht, verhuur of grondverkoop weegt ‘Circulariteit van het bouwprogramma’ en de ‘mate van milieu-impact’ stevig mee in de strategie voor het selectieproces en bij de beoordelingscriteria. We dagen de markt uit circulariteit toe te passen in de ontwikkeling, waarbij we aandacht hebben voor hergebruik en de toekomstige waarde van de grond en de daarop te realiseren bebouwing. We sluiten daarbij aan op methodieken vanuit de ondertekende deals en convenanten.",
+       "dekking": "Regulier werkproces - gedekt uit interne uren (team Circulaire Stad)."
       }
      ],
      "aan": "Als circulariteit in het HIOR en in opdrachtformulering het uitgangspunt is, kiezen projectleiders en inkopers vaker de circulaire variant.\nMeer kennis en urgentie leidt ook buiten de openbare ruimte tot andere inkoopkeuzes.\nCirculaire keuzes zijn vaak ook financieel aantrekkelijk (zo stelt het programma)."
@@ -142,12 +148,16 @@
       {
        "id": "OI-M2-A2-1",
        "naam": "2.1 Samen leren met verbonden partijen",
-       "periode": "vanaf 2027"
+       "periode": "Vanaf 2027",
+       "omschrijving": "De gemeente Amersfoort is opdrachtgever van de ontwikkeling, beheer en onderhoud van maatschappelijk vastgoed. De lessen die we leren bij de ontwikkeling, beheer en het onderhoud van dit maatschappelijk vastgoed worden in kaart worden gebracht en gedeeld met de aan ons verbonden partijen, zoals SRO en ROVA. Gezamenlijk leren we (verder) op welke manier het gebruik van primaire grondstoffen in deze ontwikkelingen kan worden verminderd en de milieu impact kan worden verlaagd bij ontwikkeling, beheer en onderhoud van maatschappelijk vastgoed.",
+       "dekking": "Regulier werkproces - gedekt uit interne uren (team Circulaire Stad in samenwerking met team Vastgoed)."
       },
       {
        "id": "OI-M2-A2-2",
-       "naam": "2.2 Circulaire principes bij ontwikkeling, beheer en onderhoud",
-       "periode": "vanaf 2025"
+       "naam": "2.2 Toepassen circulaire principes bij ontwikkeling, beheer en onderhoud van maatschappelijk vastgoed",
+       "periode": "Vanaf 2025",
+       "omschrijving": "De gemeente Amersfoort heeft een raamovereenkomst voor het verduurzamen van het gemeentelijk vastgoed. Hoewel deze raamovereenkomst zich focust op de verbetering van energetische prestaties, verzamelen we met onze ketenpartners ook inzichten over het bevorderen van circulariteit en het verlagen van milieu-impact. Ook doen we ervaring op met het meten en monitoren hiervan. Dat geeft inzicht in waar we staan ten opzichte van onze doelstellingen en de effectiviteit van maatregelen die worden genomen om circulariteit te bevorderen bij het verduurzamen van gemeentelijk vastgoed. Op basis van deze informatie kunnen we gerichter keuzes maken om onze doelstellingen te halen en dit biedt ook de mogelijkheid om onze kennis en ervaring te delen met samenwerkingspartners.",
+       "dekking": "Regulier werkproces - gedekt uit interne uren (team Circulaire Stad in samenwerking met team Vastgoed)."
       }
      ],
      "aan": "Als opdrachtgever en bij verbonden partijen heeft de gemeente genoeg invloed om keuzes te sturen.\nHet goede voorbeeld bij voorzieningen in nieuwe gebieden werkt door naar andere opdrachtgevers."
@@ -168,18 +178,24 @@
      "act": [
       {
        "id": "OI-M3-A3-1",
-       "naam": "3.1 Spend-impactanalyse",
-       "periode": "2025"
+       "naam": "3.1 Spend - impact analyse",
+       "periode": "2025",
+       "omschrijving": "Om inzicht te krijgen in de uitgaven van de gemeente en kansen voor maatschappelijk verantwoord opdrachtgeven en inkopen, wordt een spend - impact analyse uitgevoerd. Dit is een analyse waarbij de financiële uitgaven worden gekoppeld aan de (te verwachten) milieu-impact van de verschillende inkoop categorieën.",
+       "dekking": "Regulier werkproces - gedekt uit interne uren (team Circulaire Stad) i.s.m. MVOI coördinator."
       },
       {
        "id": "OI-M3-A3-2",
-       "naam": "3.2 Gemeentebrede inkoopstrategie",
-       "periode": "2025–2030"
+       "naam": "3.2 Opstellen gemeente brede inkoopstrategie",
+       "periode": "2026 - 2030",
+       "omschrijving": "Na het afronden van de spend - impact analyse stellen we een gemeente brede circulaire inkoopstrategie op, waarbij wordt gestuurd op het verlagen van de milieu impact, zodat circulariteit de norm wordt in al onze opdrachten en inkopen. Deze inkoopstrategie wordt de komende jaren stapsgewijs geïmplementeerd",
+       "dekking": "Regulier werkproces - gedekt uit interne uren (team Circulaire Stad i.s.m. het MVOI actieteam en de afdeling inkoop."
       },
       {
        "id": "OI-M3-A3-3",
        "naam": "3.3 Maatschappelijk verantwoord opdrachtgeven en inkopen",
-       "periode": "2026–2030"
+       "periode": "2025 - 2030",
+       "omschrijving": "Amersfoort heeft het manifest MVOI ondertekend en beschikt over een actieplan maatschappelijk verantwoord opdrachtgeven en inkopen (MVOI-actieplan). Het doel hiervan is maatschappelijk verantwoord opdrachtgeverschap en inkopen te stimuleren, door in toenemende mate te sturen op maatschappelijke doelen. Circulariteit is een van de zes thema’s waarmee hieraan invulling wordt gegeven. Er wordt samengewerkt met collega’s uit het MVOI actieteam en gezocht naar synergie met de andere thema’s, zoals klimaat en dierenwelzijn. Zo wordt circulariteit geborgd in een bredere context en voorkomen we dat we met het behalen van circulaire doelen, andere maatschappelijke opgaven tekort doen.",
+       "dekking": "Regulier werkproces - gedekt uit interne uren (team Circulaire Stad i.s.m. het MVOI actieteam)."
       }
      ],
      "aan": "Gebundeld inkoopvolume (raamovereenkomsten, samen inkopen) geeft leveranciers ruimte voor innovatie en drukt de meerkosten.\nDe dominante stromen leveren de meeste winst op.\nEen eenduidige vraag van meerdere opdrachtgevers beweegt de markt."
@@ -201,17 +217,23 @@
       {
        "id": "OI-M4-A4-1",
        "naam": "4.1 Schoon en emissieloos bouwen",
-       "periode": "2025–2030"
+       "periode": "2025 - 2030",
+       "omschrijving": "In 2024 heeft Amersfoort het Convenant Schoon en Emissiel oos Bouwen (SEB) ondertekend. Schoon en Emissieloos Bouwen is een gezamenlijk initiatief van overheden, kennisinstellingen en marktpartijen. Er is een ‘routekaart Schoon en Emissieloos Bouwen ontwikkeld, welke zich richt op de verduurzaming van het gebruik van de mobiele werk-, voer-, en vaartuigen ingezet in de bouwsector richting 2030. Daarin zijn concrete acties en maatregelen opgenomen om emissies te reduceren. Ter uitvoering van dit Convenant, gaan we in onze opdrachten in de openbare ruimte het gebruik van emissieloos materieel stimuleren. Daarmee reduceren we emissies tijdens het bouwproces en verlagen we de milieu impact van projecten in de openbare ruimte. Samen met onze opdrachtnemers onderzoeken we hoe we het meest effectief invulling kunnen geven aan het Convenant SEB. Daarbij zien wij het ambitieniveau ‘basis’ als ondergrens. We achterhalen welk transitiepad voor zowel grote als kleinere opdrachtnemer haalbaar en betaalbaar is, en op welke wijze wij onze opdrachtnemers het beste kunnen faciliteren in deze transitie naar emissieloos materieel. Bijvoorbeeld door het uitvoeren van energiescans, of het gericht stimuleren van bepaald materieel in onze aanbestedingen.",
+       "dekking": "Regulier werkproces - gedekt uit interne uren (team Circulaire Stad i.s.m. de afdelingen Projectrealisatie Openbare Ruimte, Leefomgeving en inkoop binnen de concrete projecten."
       },
       {
        "id": "OI-M4-A4-2",
-       "naam": "4.2 Expertteam GWW (1× per 3 weken)",
-       "periode": "2025–2030"
+       "naam": "4.2 Expertteam GWW",
+       "periode": "2025 - 2030 (1 x per 3 weken)",
+       "omschrijving": "Het expertteam GWW stelt jaarlijks een actieplan op waarmee projecten in de openbare ruimte steeds verder worden verduurzaamd. Voorbeelden uit dit actieplan zijn het sluiten van een raamovereenkomst met MKI-adviseurs en een onderzoek naar alternatieven voor rood asfalt. Deze interne samenwerking is en blijft de komende jaren een belangrijk instrument op de ambitieuze doelstellingen in de openbare ruimte voor deze programmalijn te behalen en om de circulaire beweging in de organisatie te vergroten en bestendigen.",
+       "dekking": "Regulier werkproces - gedekt uit interne uren (team Circulaire Stad i.s.m. leden van het interne expertteam Duurzaam GWW)."
       },
       {
        "id": "OI-M4-A4-3",
-       "naam": "4.3 Ketenoverleg (1× per 6 weken)",
-       "periode": "2025–2030"
+       "naam": "4.3 Ketenoverleg",
+       "periode": "2025 - 2030 (1 x per 6 weken)",
+       "omschrijving": "Het ketenoverleg tussen opdrachtgevers en betrokkenen vanuit verschillende afdelingen (leefomgeving, stedelijk beheer, projecten, inkoop, circulaire economie) helpt om ambities te borgen. Het Expertteam legt jaarlijks het actieplan ter goedkeuring voor aan het ketenoverleg en legt ook verantwoording af over de resultaten van voorafgaande jaar. Ook kan het ketenoverleg helpen keuzes te maken bij eventuele dilemma’s.",
+       "dekking": "Regulier werkproces - gedekt uit interne uren (team Circulaire Stad i.s.m. de managers uit het ketenoverleg."
       }
      ],
      "aan": "Een vast multidisciplinair team met een jaarlijks actieplan versnelt de verduurzaming van projecten.\nKetenpartners passen hun werkwijze aan via structureel overleg."
@@ -233,17 +255,23 @@
       {
        "id": "OI-M5-A5-1",
        "naam": "5.1 Monitoren, rapporteren en evalueren MKI",
-       "periode": "2025–2028"
+       "periode": "2025 - 2028",
+       "omschrijving": "Van alle projecten in de openbare ruimte berekenen wij de MKI van het project vanaf de initiatieffase. Door vervolgens op basis de resultaten in iedere projectfase weloverwogen keuzes in materiaal te maken, realiseren we bij de uitvoering van het project een aanzienlijke milieuwinst. Tevens wordt data van alle projecten in de openbare ruimte in een dashboard geplaatst, zodat we op beleidsniveau keuzes kunnen maken die ons helpen de milieulasten van onze projecten te reduceren. Deze informatie is daarom ook essentieel om de stap naar circulair opdrachtgeverschap (in de openbare ruimte) effectief te kunnen zetten.",
+       "dekking": "Regulier werkproces - gedekt uit interne uren (team Circulaire Stad i.s.m. adviesbureau Eco Monitor (raamovereenkomst voor 2025 - 2028). Projectadvisering gedekt in individuele projecten POR, overkoepelende werkzaamheden tot een bedrag van € 10.000 in 2025 gedekt in programma Circulaire Stad."
       },
       {
        "id": "OI-M5-A5-2",
-       "naam": "5.2 Areaalmodel (opdracht Eco Monitor, € 7.000)",
-       "periode": "2025–2028"
+       "naam": "5.2 Opstellen en bijhouden areaalmodel",
+       "periode": "2025 - 2028",
+       "omschrijving": "Aanvullend op het MKI dashboard wordt een areaalmodel ingericht, waardoor inzichtelijk wordt wat de meest gebruikte materialen in de openbare ruimte van de gemeente Amersfoort zijn en wat de milieu impact van deze materialen is. Ook dit instrument maakt het mogelijk om op strategisch niveau (project overstijgend) keuzes te maken die onze milieu-impact kunnen verkleinen.",
+       "dekking": "Opdracht verstrekt in 2025 van € 7.000 aan Eco monitor - dekking programma Circulaire Stad."
       },
       {
        "id": "OI-M5-A5-3",
-       "naam": "5.3 Inzicht in materiaalgebruik en milieu-impact",
-       "periode": "2026–2030"
+       "naam": "5.3 Inzicht in materiaalgebruik en milieu impact",
+       "periode": "2026 - 2030",
+       "omschrijving": "Naast de data (MKI) beschikbaar over projecten in de openbare ruimte, dient voor overige inkoop categorieën ook inzichtelijk te worden gemaakt wat de milieu impact is. Zodat deze kan worden gemonitord en kan worden gestuurd op verlaging hiervan. De Spend - impact analyse (zie 3.1) en het MVOI actieplan (zie 3.3) geldt hiervoor als basis. Vervolgens wordt onderzocht op welke manier data kan worden verkregen en gemonitord.",
+       "dekking": "Regulier werkproces - gedekt uit interne uren (team Circulaire Stad i.s.m. het MVOI actieteam."
       }
      ],
      "aan": "Meten maakt bijsturen mogelijk. Deze maatregel werkt dus via de andere maatregelen en niet rechtstreeks.\nOok buiten de GWW is data over materiaalgebruik te verzamelen."
@@ -358,10 +386,10 @@
      "rol": "Faciliterend, richtinggevend, regulerend waar nodig",
      "sub": [
       "BG-S1",
-      "BG-S2a*",
-      "BG-S2b*",
-      "BG-S3a*",
-      "BG-S3b*"
+      "BG-S2a",
+      "BG-S2b",
+      "BG-S3a",
+      "BG-S3b"
      ],
      "res": "Tijdelijk gebruik van braakliggende grond en leegstaande panden voor de circulaire economie (2025–2027).",
      "term": "2–5 jaar",
@@ -369,23 +397,31 @@
      "act": [
       {
        "id": "BG-M1-A1-1",
-       "naam": "1.1 Quickscan tijdelijk gebruik bij start nieuwe ontwikkeling",
-       "periode": "2026–2030"
+       "naam": "1.1 Quickscan voor tijdelijk gebruik van locatie bij start nieuwe gebiedsontwikkeling",
+       "periode": "2026 - 2030",
+       "omschrijving": "Op dit moment onderzoeken we in iedere gebiedsontwikkeling welke kansen en mogelijkheden er zijn voor tijdelijk gebruik. Wanneer deze in eigendom zijn van de gemeente, benutten we deze tijdelijk ter voorkoming van leegstand. Voorbeelden zijn het tijdelijk gebruiken van een leegstaand pand voor opslag van vrijkomende materialen en tijdelijke teelt van bouwgewassen of de tijdelijke huisvesting van een (circulair) bedrijf. Bij particuliere eigenaren zoeken we actief naar samenwerking waar mogelijk. Deze werkwijze zetten we voort en wordt integraal verder ontwikkeld, waarbij rekening wordt gehouden met het behoud van een prettige leefomgeving van de bestaande gebruikers. Recent is gestart met tijdelijk gebruik van braakliggend terrein in Bovenduist, waarbij o.a. tijdelijk verplaatsbare woningen worden gerealiseerd.",
+       "dekking": "Regulier werkproces - gedekt uit interne uren (team Circulaire Stad i.o.m. projectmanagers gebiedsontwikkeling)."
       },
       {
        "id": "BG-M1-A1-2",
        "naam": "1.2 Actualisatie leidraad circulair slopen",
-       "periode": "2026–2028"
+       "periode": "2026 - 2028",
+       "omschrijving": "Voordat gebouwd kan worden, wordt op sommige kavels gesloopt. Hier liggen veel kansen om hoogwaardig hergebruik mogelijk te maken. Amersfoort heeft een leidraad voor circulair slopen laten opstellen, waarin de minimale eisen en de aanpak voor een circulair sloopproject zijn opgenomen. Deze leidraad is tot stand gekomen in samenwerking met een aantal bekende sloopbedrijven. We laten deze leidraad actualiseren en borgen dat deze leidraad standaard wordt toegepast in eigen sloopprojecten. We beginnen hierbij met de Kop van Isselt omdat hier naar verwachting veel kansen liggen. Bovendien is het een dynamisch document dat we regelmatig zullen herijken en updaten op basis van nieuwe inzichten, ontwikkelingen en praktijkervaringen.",
+       "dekking": "Regulier werkproces - gedekt uit interne uren (team Circulaire Stad i.s.m. adviseurs Duurzame Gebiedsontwikkeling) en externe opdrachtverstrekking vanuit budget Circulaire Stad."
       },
       {
        "id": "BG-M1-A1-3",
        "naam": "1.3 Leidraad circulariteit bouwrijp maken",
-       "periode": "2026–2027"
+       "periode": "2026 - 2027",
+       "omschrijving": "Bij het bouwrijp maken van gebieden en ontwikkelingen worden aanzienlijke hoeveelheden van grondstoffen, zoals zand, grind, beton en asfalt gebruikt. Dit zijn grondstoffen met een behoorlijke milieu impact. We onderzoeken welke mogelijkheden er zijn om tijdens het bouwrijp maken te werken met minder primaire grondstoffen. Aan de hand daarvan stellen we een leidraad op die ontwikkelaars en aannemers stimuleert bij het maken van keuzes tijdens het bouwrijp maken die zorgen voor het verminderen van het gebruik van primaire grondstoffen. Waar de gemeente opdrachtgever is, wordt deze leidraad vervolgens toegepast binnen de context van programmalijn 1, opdrachtgeverschap en inkoop.",
+       "dekking": "Regulier werkproces - gedekt uit interne uren (team Circulaire Stad i.s.m. adviseurs Duurzame Gebiedsontwikkeling)."
       },
       {
        "id": "BG-M1-A1-4",
-       "naam": "1.4 Sloopmelding als instrument",
-       "periode": "2026–2027"
+       "naam": "1.4 Sloopmelding als instrument voor circulaire economie",
+       "periode": "2026 - 2027",
+       "omschrijving": "Sloopmeldingen bieden ons inzicht in welke gebouwen er worden gesloopt en hoe dit gebeurt. Bij een sloopmelding moeten initiatiefnemers aangeven welke materialen vrijkomen, in welke hoeveelheden, en hoe deze worden afgevoerd. Hoewel de verplichting tot het indienen van een sloopmelding al bestaat (minimaal vier weken voorafgaand aan sloop), willen we deze informatie strategischer inzetten voor de transitie naar een circulaire economie. Daarbij onderzoeken we de mogelijkheid om andere termijnen te hanteren dan de wettelijk voorgeschreven tijdigheid, zodat we meer tijd hebben om te anticiperen op hergebruikmogelijkheden. Dit zou ons drie belangrijke voordelen bieden, namelijk om (1) de panden voorafgaand aan sloop en in het geval van leegstand tijdelijk te benutten; (2) inzicht te krijgen in de materialen die vrijkomen en op welk moment. Hierdoor is de kans dat deze materialen hoogwaardig worden hergebruikt groter; en (3) om met maatwerkvoorschriften strengere eisen stellen aan het scheiden van afval. We gaan onderzoeken hoe we sloopmeldingen optimaal kunnen inzetten als beleidsinstrument. Dit omvat het vaststellen van aangepaste termijnen die meer ruimte bieden voor inventarisatie en hergebruik, en het bepalen van welke maatwerkvoorschriften we daarbij kunnen opleggen. Voor deze activiteit maken we onder meer gebruik van de al beschikbare kennis vanuit Circulaw. Deze activiteit hangt dan ook nauw samen met maatregel 4.",
+       "dekking": "Regulier werkproces - gedekt uit interne uren (team Circulaire Stad i.s.m. Vergunningverlening, toezicht en handhaving) en externe opdrachtverstrekking vanuit budget Circulaire Stad."
       }
      ],
      "aan": "Tijdelijk gebruik (grondstoffendepots, bouwgewassen, ruimte voor circulaire bedrijven) verlaagt de vraag naar primaire grondstoffen.\nParticuliere eigenaren willen meewerken."
@@ -404,32 +440,44 @@
       {
        "id": "BG-M2-A2-1",
        "naam": "2.1 Robuust kader circulariteit op gebiedsniveau",
-       "periode": "2026–2028"
+       "periode": "2026 - 2028",
+       "omschrijving": "Er is een robuust kader nodig om met ontwikkelaars, woningcorporaties, afdelingen binnen de gemeente en andere stakeholders tot goede, haalbare afspraken te laten komen voor circulaire gebiedsontwikkeling. Hiermee werken we toe naar minder materiaal en minder materiaalgebonden milieu-impact. Vanwege de omvang en complexiteit van deze activiteit, pakken we het stapsgewijs aan. Hiertoe nemen we de volgende stappen: Stap 1: Een integrale indicatoren set voor circulariteit in gebiedsontwikkelingen Stap 2: Een afwegingskader voor deze indicatoren Stap 3: Implementatie in lopende gebiedsontwikkelingen Stap 4: Circulaire principes en stedenbouwkundige kwaliteit Deze activiteit resulteert in een herijkte Checklist Circulaire gebiedsontwikkeling (zie activiteit 2.4 van deze programmalijn). Deze Checklist is de kapstok waar alles bij elkaar wordt gebracht. In dit document maken we onderscheid tussen verschillende fasen in een project. Per fase geven we aan hoe circulariteit in de betreffende fase geborgd kan worden en welke instrumenten, indicatorensets en afwegingskaders relevant zijn. Stap 1: We willen toe naar één integrale indicatorenset voor circulariteit op gebiedsniveau. Hiervoor maken we een vergelijk van verschillende indicatoren, waaronder die van het Convenant Toekomstbestendig Bouwen, Het Nieuwe Normaal (gebouw en gebied), GPR Gebied, NL Greenlabel (2026 - 2030). Deze stap doen we niet alleen, maar wordt opgepakt binnen de Samenwerkingsagenda Toekomstbestendige Gebiedsontwikkeling. Amersfoort zal deze amenwerkingsagenda naar verwachting aangaan tijdens de Dag van de Huisvesting op 8 december ’25. Stap 2: Om vervolgens tot een afwegingskader voor circulariteit te komen, zoeken we (i) de samenwerking tussen de overheid, gemeenten, marktpartijen en woningcorporaties op. We willen in gesprek met ontwikkelaars en woningcorporaties en verkennen hoe we komen tot standaardvoorwaarden en prioritering op gemeentelijk niveau bij gebiedsontwikkeling. We nemen stedenbouwkundigen en juridisch planologen van de gemeente mee in de ruimtelijke consequenties van biobased bouwen. Daarbij onderzoeken we hoe we voorkomen dat de kaders van woningbouwplannen en regels van omgevingsplannen deze ontwikkeling belemmeren. Door (ii) het evalueren en doorontwikkelen van bouwmethodes werken we toe naar een methode om binnen de planetaire grenzen betaalbaar te kunnen blijven bouwen. Specifiek richten we ons hierbij op hergebruik van materialen en biobased en conceptueel bouwen. Daarvoor onderzoeken we ook (iii) nieuwe manieren om de maatschappelijke kosten en baten van verschillende keuzes in gebiedsontwikkeling te waarderen en mee te nemen in besluitvorming. Vanuit deze programmalijn ligt de focus op circulaire gebiedsontwikkeling en bouwen. We hebben echter veel belang bij een integraal afwegingskader waarbij thema’s zoals energie, circulariteit, duurzame mobiliteit, klimaatadaptatie, natuurinclusiviteit en biodiversiteit en gezonde leefomgeving op een samen- hangende manier verankerd in nieuwe en bestaande gebiedsontwikkelingen. Binnen de gemeente wordt hieraan in 2026 - 2028 gewerkt. Tegelijkertijd (iv) onderzoeken we vanaf 2026 hoe de Samenwerkingsagenda Toekomstbestendige Gebiedsontwikkeling (zie activiteit 2.2) ons kan helpen om tot één integraal afwegingskader te komen voor toekomstbestendig en betaalbaar bouwen. Stap 3: De inzichten en ervaringen die we opdoen in de periode 2026 - 2028, implementeren we waar mogelijk in onze lopende gebiedsontwikkelingen. Vervolgens evalueren we deze en de gebruikte instrumenten. Vanaf 2028 passen we de werkwijze voor circulaire gebiedsontwikkeling inclusief indicatoren set, afwegingskader en standaard toe in onze gebiedsontwikkelingen. Stap 4: Tot slot werken we samen met Stad en Ontwikkeling en de Gemeentelijke Adviescommissie Omgevingskwaliteit (GAO), om zo te borgen dat circulariteit op een gedragen manier wordt geïntegreerd in de stedenbouwkundige ontwikkelkaders. Daarnaast zetten we ons om circulariteit onderdeel te maken van het afwegingskader van GAO.",
+       "dekking": "Regulier werkproces - gedekt uit interne uren (team Circulaire Stad i.s.m. Afdeling Stad en Ontwikkeling, Gemeentelijke Adviescommissie Omgevingskwaliteit en Leefomgeving."
       },
       {
        "id": "BG-M2-A2-2",
        "naam": "2.2 Samenwerkingsagenda Toekomstbestendige Gebiedsontwikkeling",
-       "periode": "2026–2030"
+       "periode": "2026 - 2030",
+       "omschrijving": "Samenwerkingsagenda Toekomstbestendige Gebiedsontwikkeling kan bijdragen aan een toekomstbestendige en betaalbare ontwikkeling van het gebied Bovenduist, die aansluit bij onze gemeentelijke ambities. Het inbrengen van gebiedsontwikkeling Bovenduist als deelnemend gebied helpt ons invulling te geven aan het toonaangevend duurzaam én betaalbaar ontwikkelen van het gebied. Bovendien kan het helpen bij het maken van een integrale afweging van alle ambities die we voor het gebied hebben. Samen met andere gemeenten en ontwikkelaars leren we effectief in te spelen op Europese eisen en marktontwikkelingen. Meerdere ontwikkelaars met een grondpositie nemen deel aan de Samenwerkingsagenda Toekomstbestendige Gebiedsontwikkeling. Los van de landelijke commitment die is uitgesproken, maken in 2026 samen met ontwikkelaars en De Alliantie afspraken over hoe we de afspraken uit de Samenwerkingsagenda concretiseren in Bovenduist. Lees verder op de volgende pagina Deze Samenwerkingsagenda beschrijft hoe Rijk, medeoverheden, marktpartijen, woningcorporaties en andere partners samen werken aan toekomstbestendige gebiedsontwikkeling. Het document biedt een kader voor interbestuurlijke en publiek-private samenwerking tot 2029, met als doel versneld toekomstbestendige gebieden te realiseren. Deze samenwerkingsagenda dient als een richtinggevend kompas. In Bovenduist gaan we - samen met ontwikkelaars en De Alliantie - concreet invulling geven aan de Samenwerkingsagenda. Dit gebeurt in samenwerking met alle partijen die deelnemen aan de City Deal in minimaal 25 gebiedsontwikkelingen, verspreid over het land.",
+       "dekking": "Regulier werkproces - gedekt uit interne uren (team Circulaire Stad en adviseurs Duurzame Gebiedsontwikkeling) en in samenwerking met Samenwerkingsagenda Toekomstbestendige Gebiedsontwikkeling."
       },
       {
        "id": "BG-M2-A2-3",
-       "naam": "2.3 Verkenning digitalisering",
-       "periode": "2025–2030"
+       "naam": "2.3 Verkenning Digitalisering",
+       "periode": "2025 - 2030",
+       "omschrijving": "Werken op basis van data en digitale inzichten kan zorgen voor meer inzicht over waar impact effectief, kansrijk en logisch te behalen is. In 2025 - 2030 verkennen we op welke wijze digitalisering een infrastructuur kan bieden voor circulaire gebiedsontwikkeling op gebouw- en gebiedsniveau. Daarbij kijken we naar voorbeelden in de regio en op nationaal niveau, waaronder via de gesloten deals en convenanten. Waar digitalisering wordt toegepast, borgen we aansluiting en synergie met de ontwikkeling van de Circulaire Grondstoffencorridor. Daarnaast kijken we naar de wensen en behoeftes van de ontwikkelende partijen, afdelingen binnen de gemeente en andere stakeholders, om te komen tot gezamenlijk draagvlak. De verkenning leidt - waar haalbaar - tot een aanpak met strategie en beoogde bijdrage aan de transitie- en subdoelen. Bij het opstellen van deze strategie hebben we oog voor de voortgang van de transitie richting de 2030 en 2050 doelen.",
+       "dekking": "Regulier werkproces - gedekt uit interne uren (team Circulaire Stad in samenwerking met Earth Valley en DigiC) en in samenwerking met team Vergunningverlening, toezicht en handhaving."
       },
       {
        "id": "BG-M2-A2-4",
-       "naam": "2.4 Checklist circulaire gebiedsontwikkeling",
-       "periode": "2028–2029"
+       "naam": "2.4 Checklist Circulaire gebiedsontwikkeling",
+       "periode": "2028 - 2029",
+       "omschrijving": "De huidige Checklist circulaire gebiedsontwikkeling is een intern instrument om kansen en uitgangspunten voor circulair bouwen te identificeren. Hoewel we het nu nog een ‘checklist’ noemen, doet deze benaming geen recht aan het werkelijke karakter van het instrument. Het document richt zich op alle bouw aspecten van de (her)ontwikkeling van een gebied: bouwrijp maken van gronden, sloop, renovatie- en verbouw en nieuwbouw. We willen dit document door ontwikkelen tot een instrument voor het borgen van circulariteit in bouw en gebiedsontwikkeling projecten, waarbij we per fase aangeven hoe circulariteit geborgd kan worden en welke instrumenten, indicatorensets en afwegingskaders relevant zijn. Door deze werkwijze vervolgens organisatie breed te implementeren, kunnen duurzaamheidsadviseurs en andere vakdisciplines er standaard mee gaan werken. Het streven is om deze werkwijze vanaf 2028 standaard toe te passen in onze nieuwe gebiedsontwikkelingen. Deze activiteit hangt nauw samen met activiteit 2.1 ‘Robuust kader circulaire gebiedsontwikkeling’.",
+       "dekking": "Regulier werkproces - gedekt uit interne uren (team Circulaire Stad i.o.m. projectmanagers Gebiedsontwikkeling)."
       },
       {
        "id": "BG-M2-A2-5",
        "naam": "2.5 Planregels voor het omgevingsplan",
-       "periode": "2025–2028"
+       "periode": "2025 - 2028",
+       "omschrijving": "De gemeente is actief met het actualiseren en omzetten van regels in het omgevingsplan, zoals opgenomen in de Omgevingswet. Planregels scheppen duidelijke kaders en geven zekerheid over wat kan en niet kan. Het vormt een concrete uitwerking van gemeentelijk beleid in juridisch bindende vorm. Hierdoor krijgen zowel onze eigen afdelingen binnen de gemeente, als marktpartijen en bewoners tijdig een duidelijk beeld wat kan en niet kan. In deze versie van het Omgevingsprogramma zijn nog geen omgevingsplanregels opgenomen. Op dit moment onderzoeken we hoe planregels in het omgevingsplan kunnen worden ingezet ter ondersteuning van onze ambities en doelen. Hiervoor gaan we ook de samenwerking met andere gemeenten aan. De verwachting is dat het gaat om regels die samenhangen met Bouw- en gebiedsontwikkeling, in het bijzonder op het gebied van biobased bouwen en hoogwaardig hergebruik. Waar nodig en mogelijk nemen we deze in de opvolgende jaren op in de actualisatie van dit Omgevingsprogramma en daarna in het omgevingsplan. Voordat planregels worden ingezet, kijken we goed naar de impact van de maatregelen en de vraag in hoeverre specifieke regels bijdragen aan het behalen van de doelen. Hierbij sluiten we aan op de beleidscyclus van de Omgevingswet en kijken we goed naar: • Integraliteit en efficiëntie met andere regels • Het minimaliseren van administratieve lasten • De positieve impact van de regel(s) Voor deze activiteit werken we nauw samen met andere gemeenten, Circulaw en onze gemeentelijk juristen. Deze activiteit hangt samen met de activiteit ‘Onderzoek materialenpaspoort op gebiedsniveau’.",
+       "dekking": "Regulier werkproces - gedekt uit interne uren (team Circulaire Stad i.s.m. Circulaw en afdeling Stad en Ontwikkeling (planjuristen)."
       },
       {
        "id": "BG-M2-A2-6",
        "naam": "2.6 Onderzoek materialenpaspoort op gebiedsniveau",
-       "periode": "2026–2028"
+       "periode": "2026 - 2028",
+       "omschrijving": "Een materialenpaspoort op gebiedsniveau faciliteert hergebruik van materialen binnen hetzelfde gebied bij renovatie of transformatie. Ook kunnen materialenstromen in kaart worden gebracht en vrijkomende materialen voorspeld worden. Ketensamenwerking is hiervoor essentieel. Landelijk wordt dit als relevant instrument gezien en wordt onderzocht hoe een dergelijk paspoort kan werken, in hoeverre dit kan worden voorgeschreven in het omgevingsplan en welke randvoorwaarden hiervoor nodig zijn. We houden deze ontwikkelingen nauwlettend in de gaten zodat we hier tijdig op kunnen anticiperen. Daarnaast zoeken we hiervoor ook actief de samenwerking op met andere gemeenten en het Rijk. Onderwerpen die verder onderzocht dienen te worden zijn: • Dataverzameling, opslag- en beheer; • Ketensamenwerking tussen verschillende eigenaren en belanghebbende; • Privacy- en veiligheidsvraagstukken rondom gedetailleerde gebiedsinformatie. Belangrijk is dat we als gemeente aansluiten bij landelijke ontwikkelingen en niet zelf ‘het wiel opnieuw gaan uitvinden’. We hebben als doelstelling om in 2026 een materiaalpaspoort op gebiedsniveau op te nemen als verplichting in het omgevingsplan, tenzij in ons onderzoek zwaarwegende redenen naar voren komen om dit niet te doen. Deze activiteit hangt nauw samen met de activiteit ‘Planregels voor het omgevingsplan’.",
+       "dekking": "Regulier werkproces - gedekt uit interne uren (team Circulaire Stad in samenwerking Circulaw en in samenwerking met Stad& Ontwikkeling) en Vergunningverlening toezicht en handhaving."
       }
      ],
      "aan": "Sturen op gebiedsniveau is effectiever dan per kavel of gebouw.\nEén integraal afwegingskader maakt de bestaande instrumenten (MKI, MPG, convenant, leidraad, checklist) eenvoudiger en effectiever.\nDe ambities kunnen worden vastgelegd op de vaste momenten in het ontwikkelproces."
@@ -441,10 +489,10 @@
      "rol": "Faciliterend, richtinggevend, regulerend waar nodig",
      "sub": [
       "BG-S1",
-      "BG-S2a*",
-      "BG-S2b*",
-      "BG-S3a*",
-      "BG-S3b*"
+      "BG-S2a",
+      "BG-S2b",
+      "BG-S3a",
+      "BG-S3b"
      ],
      "res": "Biobased bouwen is de norm geworden.",
      "term": "2–5 jaar",
@@ -453,12 +501,16 @@
       {
        "id": "BG-M3-A3-1",
        "naam": "3.1 Implementatie en naleving Convenant Toekomstbestendige Woningbouw",
-       "periode": "2025–2026"
+       "periode": "2025 - 2026",
+       "omschrijving": "Amersfoort heeft het Convenant Toekomstbestendige Woningbouw ondertekend. In nieuwe woningbouwprojecten nemen we ambities en doelstellingen op over biobased bouwen. In het omgevingsprogramma Volkshuisvesting is uitgewerkt hoe we per thema met het Convenant omgaan in woningbouwprojecten. Met deze activiteit onderzoeken we hoe we als gemeente biobased bouwen meer kunnen reguleren via ontwikkelkaders en stedenbouwkundige plannen en hoe we dit kunnen stimuleren. Samen met relevante afdelingen binnen de gemeente, ontwikkelende partijen en woningcorporaties kijken we welke aspecten in een bepaald project prioritair zijn en hoe daarop een zo hoog mogelijk niveau kan worden gehaald. Wanneer circulair bouwen prioritair is, streven we naar ambitieniveau ‘Goud’. We beginnen hiermee in Bovenduist. In 2027 herijken we de status van biobased bouwen in Amersfoort en verhogen we waar mogelijk onze ambities en doelstellingen. Aanvullend zetten we een tijdelijke subsidieregeling op die bouwende partijen stimuleert biobased sociale huurwoningen te gaan bouwen. Verder onderzoeken of we aan de lopende Subsidieregeling woningisolatie voor woningeigenaren, een stimulans voor biobased isoleren kunnen opnemen. Daarnaast maken we inzichtelijk met welke belemmeringen en uitdagingen we te maken hebben bij biobased bouwen en zoeken naar werkbare oplossingen.",
+       "dekking": "Regulier werkproces - gedekt uit interne uren (team Circulaire Stad in samenwerking met adviseurs Duurzame Gebiedsontwikkeling)."
       },
       {
        "id": "BG-M3-A3-2",
-       "naam": "3.2 Belemmeringen vergunningverlening biobased bouwen",
-       "periode": "2025–2027"
+       "naam": "3.2 Belemmeringen en uitdagingen vergunningverlening biobased bouwen",
+       "periode": "2025 - 2027",
+       "omschrijving": "Samen met VTH en de brandweer maken we inzichtelijk welke belemmeringen en uitdagingen bestaan bij de vergunningverlening van biobased gebouwen. Aan de hand van deze inzichten zoeken we gezamenlijk naar werkbare oplossingen.",
+       "dekking": "Regulier werkproces - gedekt uit interne uren (team Circulaire Stad i.s.m. VTH en BSV)."
       }
      ],
      "aan": "Verankering in ontwikkelkaders en stedenbouwkundige plannen leidt tot meer biobased bouwen.\nDe markt heeft genoeg aanbod (zo stelt het programma). Het knelpunt zit in toepassing, niet in beschikbaarheid."
@@ -470,8 +522,8 @@
      "rol": "Faciliterend, richtinggevend, stimulerend, regulerend waar nodig",
      "sub": [
       "BG-S1",
-      "BG-S3a*",
-      "BG-S3b*"
+      "BG-S3a",
+      "BG-S3b"
      ],
      "res": "Hoogwaardig hergebruik van secundaire materialen over meerdere levenscycli is genormaliseerd en opgeschaald.",
      "term": "Direct",
@@ -480,7 +532,9 @@
       {
        "id": "BG-M4-A4-1",
        "naam": "4.1 Circulaire grondstoffencorridor",
-       "periode": "2025–2028"
+       "periode": "2025 - 2028",
+       "omschrijving": "De Circulaire grondstoffencorridor is een project dat tot doel heeft om inzichtelijk te krijgen wat nodig is om grondstoffenketens te kunnen sluiten. De focus ligt op hoogwaardig hergebruik van bouwmaterialen die vrijkomen uit bestaande bouw. In samenwerking met lokale partijen willen we dit hergebruik op projectniveau toepassen, om zo te leren wat nodig is om hoogwaardig hergebruik van bouwmaterialen op te schalen. In de periode 2025 - 2028 werken we verder aan het hoogwaardig hergebruik van vrijkomende bouwmaterialen in Amersfoort. Onderdeel daarvan is het onderzoek of een grondstoffencorridor in Amersfoort een oplossing biedt om grondstoffen, materialen en producten beter te kunnen hergebruiken en uit te wisselen en wat de randvoorwaarden hiervoor zijn. Dit onderzoek bevindt zich momenteel in de afrondende fase. Nieuwe inzichten en de voortgang van het project maken dat we de focus opnieuw gaan bepalen in 2026. Daarnaast zetten wij ons in voor het gebruik en de ontwikkeling van digitale bouwmarktplaatsen die vraag en aanbod van materialen efficient koppelen. Deze activiteit heeft samenhang met de activiteit 2.2 Verkenning digitalisering. Ook verkennen we welke rol we als hier nog meer (kunnen) innemen. Denk onder meer aan transport en opslag, geplande sloop- en bouwprojecten binnen de gemeente, materialen die daaruit vrijkomen, projectenkalenders en het stimuleren/regisseren van samenwerking. In 2026 maken we inzichtelijk wat nodig is om de materiaalketens van hout en staal in de gemeente Amersfoort te sluiten. Deze activiteit heeft raakvlakken met activiteit 1.1 ‘Onderzoek inrichting grondstoffendepot’ van de Circulaire randvoorwaarden.’",
+       "dekking": "Regulier werkproces - gedekt uit interne uren (team Circulaire Stad i.s.m. POR, LO)."
       }
      ],
      "aan": "Beter inzicht in de bestaande voorraad en vrijkomende materialen leidt tot meer hoogwaardig hergebruik.\nEr komen genoeg aanbod en verwerkingscapaciteit (landelijk was in 2024 maar 0,24% van het bouw- en sloopafval hoogwaardig hergebruikt; het doel is 15% in 2030)."
@@ -492,10 +546,10 @@
      "rol": "Faciliterend, richtinggevend, stimulerend",
      "sub": [
       "BG-S1",
-      "BG-S2a*",
-      "BG-S2b*",
-      "BG-S3a*",
-      "BG-S3b*"
+      "BG-S2a",
+      "BG-S2b",
+      "BG-S3a",
+      "BG-S3b"
      ],
      "res": "Bestaande bouw slimmer en efficiënter benutten leidt tot aanzienlijk minder primair grondstoffengebruik.",
      "term": "Lange termijn (vanaf 5 jaar)",
@@ -504,12 +558,16 @@
       {
        "id": "BG-M5-A5-1",
        "naam": "5.1 Ontwikkelen strategie bestaande bouw",
-       "periode": "2028–2030"
+       "periode": "2028 - 2030",
+       "omschrijving": "Door anders, beter en wellicht meer gebruik te maken van bestaande bouw, is het mogelijk om nieuwbouw te beperken. Nieuwbouw (op traditionele wijze) heeft een aanzienlijke milieu impact en vereist veel primair grondstoffengebruik. In het kader van prioritering en keuzes op capaciteit, wordt de komende jaren onderzocht welk beleid en welke strategie ten aanzien van bestaande bouw kan worden uitgewerkt voor een meer effectieve en kwantitatief aantoonbare aanpak. Deze strategie zal in 2030 gereed zijn. Onderdeel daarvan is onderzoeken of- en hoe we renoveren en transformeren kunnen stimuleren en faciliteren boven sloop/nieuwbouw.",
+       "dekking": "Regulier werkproces - gedekt uit interne uren (team Circulaire Stad)."
       },
       {
        "id": "BG-M5-A5-2",
        "naam": "5.2 Circulair verduurzamen bestaande bouw",
-       "periode": "2025–2027"
+       "periode": "2025 - 2027",
+       "omschrijving": "We zoeken de synergie met de energietransitie. Daar waar bestaande bouw verduurzaamd wordt vanuit het oogpunt van de energietransitie, zoeken we circulaire mogelijkheden zoals het toepassen van biobased materialen of alternatieven waarvoor minder primaire grondstoffen voor nodig zijn. Daarnaast gaan we onderzoeken hoe we in het project Energiehuiskamer in Schothorst het gebruik van biobased en circulaire isolatiematerialen kunnen stimuleren. Vanwege prioritering en keuzes op capaciteit, betreft dit de komende jaren voornamelijk een zoektocht naar synergie en meekoppelkansen vanuit het Team Energietransitie.",
+       "dekking": "Regulier werkproces - gedekt uit interne uren (team Circulaire Stad i.s.m. team Energietransitie)."
       }
      ],
      "aan": "Voor ontwikkelaars, corporaties en eigenaren is circulair renoveren en transformeren een reëel alternatief voor sloop en nieuwbouw.\nTot 2028 ligt de focus bewust ergens anders (zie ‘Wat doen we niet’), dus het effect komt later."
@@ -521,10 +579,10 @@
      "rol": "Faciliterend, richtinggevend, stimulerend, regulerend waar nodig",
      "sub": [
       "BG-S1",
-      "BG-S2a*",
-      "BG-S2b*",
-      "BG-S3a*",
-      "BG-S3b*"
+      "BG-S2a",
+      "BG-S2b",
+      "BG-S3a",
+      "BG-S3b"
      ],
      "res": "Circulaire nieuwbouw is de norm, met gebouwen ontworpen als toekomstige materialenbanken.",
      "term": "Direct",
@@ -532,28 +590,38 @@
      "act": [
       {
        "id": "BG-M6-A6-1",
-       "naam": "6.1 Strategie nieuwbouw utiliteit",
-       "periode": "2025–2027"
+       "naam": "6.1 Ontwikkelen strategie nieuwbouw utiliteit",
+       "periode": "2026 - 2028",
+       "omschrijving": "Nieuwbouw van utiliteitsgebouwen heeft een grote milieu- impact door onder andere het materiaalgebruik en CO₂-uitstoot die nodig is voor de realisatie. De groei van de stad maakt het echter wenselijk dat er nieuwe utiliteitsgebouwen worden gerealiseerd, onder andere voor de huisvesting van maatschappelijke voorzieningen. We willen een strategie ontwikkelen om de utiliteitsbouw zo circulair mogelijk te realiseren, met als doelstelling minimaal CO₂-neutrale nieuwbouw in 2030, waarbij we zowel kijken naar materiaalgebruik als energie. In de periode van 2026-2028 onderzoeken we wat nodig is om te komen tot een strategie voor circulaire nieuwbouw van utiliteitsgebouwen. Bij het uitwerken van deze strategie sluiten we voor de definitie van circulair bouwen en circulair ontwerpen aan bij het Lexicon van Platform CB’23. Daarbij onderzoeken we welk beleid en welke instrumenten kunnen worden uitgewerkt voor een meer effectieve en kwantitatief aantoonbare aanpak. Vervolgens werken we een strategie uit, waar we vanaf 2028 invulling aan gaan geven.",
+       "dekking": "Regulier werkproces - gedekt uit interne uren (team Circulaire Stad i.s.m. team vastgoed."
       },
       {
        "id": "BG-M6-A6-2",
        "naam": "6.2 Circulaire en sociale woningbouw",
-       "periode": "2026–2028"
+       "periode": "2025 - 2027",
+       "omschrijving": "Woningcorporaties zijn belangrijke partners en stakeholders bij gebiedsontwikkelingen, renovatie en transformatie. We zijn hier continu mee in overleg. Bij woningbouwprojecten maken we afspraken met woningcorporaties in het kader van circulariteit. De ervaringen en lessen die we opdoen, passen we in volgende ontwikkelingen toe. We werken toe naar meer structurele afspraken op gemeente breed niveau en onderzoeken dit de komende jaren. Met corporaties maken we via de samenwerkingsafspraken in gezamenlijkheid keuzes over de inzet en haalbaarheid. Samen met woningcorporaties verkennen we in hoeverre we biobased bouwen hierin kunnen meenemen. Ter ondersteuning van het realiseren van biobased sociale huurwoningen zetten we een tijdelijke subsidieregeling op. Voortgang van deze activiteit monitoren we jaarlijks. Vervolgens beoordelen we of - zo ja, wat voor - aanvullend beleid en afspraken nodig zijn. Deze activiteit hangt nauw samen met de activiteit ‘Biobased bouwen in Amersfoort stimuleren en faciliteren’.",
+       "dekking": "Regulier werkproces - gedekt uit interne uren (team Circulaire Stad i.s.m. afdeling Wonen)."
       },
       {
        "id": "BG-M6-A6-3",
-       "naam": "6.3 Interne kennisdeling circulair bouwen",
-       "periode": "2027–2030"
+       "naam": "6.3 Interne kennisdeling Circulair Bouwen",
+       "periode": "2027 - 2030",
+       "omschrijving": "Voor de openbare ruimte, woning- en utiliteitsbouw ontwikkelen we een intern kennisdelingsprogramma om ambtenaren bekend te maken met het vakgebied circulair bouwen. We delen kennis over ons beleid op circulair bouwen, de kansen, aandachtspunten en praktische toepassingen. Dergelijke kennisverspreiding draagt ook bij aan onze ambitie van Circulair Opdrachtgeven en inkoop. Hiervoor zoeken we ook de samenwerking op met bestaande platforms als Cirkelstad en Building Balance en onderzoeken we of deze binnen de gesloten deals en convenanten kan worden ontwikkeld.",
+       "dekking": "Regulier werkproces - gedekt uit interne uren (team Circulaire Stad)."
       },
       {
        "id": "BG-M6-A6-4",
-       "naam": "6.4 Circulair businessmodel gemeentelijk vastgoed",
-       "periode": "2027–2030"
+       "naam": "6.4 Circulair businessmodel voor gemeentelijk vastgoed",
+       "periode": "2027 - 2030",
+       "omschrijving": "We willen de betaalbaarheid vergroten van circulair bouwen. Circulair bouwen is nog geen gemeengoed, veelal vanwege hogere initiële investeringskosten. Deze manier van ‘kosten-denken’ komt echter voort uit een lineair economisch model. Voor een succesvolle transitie naar een circulaire economie moeten we ook anders naar onze (financiële) investeringen kijken. Hiervoor analyseren we inspirerende praktijkvoorbeelden in Nederland, zoals: • Het circulair afschrijven van assets. De gemeente Leeuwarden kijkt niet alleen naar aanschafkosten, maar rekent bij investeringen met restwaarde van materialen. Op basis van data is de gemeente in staat om per productcategorie op basis van best practice aan te geven hoeveel procent restwaarde op een investering mag worden ingerekend. Op dit moment varieert dit tussen de 5% en 20%. Naarmate circulariteit steeds meer de basis van investeringen gaat vormen, zullen de genoemde percentages gaan oplopen. De percentages zullen daarom jaarlijks worden herijkt. • CO₂-beprijzing als instrument voor maatschappelijk vastgoed. Deze methode gaat uit van de toekomstige maatschappelijke kosten van klimaatschade die ontstaat door elke ton CO₂ die wij als samenleving nu uitstoten. De Provincie Utrecht hanteert een rekenmethode waarbij de toekomstige klimaatschade van 1 ton uitgestoten CO₂ € 875,- bedraagt. Door dergelijke nieuwe rekenmethoden te onderzoeken, kunnen we nagaan hoe we binnen Amersfoort circulair bouwen financieel aantrekkelijker kunnen maken. Bovendien helpt het ons om de echte kosten en baten van verschillende alternatieven beter te vergelijken.",
+       "dekking": "Regulier werkproces - gedekt uit interne uren (team Circulaire Stad i.s.m. team Vastgoed)."
       },
       {
        "id": "BG-M6-A6-5",
        "naam": "6.5 Ketensamenwerking",
-       "periode": "2025–2027"
+       "periode": "2025 - 2027",
+       "omschrijving": "Ketensamenwerking is essentieel voor de transitie naar een circulaire economie. Een circulaire economie ontstaat pas wanneer alle schakels in de keten - van grondstofwinning tot hergebruik - circulaire principes toepassen. De gemeente heeft hierin vooral een verbindende en katalyserende rol: we scheppen voorwaarden, brengen partijen bij elkaar en stellen kaders. We ontwikkelen en delen kennis door: • Het volgen van marktontwikkelingen en deze kennis intern te delen; • Deelnemen aan regionale netwerken om van elkaar te leren over nieuwe ontwikkelingen omtrent circulair bouwen; • Kennisuitwisseling met woningcorporaties, marktpartijen, onderwijs en andere partijen in de regio. Daarnaast werken we lokaal samen met partijen die actief zijn in de bouw- en gebiedsontwikkeling in Amersfoort, zoals woningcorporaties, (regionale) ontwikkelaars en marktpartijen die betrokken zijn bij de lokale bouwsector. Op regionaal en landelijk niveau werken we samen met andere gemeenten, de provincie Utrecht, het Rijk en landelijke platforms als Cirkelstad en Building Balance. We leren continu, zowel wat goed werkt als de uitdagingen die we tegenkomen. Deze inzichten delen we actief met partijen in de regio, zodat we samen kunnen bouwen aan toekomstbestendige gebiedsontwikkeling. Voorbeelden zijn onder andere de Samenwerkingsagenda Toekomstbestendige Gebiedsontwikkeling en het Convenant Toekomstbestendige Woningbouw.Op basis van nieuwe inzichten passen we ons beleid en toetsingskaders aan waar nodig en mogelijk, zodat deze circulair bouwen niet belemmeren maar stimuleren. Deze activiteit hangt nauw samen met de maatregelen 2, 3 en 4.",
+       "dekking": "Regulier werkproces - gedekt uit interne uren (team Circulaire Stad)."
       }
      ],
      "aan": "De beschikbare beleidsinstrumenten zijn sterk genoeg, ook al mag de gemeente geen bouwtechnische eisen stellen boven het Bbl.\nCirculair ontwerpen leidt over meerdere levenscycli tot minder vraag naar primaire grondstoffen."
@@ -658,17 +726,23 @@
       {
        "id": "BE-M1-A1-1",
        "naam": "1.1 Toekomstfonds Duurzame Ontwikkeling",
-       "periode": "2025–2030"
+       "periode": "2025 - 2030",
+       "omschrijving": "Met het Toekomstfonds Duurzame Ontwikkeling (hierna: Toekomstfonds) ondersteunen we initiatieven die een bijdrage leveren aan de energietransitie of circulaire economie van Amersfoort. De regeling is op basis van co-financiering tot maximaal €50.000 per initiatief. Initiatiefnemers financieren minstens 50% van de totale kosten zelf. Het Toekomstfonds is een succes gebleken. Van 2015 tot en met 2024 zijn 46 initiatieven gesteund, hiervan focust 70% (32 initiatieven) zich op de circulaire economie, bijvoorbeeld door het verminderen van afval of het hergebruiken van afvalstromen. Met subsidie vanuit het Toekomstfonds zijn in Amersfoort circulaire initiatieven ontstaan, zoals de Circulaire Stadswerkplaats, FLUPS, en de Green Outlet.",
+       "dekking": "Jaarlijks wordt het subsidieplafond voor deze subsidieregeling vastgesteld gedekt vanuit de structureel gereserveerde gelden voor het Toekomstfonds Duurzame Ontwikkeling. De uitvoering van de subsidieregeling Toekomstfonds Duurzame Ontwikkeling wordt gedekt vanuit de uren Circulaire Stad."
       },
       {
        "id": "BE-M1-A1-2",
        "naam": "1.2 Broedplaatsensubsidie",
-       "periode": "doorlopend"
+       "periode": "Doorlopend",
+       "omschrijving": "Middels een broedplaatsensubsidie faciliteren we betaalbare werkplekken voor circulaire (en creatieve, kunstzinnige en culturele) initiatieven en stimuleren we samenwerkingen tussen deze initiatieven. Met de regeling kan een nieuwe broedplaats opgezet worden of aan een bestaande broedplaats werkruimtes worden toegevoegd. In 2024 is deze subsidieregeling opgesteld en zijn drie initiatieven gesteund voor in totaal €180.000, waarvan twee initiatieven raakvlak hebben met circulaire economie. In 2025 wordt de broedplaatsensubsidie opnieuw opengesteld. In de komende jaren zullen we de resultaten hiervan monitoren en per jaar bepalen of de subsidie opnieuw wordt opengesteld.",
+       "dekking": "In 2025 is in totaal €123.750 gereserveerd voor de Broedplaatsensubsidie, hiervan is €41.250 gedekt vanuit de gelden Toekomstfonds Duurzame Ontwikkeling. Het resterende bedrag wordt gedekt door de afdelingen Cultuur en Economie. (Vanuit team Economie is voor de programmalijn Circulaire bedrijvigheid 8 uur per week gereserveerd)."
       },
       {
        "id": "BE-M1-A1-3",
-       "naam": "1.3 Subsidies van anderen onder de aandacht",
-       "periode": "2025–2030"
+       "naam": "1.3 Subsidies van anderen onder de aandacht brengen",
+       "periode": "2025 - 2030",
+       "omschrijving": "Naast onze eigen subsidies verwijzen we lokale ondernemers naar het aanbod van subsidies op regionaal, nationaal en Europees niveau. Voorbeelden hiervan zijn: Subsidie Circulair Implementeren en Opschalen (CIO) van RVO en MKB Innovatievoucher Circulaire Economie van Kansen voor West voor Provincie Utrecht.",
+       "dekking": "Regulier werkproces - gedekt uit interne uren (team Circulaire Stad)."
       }
      ],
      "aan": "Financiering is een belangrijke drempel voor circulaire ondernemers.\nCofinanciering tot € 50.000 is genoeg om een initiatief te laten starten of opschalen (2015–2024: 46 initiatieven gesteund, 32 circulair)."
@@ -687,13 +761,17 @@
      "act": [
       {
        "id": "BE-M2-A2-1",
-       "naam": "2.1 Community management (extern, € 30.000)",
-       "periode": "2025"
+       "naam": "2.1 Community management",
+       "periode": "2025",
+       "omschrijving": "Circulaire ondernemers en makers spelen een belangrijke rol in het sluiten van ketens, doordat zij grondstofstromen (voorheen afval) afnemen. De groep van circulaire makers in Amersfoort willen we laten groeien, maar ook faciliteren in hun bedrijfsvoering. Daarom worden circulaire makers getraind en gecoacht in commercieel ondernemerschap, zodat ze hun producten beter kunnen vermarkten en hun bedrijfsmodel financieel duurzaam wordt. We zetten community managers in die midden in het netwerk staan en de behoeften van deze ondernemers kunnen vertalen naar netwerk- en scholingsactiviteiten, en concrete projecten in de stad. De community managers zullen: 1) circulaire makers identificeren en verbinden, 2) behoeften, drempels en thema’s ophalen, 3) netwerk- en scholingsactiviteiten organiseren en 4) zorgen dat de community vanaf 2026 op eigen benen verder kan.",
+       "dekking": "Externe community managers ingehuurd voor €30.000 (waarvan 10% gefinancierd in 2024). Gefinancierd vanuit het project VSNS, mede mogelijk gemaakt door de Europese Unie (Kansen voor West III)."
       },
       {
        "id": "BE-M2-A2-2",
-       "naam": "2.2 Impuls Programma (€ 12.500)",
-       "periode": "2025, bij succes 2026"
+       "naam": "2.2 Impuls Programma",
+       "periode": "2025 (bij succes herhaling in 2026)",
+       "omschrijving": "We steunen 5 ondernemingen met hun vraagstuk met het twee maanden durende Impuls Programma. Gedurende het programma werken deelnemers aan hun onderneming, waardoor alle opgedane inzichten direct in de praktijk worden gebracht. Deelnemers leren van succesvolle innovatieve impact ondernemers en entrepreneurs die laten zien dat impact maken en groei samen gaan. De geleerde lessen worden actief gedeeld in de community van circulaire pioniers (zie maatregel 4) en in het netwerk van VSNS.",
+       "dekking": "Extern traject ingekocht voor €12.500. Gefinancierd vanuit het project VSNS, mede mogelijk gemaakt door de Europese Unie (Kansen voor West III)."
       }
      ],
      "aan": "Pioniers die krachten bundelen, groeien in schaal en impact.\nVia de community ontstaan verbindingen met het reguliere bedrijfsleven."
@@ -713,7 +791,9 @@
       {
        "id": "BE-M3-A3-1",
        "naam": "3.1 Ondersteunen ondernemers met concrete hulpvraag",
-       "periode": "2025–2030"
+       "periode": "2025 - 2030",
+       "omschrijving": "Ondernemers die circulaire stappen willen zetten lopen tegen verschillende belemmeringen aan. Soms zijn deze belemmeringen zo concreet, dat we met de ondernemers kunnen meedenken. De afgelopen jaren hebben we verschillende ondernemers ondersteund met oplossingen, zoals het inventariseren van relevante wet- en regelgeving en ondersteuning in gesprekken met relevante organen. Komende jaren zullen we ondernemers, groot en klein, die circulair (willen) ondernemen met een concrete hulpvraag blijven ondersteunen. Doel daarbij is dat we bestaande circulaire initiatieven versterken en versnellen. Waar mogelijk nemen we de geleerde lessen mee, zodat andere ondernemers hier ook van kunnen leren (al dan niet via onze samenwerkingspartners).",
+       "dekking": "Regulier werkproces - gedekt uit interne uren (team Circulaire Stad)."
       }
      ],
      "aan": "Maatwerk lost concrete belemmeringen op.\nLessen uit individuele gevallen zijn overdraagbaar."
@@ -733,12 +813,16 @@
       {
        "id": "BE-M4-A4-1",
        "naam": "4.1 Ondernemers verbinden aan regionale netwerken",
-       "periode": "2025–2030"
+       "periode": "2025 - 2030",
+       "omschrijving": "Netwerken spelen een belangrijke rol in het versterken van circulair ondernemerschap. Binnen netwerken ontmoeten ondernemers elkaar, wisselen zij kennis uit en worden gezamenlijke initiatieven opgezet. We kunnen als gemeente ondernemers koppelen aan bestaande netwerken, zoals Duurzaam Netwerk Amersfoort (DNA). Ook zien we potentie in het verbinden van de circulaire pioniers en het MKB.",
+       "dekking": "Regulier werkproces - gedekt uit interne uren (team Circulaire Stad)."
       },
       {
        "id": "BE-M4-A4-2",
-       "naam": "4.2 Deelname Circulair Utrecht (€ 5.000 per jaar)",
-       "periode": "2025, verlenging bij succes"
+       "naam": "4.2 Deelname aan Circulair Utrecht",
+       "periode": "2025 (met verlenging bij succes)",
+       "omschrijving": "Circulair Utrecht is een vereniging vóór en dóór ondernemers met circulaire ambities. De vereniging is er voor bedrijven die al actief zijn in de circulaire economie, maar juist ook voor bedrijven die willen verduurzamen en nog zoeken naar de juiste kennis, partners of ondersteuning. Door bedrijven te bundelen in een vereniging ontstaat een herkenbaar, georganiseerd netwerk. Gemeenten en andere overheden kunnen via één aanspreekpunt in contact komen met het circulaire bedrijfsleven in de regio. Ondernemers delen via de vereniging hun ambities én belemmeringen, en werken samen aan concrete projecten, netwerkactiviteiten en delen kennis.",
+       "dekking": "Jaarlijkse bijdrage van €5.000 wordt betaald door afdeling Economie. Het eerste aanspreekpunt wordt gevormd door team CE, gedekt uit interne uren (team Circulaire Stad)."
       }
      ],
      "aan": "Netwerken leiden tot kennisuitwisseling en gezamenlijke initiatieven.\nPioniers en mkb versterken elkaar (circulaire kennis tegenover ondernemerschap)."
@@ -842,13 +926,17 @@
      "act": [
       {
        "id": "CG-M1-A1-1",
-       "naam": "1.1 Bewustwordingscampagne (€ 30.000 uit VSNS)",
-       "periode": "2027"
+       "naam": "1.1 Bewustwordingscampagne",
+       "periode": "2027 (afhankelijk van de oplevering van het nieuwe milieubrengstation)",
+       "omschrijving": "We zetten in op een communicatiestrategie die bewustwording vergroot en circulair gedrag stimuleert. We vertellen het juiste verhaal op het juiste moment tegen de juiste doelgroep. De verplaatsing van het milieubrengstation grijpen we aan als hét communicatiemoment om inwoners te stimuleren hun gedrag aan te passen.",
+       "dekking": "€30.000 gereserveerd vanuit het project VSNS, mede mogelijk gemaakt door de Europese Unie (Kansen voor West III)."
       },
       {
        "id": "CG-M1-A1-2",
-       "naam": "1.2 Aanvulling op trajecten van afdeling afval",
-       "periode": "2025–2030"
+       "naam": "1.2 Aanvulling trajecten van afdeling afval",
+       "periode": "2025 - 2030",
+       "omschrijving": "Op diverse manieren proberen we als gemeente gedragsverandering te creëren rondom (het voorkomen van) afval. We wijzen niet met de vinger, maar nodigen inwoners met een aantrekkelijke, positieve boodschap uit om circulaire alternatieven te proberen (bijvoorbeeld verpakkingsvrij en/of tweedehands winkelen of repareren). Daarbij maken we zoveel mogelijk de koppeling met andere voordelen van deze alternatieven, zoals eigen gezondheid, geld besparen, een schone stad en het stimuleren van de lokale economie. In het Afvalpreventieplan van team afval staan de volgende trajecten gepland: luiers, repareren (landelijke campagne), zero waste, herbruikbare verpakkingen en Amersfoort Afvalvrijdagen. Team Circulariteit haakt aan bij deze campagnes om samen meer impact te maken. We leggen hierbij o.a. de verbinding met circulaire makers/ondernemers. Zo wordt er jaarlijks invulling gegeven aan de Week van de Circulaire economie, bijvoorbeeld middels een makersroute.",
+       "dekking": "Regulier werkproces - gedekt uit interne uren (team Circulaire Stad)."
       }
      ],
      "aan": "Bewustwording is de eerste stap naar gedragsverandering.\nKoppeling aan eigen voordeel (portemonnee, gezondheid, schone stad) maakt de boodschap effectiever."
@@ -867,8 +955,10 @@
      "act": [
       {
        "id": "CG-M2-A2-1",
-       "naam": "2.1 Pilots digital kiosks (EU-financiering)",
-       "periode": "2025–2026"
+       "naam": "2.1 Pilots Digital Kiosks",
+       "periode": "2025 en 2026",
+       "omschrijving": "Digital Kiosks zijn elektrisch te vergrendelen deelkasten. Deze deelkasten bieden een oplossing om het delen van producten eenvoudiger te maken. Ze verminderen de noodzaak om onnodige apparatuur aan te schaffen. In Amersfoort gaan we met ten minste twee pilotlocaties testen of en hoe een deelkast kan bijdragen aan het stimuleren van de deeleconomie. Zo leren we welke producten, locaties en doelgroepen hier geschikt voor zijn en welke rol we als gemeente hierin kunnen nemen. Naast twee pilots in Amersfoort, worden er ook in zeven andere Europese steden pilots gedaan en wisselen we onderling kennis uit.",
+       "dekking": "Dit project wordt gefinancierd door de Europese Unie (Interreg North Sea). Rol van projectleider wordt gedekt uit interne uren (team Circulaire Stad)."
       }
      ],
      "aan": "Delen wordt vaker gekozen als het makkelijk is, en vermindert de aanschaf van nieuwe apparaten.\nDit is een leermaatregel: het effect is vooral kennis."
@@ -887,13 +977,17 @@
      "act": [
       {
        "id": "CG-M3-A3-1",
-       "naam": "3.1 Bouw toekomstbestendig milieubrengstation (VSNS)",
-       "periode": "2026–2027"
+       "naam": "3.1 Bouw toekomstbestendig milieubrengstation",
+       "periode": "2026 en 2027",
+       "omschrijving": "We creëren een plek voor de hoogwaardigere verwerking van consumptiegoederen op het milieubrengstation van de ROVA. Er is een apart innamepunt voor herbruikbare goederen en er is meer ruimte voor (voor) sorteren, demontage en opslag.",
+       "dekking": "Gefinancierd vanuit het project VSNS, mede mogelijk gemaakt door de Europese Unie (Kansen voor West III). Daarnaast draagt de gemeente €12.000 per jaar bij voor de afschrijving van een deel van de investeringen."
       },
       {
        "id": "CG-M3-A3-2",
        "naam": "3.2 Aanbesteding exploitant innamepunt",
-       "periode": "2025–2026"
+       "periode": "2025 en 2026",
+       "omschrijving": "Voor de extra activiteiten voor (voor-)sorteren, demontage en opslag zoekt de ROVA een externe partij op het nieuwe milieubrengstation. Deze partij wordt waarschijnlijk via een aanbesteding gevonden, die door de ROVA samen met de gemeente Amersfoort opgezet wordt. In deze activiteit wordt t.b.v. de aanbesteding de exploitatie uitgewerkt o.a. voor het inzetten van vermeden kosten voor afvalverbranding voor personeel voor extra sortering en demontage. Daarnaast wordt onderzocht hoe de monitoring en financiële afrekening moet worden opgenomen in de aanbesteding.",
+       "dekking": "Gefinancierd vanuit het project VSNS, mede mogelijk gemaakt door de Europese Unie (Kansen voor West III). Betrokkenheid aanbesteding wordt gedekt door team CE (adviseur circulaire consumptiegoederen en adviseur circulair inkopen)."
       }
      ],
      "aan": "Een apart innamepunt en meer ruimte voor sorteren en demontage halen herbruikbare producten eruit voordat ze in de recycling verdwijnen.\nInwoners leveren spullen op de nieuwe manier in."
@@ -912,8 +1006,10 @@
      "act": [
       {
        "id": "CG-M4-A4-1",
-       "naam": "4.1 Grondstoffenregisseur (VSNS)",
-       "periode": "2025–2026"
+       "naam": "4.1 Grondstoffenregisseur",
+       "periode": "2025 en 2026",
+       "omschrijving": "We onderzoeken kansen om ketens op te zetten, zodat producten die binnenkomen op het milieubrengstation hoogwaardiger kunnen worden verwerkt. Daarbij onderzoeken we de meest hoogwaardige manier van hergebruik; eerst ligt de focus op hergebruik en reparatie en daarna op demontage of recycling. Middels pilots leren we welke stromen een positieve (maatschappelijke) business case hebben. Voor de stromen waarvoor een business case bestaat, zorgen we dat we fysieke ruimte reserveren op het nieuwe milieubrengstation, zodat ze hoogwaardiger kunnen worden hergebruikt.",
+       "dekking": "Gefinancierd vanuit het project VSNS, mede mogelijk gemaakt door de Europese Unie (Kansen voor West III)."
       }
      ],
      "aan": "Voor een deel van de stromen (e-waste, hout, meubels) is een positieve maatschappelijke business case te vinden.\nAfnemers voor secundaire grondstoffen zijn beschikbaar."
@@ -932,8 +1028,10 @@
      "act": [
       {
        "id": "CG-M5-A5-1",
-       "naam": "5.1 Lessen van pilots implementeren (VSNS)",
-       "periode": "2025–2027"
+       "naam": "5.1 Lessen van pilots implementeren",
+       "periode": "2025 - 2027",
+       "omschrijving": "Aan de hand van de pilots binnen het project ‘Van stort naar start’ maken we kansen inzichtelijk om de inzameling van ‘afval’ te verbeteren. Ook kunnen we inwoners stimuleren om producten niet weg te gooien middels interventies.",
+       "dekking": "Gefinancierd vanuit het project VSNS, mede mogelijk gemaakt door de Europese Unie (Kansen voor West III)."
       }
      ],
      "aan": "Lessen uit de VSNS-pilots zijn breder toe te passen.\nInwoners zijn te stimuleren producten niet weg te gooien."
@@ -944,7 +1042,7 @@
    "id": "rv",
    "naam": "Randvoorwaarden",
    "invloed": "—",
-   "transitiedoel": "Geen eigen doelen: dit zijn de voorwaarden om de andere programmalijnen uit te kunnen voeren (ruimte, digitalisering, kennis en gedrag). De maatregelen dragen bij aan subdoelen van andere lijnen.",
+   "transitiedoel": "Geen eigen doelen: dit zijn de voorwaarden om de andere programmalijnen uit te kunnen voeren (ruimte, digitalisering, kennis en gedrag).",
    "fase": "Doorsnijdend",
    "sub": [],
    "mt": [
@@ -953,11 +1051,7 @@
      "k": "1",
      "t": "Inrichting grondstoffendepot",
      "rol": "Regulerend",
-     "sub": [
-      "OI-S1",
-      "OI-S2",
-      "OI-S3"
-     ],
+     "sub": [],
      "res": "Er is een grondstoffendepot voor de dominante vrijkomende materialen uit de openbare ruimte, met tools om ze te koppelen aan de projectprogrammering.",
      "term": "Direct tot lange termijn",
      "imp": "z",
@@ -965,45 +1059,55 @@
       {
        "id": "RV-M1-A1-1",
        "naam": "1.1 Onderzoek inrichting grondstoffendepot",
-       "periode": "2025–2030"
+       "periode": "2025 - 2030",
+       "omschrijving": "De transitie naar een circulaire economie vraag om een (of meerdere) locaties in te richten als grondstoffendepot, waarop Amersfoort haar eigen vrijkomende materialen kan opslaan ten behoeve van hergebruik (voorbeelden: Utrecht Trechterwijde en het circulaire materialendepot van de gemeente Apeldoorn). Daar slaan we de meest ‘relevante’ grondstoffen en materialen op. Hiermee wordt bedoeld grondstoffen die een hoge milieu impact hebben en een resterende levensduur hebben, waardoor inzet op een andere locatie direct de aanschaf van nieuwe primaire materialen reduceert. Daarnaast wordt onderzocht welke proces- en beleidsaanpassingen nodig zijn om vrijkomende materialen op te slaan en her te gebruiken.",
+       "dekking": "Regulier werkproces - gedekt uit interne uren (team Circulaire Stad) i.s.m. met de afdeling Leefomgeving en Vastgoed."
       },
       {
        "id": "RV-M1-A1-2",
-       "naam": "1.2 Digitale ondersteuning gebruik depot",
-       "periode": "2025–2030"
+       "naam": "1.2 Digitale ondersteuning gebruik grondstoffendepot",
+       "periode": "2025 - 2030",
+       "omschrijving": "We onderzoeken de kansen en mogelijkheden die digitale hulpmiddelen ons kunnen bieden bij het verkrijgen van inzicht in vrijkomende materialen- en grondstoffen. Wanneer we deze weten te koppelen aan de programmering van projecten wordt de mogelijkheid materialen te hergebruiken vergroot. Daarbij wordt onderzocht welke (financiële) mogelijkheden de samenwerking met Earth Valley en DIGI-C bieden.",
+       "dekking": "Regulier werkproces - gedekt uit interne uren (team Circulaire Stad)."
       }
      ],
-     "aan": "Materialen vallen niet langer aan de aannemer toe maar komen beschikbaar voor hergebruik.\nVrijkomende materialen en projectplanning zijn op tijd op elkaar af te stemmen."
+     "aan": "Materialen vallen niet langer aan de aannemer toe maar komen beschikbaar voor hergebruik.\nVrijkomende materialen en projectplanning zijn op tijd op elkaar af te stemmen.",
+     "randvoorwaarde": true
     },
     {
      "id": "RV-M2",
      "k": "2",
      "t": "Samenwerken en ruimte reserveren",
      "rol": "Richtinggevend",
-     "sub": [
-      "BE-S1"
-     ],
+     "sub": [],
      "res": "Aanbevelingen (CE Delft, ‘Ruimte voor CE’) zijn waar mogelijk opgenomen in omgevingsplannen en -programma’s en ontwikkelkaders. Het kavel bij het nieuwe milieubrengstation (Wieken-Vinkenhoef) is gereserveerd voor circulaire bedrijvigheid (amendement).",
      "term": "Direct tot lange termijn",
      "imp": "a",
      "act": [
       {
        "id": "RV-M2-A2-1",
-       "naam": "2.1 Verkenning regionaal bedrijventerrein",
-       "periode": "2025–2030"
+       "naam": "2.1 Verkenning van regionaal bedrijventerrein",
+       "periode": "2025 - 2030",
+       "omschrijving": "“Het realiseren van een nieuw regionaal bedrijventerrein is van groot belang voor de mogelijkheid om passende ruimte te kunnen bieden aan de additionele vraag vanuit de verschillende grote transities.” (Strategie bedrijventerreinen regio Amersfoort, Stec Group 2024). Ook het rapport van CE Delft (2025) onderschrijft dit (bijlage 8 omgevingsprogramma Circulair Stad). In samenwerking met de provincie en omliggende gemeenten blijven we zoeken naar een locatie voor een regionaal circulair bedrijventerrein. Gelijktijdig wordt gezocht naar mogelijkheden om de huidige bedrijventerreinen te intensiveren, waarbij wordt onderzocht op welke wijze bedrijventerrein met een hoge milieucategorisering kunnen worden beschermd.",
+       "dekking": "Regulier werkproces - gedekt uit interne uren (team Economie. Vanuit team Economie is voor de programmalijn Circulaire bedrijvigheid 8 uur per week gereserveerd)."
       },
       {
        "id": "RV-M2-A2-2",
        "naam": "2.2 Trends en ontwikkelingen bij Amersfoortse bedrijven",
-       "periode": "2025–2030"
+       "periode": "2025 - 2030",
+       "omschrijving": "Omdat het vooralsnog niet gelukt is om ruimte te vinden voor een nieuw regionaal bedrijventerrein, zal ook gekeken moeten worden naar alternatieven. Hoe kunnen we omgaan met het beter benutten van bestaande bedrijventerreinen? Welke additionele ruimtevraag ontstaat (al dan niet tijdelijk) als bestaande bedrijfsprocessen meer circulair worden ingericht? Met een representatieve steekproef bij Amersfoortse bedrijven halen we bepaalde trends, ontwikkelingen en verwachtingen op die mogelijk een impact hebben op de ruimte die bedrijven nodig zullen hebben wanneer ze circulair worden of circulaire activiteiten ontwikkelen.",
+       "dekking": "Regulier werkproces - gedekt uit interne uren (team Circulaire Stad en team Economie. Vanuit team Economie is voor de programmalijn Circulaire bedrijvigheid 8 uur per week gereserveerd)."
       },
       {
        "id": "RV-M2-A2-3",
        "naam": "2.3 Verkennen circulariteit in Bovenduist",
-       "periode": "2025–2030"
+       "periode": "2025 - 2030",
+       "omschrijving": "De nog uit te geven 11 hectare - genoemd in het onderzoek van CE Delft - bestaat voornamelijk uit Bovenduist (10ha). De maximale milieucategorie zal daar 3.1 worden, vanwege de naastliggende woonwijk. Bovendien voldoet Bovenduist niet aan de ontsluitingseisen en is waarschijnlijk niet geschikt voor zwaar vervoer. Er zal verkend moeten worden wat er wel mogelijk is aan circulaire activiteiten op dit nieuw te ontwikkelen bedrijventerrein, om te voorkomen dat ook deze ruimte vergeven is en er in Amersfoort geen ruimte meer te vergeven is voor circulaire activiteiten. Het rapport en de aanbevelingen van het CE Delft onderzoek worden ingebracht in Project Bovenduist. Verkend wordt in hoeverre ruimte voor circulaire economie kan worden meegenomen in het ontwikkelkader voor het bedrijventerrein en de ontwikkelstrategie.",
+       "dekking": "Regulier werkproces - gedekt uit interne uren (team Economie. Vanuit team Economie is voor de programmalijn Circulaire bedrijvigheid 8 uur per week gereserveerd)."
       }
      ],
-     "aan": "Zonder reservering is de ruimte later niet meer beschikbaar (tot 2050 is 0–22 ha extra nodig; uitgeefbaar is nu 11 ha).\nProvincie en buurgemeenten willen samen ruimte vinden."
+     "aan": "Zonder reservering is de ruimte later niet meer beschikbaar (tot 2050 is 0–22 ha extra nodig; uitgeefbaar is nu 11 ha).\nProvincie en buurgemeenten willen samen ruimte vinden.",
+     "randvoorwaarde": true
     }
    ]
   }
@@ -1015,7 +1119,7 @@
   ],
   [
    "Bouw: verwijzingen naar subdoelen zijn grof",
-   "Maatregelen verwijzen naar “1, 2 en 3” terwijl er subdoelen 2a, 2b, 3a en 3b zijn. Hier heb ik “2” gelezen als 2a+2b en “3” als 3a+3b; die lijnen zijn gestippeld. Maatregel 2 noemt “Indirect” en geen subdoel; die is aan het transitiedoel gekoppeld. Maatregel 4 (secundaire materialen) noemt 1 en 3, maar niet 2 (woningbouw)."
+   "Maatregelen verwijzen naar “1, 2 en 3” terwijl er subdoelen 2a, 2b, 3a en 3b zijn; “2” betekent hier 2a en 2b, “3” betekent 3a en 3b. Maatregel 2 noemt “Indirect” en geen subdoel; die is indirect aan het transitiedoel gekoppeld. Maatregel 4 (secundaire materialen) noemt 1 en 3, maar niet 2 (woningbouw)."
   ],
   [
    "Bouw: 2a/2b en 3a/3b zijn in de tekst omgewisseld",
@@ -1039,7 +1143,7 @@
   ],
   [
    "Randvoorwaarden hebben geen indicatoren",
-   "Voor het grondstoffendepot en de ruimtereservering zijn de mijlpalen (depot ingericht, hectares gereserveerd) eenvoudig als indicator te volgen."
+   "De randvoorwaarden zijn niet direct aan subdoelen gekoppeld. Voor het grondstoffendepot en de ruimtereservering zijn mijlpalen (depot ingericht, hectares gereserveerd) wel eenvoudig als voortgang te volgen, bijvoorbeeld via de stand van uitvoering per activiteit."
   ],
   [
    "Aannames staan niet in het programma",

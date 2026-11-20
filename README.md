@@ -5,7 +5,8 @@ Een kleine webapp om het Omgevingsprogramma Circulaire Stad te monitoren. Per pr
 Wat je in de app kunt invullen:
 
 - **Per activiteit uit het uitvoeringsprogramma:** aannames, stand van uitvoering, evaluatie en bijdrage aan de maatregel.
-- **Per maatregel als geheel:** aannames (waarom leidt de maatregel tot de subdoelen), stand, evaluatie en bijdrage en effect.
+- **Per maatregel als geheel:** evaluatie en bijdrage en effect.
+- Bij elke activiteit staan ook de omschrijving en de dekking uit het uitvoeringsprogramma.
 - **Per subdoel:** indicatoren toevoegen en bewerken, en een duiding van de voortgang. Een indicator kan categorieën hebben, bijvoorbeeld banen per R-strategie of weggooigedrag per productgroep. Per periode vul je dan een waarde per categorie in. Tellen de categorieën op tot een totaal, dan toont de app gestapelde staven met het totaal; anders gegroepeerde staven of lijnen. Een doellijn kan als stippellijn in de grafiek.
 - **Historie:** elke wijziging wordt met tijd en naam vastgelegd.
 - **Export:** de knoppen onderaan downloaden alles als Excel (een tabblad per onderdeel) of als JSON.
@@ -85,10 +86,11 @@ Velden per maatregel in `model.json`:
 
 | Veld | Betekenis |
 |---|---|
-| `sub` | Subdoelen waaraan de maatregel bijdraagt. Een `*` achter het id betekent: afgeleide koppeling, getoond als stippellijn. |
-| `viaDoel` | `true` als de maatregel alleen aan het transitiedoel is gekoppeld |
+| `sub` | Subdoelen waaraan de maatregel bijdraagt |
+| `randvoorwaarde` | `true` voor maatregelen zonder koppeling met subdoelen |
+| `viaDoel` | `true` als de maatregel alleen indirect aan het transitiedoel is gekoppeld (stippellijn) |
 | `imp` | Verwachte impact: `z` = zeer veel, `a` = aanzienlijk, `b` = beperkt |
-| `act` | Activiteiten als `{ "id": "BG-M3-A3-1", "naam": "...", "periode": "2025–2026" }`. Het id koppelt de invoer per activiteit; houd het gelijk. |
+| `act` | Activiteiten als `{ "id": "BG-M3-A3-1", "naam": "...", "periode": "...", "omschrijving": "...", "dekking": "..." }`. Het id koppelt de invoer per activiteit; houd het gelijk. |
 | `aan` | Standaardtekst voor de aannames, zolang niemand die heeft aangepast |
 
 Indicatoren en metingen beheer je in de app zelf. De `ind`-blokken in `model.json` worden alleen bij de allereerste start gebruikt.

@@ -131,6 +131,13 @@ details.actd>summary [data-ast]{grid-column:1/-1}
 details.actd>summary [data-ast]:empty{display:none}
 details.actd .ab{padding:0 0 12px 14px;border-left:2px solid var(--rule);margin-left:4px}
 details.actd .ab label:first-child{margin-top:4px}
+details.omsch{margin:4px 0 6px}
+details.omsch summary{color:var(--acc);font-size:14px}
+details.omsch p{font-size:15px;margin:6px 0 0}
+ul.mlist{list-style:none;padding:0;margin:0}
+ul.mlist li{margin:0}
+button.mlink{text-align:left;padding:4px 0;min-height:32px;font-size:15px;line-height:1.35}
+button.mlink:hover{text-decoration:underline}
 dialog{border:1px solid var(--rule);border-radius:8px;background:var(--bg);color:var(--ink);padding:20px 22px;width:min(860px,calc(100vw - 24px));max-height:calc(100vh - 32px)}
 dialog::backdrop{background:rgba(0,0,0,.35)}
 dialog h2{margin-bottom:4px}
@@ -154,7 +161,7 @@ button.del{color:var(--bad)}
 <h1 id="titel">Monitoring Omgevingsprogramma Circulaire Stad</h1>
 <div class="who"><label for="naam" style="margin:0;font-weight:400">Je naam</label><input id="naam" autocomplete="name" placeholder="voor de historie"></div>
 </div>
-<p class="lead">Het Omgevingsprogramma Circulaire Stad als keten van activiteiten, maatregelen, subdoelen en transitiedoel. Kies een maatregel om aannames, uitvoering en effect bij te houden. Kies een subdoel om de indicatoren en metingen in te vullen.</p>
+<p class="lead">Het Omgevingsprogramma Circulaire Stad als keten van activiteiten, maatregelen, subdoelen en transitiedoel. Kies een maatregel om per activiteit aannames, uitvoering, evaluatie en bijdrage bij te houden. Kies een subdoel om de indicatoren en metingen in te vullen.</p>
 <div class="goal" id="goal"></div>
 </header>
 <nav id="nav"></nav>
@@ -288,6 +295,7 @@ function goal(){$('goal').innerHTML=`<span><b>Hoofddoel 2050</b> ${esc(M.hoofddo
 function histBlock(item){return `<details data-hist="${item}"><summary>Historie van wijzigingen</summary><ul class="hist" style="padding-left:18px"><li>Laden…</li></ul></details>`}
 async function loadHist(d){try{const r=await api('GET','/api/historie?item='+encodeURIComponent(d.dataset.hist));d.querySelector('ul').innerHTML=r.length?r.map(h=>`<li>${fmt(h.t)} · <b>${esc(h.door||'onbekend')}</b> · ${esc(h.actie)} ${esc(String(h.item).split('/').slice(1).join('/'))}${typeof h.waarde==='string'&&h.waarde?`: ${esc(h.waarde.length>140?h.waarde.slice(0,140)+'…':h.waarde)}`:''}</li>`).join(''):'<li>Nog geen wijzigingen.</li>'}catch(e){d.querySelector('ul').innerHTML='<li class="err">Historie niet beschikbaar.</li>'}}
 function actHtml(a){return `<details class="actd" data-aid="${a.id}"${openActs.has(a.id)?' open':''}><summary><span class="an">${esc(a.naam)}</span><span class="ap">${esc(a.periode)}</span><span data-ast="${a.id}">${badge(a.id)}</span></summary><div class="ab">
+${a.omschrijving?`<details class="omsch"><summary>Omschrijving uit het uitvoeringsprogramma</summary><p>${esc(a.omschrijving)}</p></details>`:''}${a.dekking?`<p class="note"><b>Dekking en uitvoering:</b> ${esc(a.dekking)}</p>`:''}
 ${field(a.id,'aannames','Aannames','waarom draagt deze activiteit bij aan de maatregel?')}
 ${statusSel(a.id,'Stand van uitvoering')}
 ${field(a.id,'evaluatie','Evaluatie','wat is er gebeurd?')}
@@ -297,16 +305,14 @@ function detail(){
 const l=lijn(),box=$('det');if(!box)return;
 if(!sel){box.innerHTML=`<p class="empty">Kies een maatregel of subdoel.</p><h3>Fase van de transitie</h3><p>${esc(l.fase)}</p><h3>Invloed van de gemeente</h3><p>${esc(l.invloed)}</p>`;return}
 const m=l.mt.find(x=>x.id===sel);
-if(m){box.innerHTML=`<h2>${m.k}. ${esc(m.t)}</h2><dl><dt>Rol</dt><dd>${esc(m.rol)}</dd><dt>Verwacht resultaat</dt><dd>${esc(m.res)}</dd><dt>Termijn</dt><dd>${esc(m.term)}</dd><dt>Verwachte impact</dt><dd><span class="dots">${IMP[m.imp][0]}</span> ${IMP[m.imp][1]}</dd><dt>Draagt bij aan</dt><dd>${m.viaDoel?'Transitiedoel (geen subdoel genoemd)':m.sub.map(clean).map(s=>`${allSub[s].lijn===l.naam?'':esc(allSub[s].lijn)+' '}subdoel ${allSub[s].k}`).join(', ')}</dd></dl>
+if(m){box.innerHTML=`<h2>${m.k}. ${esc(m.t)}</h2><dl><dt>Rol</dt><dd>${esc(m.rol)}</dd><dt>Verwacht resultaat</dt><dd>${esc(m.res)}</dd><dt>Termijn</dt><dd>${esc(m.term)}</dd><dt>Verwachte impact</dt><dd><span class="dots">${IMP[m.imp][0]}</span> ${IMP[m.imp][1]}</dd><dt>Draagt bij aan</dt><dd>${m.randvoorwaarde?'Geen directe koppeling met subdoelen: voorwaarde voor de andere programmalijnen':m.viaDoel?'Indirect aan het transitiedoel (geen subdoel genoemd)':m.sub.map(clean).map(s=>`${allSub[s].lijn===l.naam?'':esc(allSub[s].lijn)+' '}subdoel ${allSub[s].k}`).join(', ')}</dd></dl>
 <h3>Activiteiten (uitvoeringsprogramma)</h3><p class="note" style="margin-top:-2px">Klik op een activiteit om aannames, uitvoering, evaluatie en bijdrage in te vullen.</p><div class="acts">${m.act.map(actHtml).join('')}</div>
 <h3>Maatregel als geheel</h3>
-${field(m.id,'aannames','Aannames','waarom leidt deze maatregel tot de subdoelen?',m.aan)}
-${statusSel(m.id,'Stand van uitvoering')}
 ${field(m.id,'evaluatie','Evaluatie','wat is er gebeurd?')}
 ${field(m.id,'effect','Bijdrage en effect','wat heeft het opgeleverd voor de subdoelen, en klopten de aannames?')}
 <p class="note" id="upd-${m.id}">${updLine(DATA.notities[m.id])}</p>${histBlock(m.id)}`;grow();return}
 const s=allSub[sel];const ms=M.lijnen.flatMap(x=>x.mt).filter(x=>x.sub.map(clean).includes(sel));const inds=indsOf(sel);
-box.innerHTML=`<h2>Subdoel ${s.k}</h2><p>${esc(s.t)}</p><h3>Maatregelen die bijdragen</h3><p>${ms.length?ms.map(x=>`${x.id.startsWith('RV')?'Randvoorwaarde ':'Maatregel '}${x.k}. ${esc(x.t)}`).join('<br>'):'Geen maatregel gekoppeld.'}</p>
+box.innerHTML=`<h2>Subdoel ${s.k}</h2><p>${esc(s.t)}</p><h3>Maatregelen die bijdragen</h3>${ms.length?`<ul class="mlist">${ms.map(x=>`<li><button type="button" class="l mlink" data-goto="${x.id}">Maatregel ${x.k}. ${esc(x.t)}</button></li>`).join('')}</ul>`:'<p>Geen maatregel gekoppeld.</p>'}
 <h3>Indicatoren</h3>${inds.map(indHtml).join('')||'<p class="note">Nog geen indicatoren.</p>'}
 <div class="btns"><button class="b" type="button" data-a="aind">Indicator toevoegen</button></div>
 ${field(s.id,'toelichting','Duiding','wat zeggen de indicatoren over de voortgang?')}<p class="note" id="upd-${s.id}">${updLine(DATA.notities[s.id])}</p>${histBlock(s.id)}`;grow();drawCharts()}
@@ -333,8 +339,8 @@ const l=lijn();
 const subCol=l.sub.length?l.sub.map(s=>`<button type="button" class="card" data-s="${s.id}"><span class="n">Subdoel ${s.k}</span><span class="t">${esc(s.t)}</span><span class="chips" data-chips="${s.id}"></span></button>`).join(''):[...new Set(l.mt.flatMap(m=>m.sub))].map(sid=>{const s=allSub[sid];return `<button type="button" class="card" data-s="${sid}"><span class="n">${esc(s.lijn)}, subdoel ${s.k}</span><span class="t">${esc(s.t)}</span></button>`}).join('');
 main.innerHTML=`<div class="tdoel"><h2>Transitiedoel</h2><p>${esc(l.transitiedoel)}</p><p class="fase">Fase: ${esc(l.fase)}. Invloed van de gemeente: ${esc(l.invloed)}.</p></div>
 <div class="board"><svg aria-hidden="true"></svg>
-<div class="col"><h3>Maatregelen</h3>${l.mt.map(m=>`<button type="button" class="card" data-m="${m.id}"><span class="n">Maatregel ${m.k}</span><span class="t">${esc(m.t)}</span><span class="meta"><span><span class="dots">${IMP[m.imp][0]}</span> ${IMP[m.imp][1]}</span><span data-st="${m.id}"></span></span><span class="meta" data-acts="${m.id}"></span><span class="mob meta">Draagt bij aan: ${m.viaDoel?'transitiedoel':m.sub.map(s=>allSub[clean(s)].k).join(', ')}</span></button>`).join('')}</div>
-<div class="col"><h3>${l.sub.length?'Subdoelen en indicatoren':'Subdoelen van andere lijnen'}</h3>${l.mt.some(m=>m.viaDoel)?`<div class="card tdk" style="cursor:default"><span class="n">Transitiedoel</span><span class="t">Direct, zonder subdoel</span></div>`:''}${subCol}</div>
+<div class="col"><h3>Maatregelen</h3>${l.mt.map(m=>`<button type="button" class="card" data-m="${m.id}"><span class="n">Maatregel ${m.k}</span><span class="t">${esc(m.t)}</span><span class="meta"><span><span class="dots">${IMP[m.imp][0]}</span> ${IMP[m.imp][1]}</span></span><span class="meta" data-acts="${m.id}"></span>${m.randvoorwaarde?'':`<span class="mob meta">Draagt bij aan: ${m.viaDoel?'transitiedoel (indirect)':m.sub.map(s=>allSub[clean(s)].k).join(', ')}</span>`}</button>`).join('')}</div>
+<div class="col"><h3>${l.sub.length?'Subdoelen en indicatoren':'Subdoelen'}</h3>${!l.sub.length&&!subCol?'<p class="note">De randvoorwaarden zijn niet direct aan subdoelen gekoppeld. Ze maken de uitvoering van de andere programmalijnen mogelijk.</p>':''}${l.mt.some(m=>m.viaDoel)?`<div class="card tdk" style="cursor:default"><span class="n">Transitiedoel</span><span class="t">Indirect, zonder subdoel</span></div>`:''}${subCol}</div>
 <aside class="detail" id="det" aria-live="polite"></aside></div>`;
 cardStatus();chips();
 ro=new ResizeObserver(()=>{lines();drawCharts()});ro.observe(main.querySelector('.board'));mark()}
@@ -344,6 +350,7 @@ const main=$('main');
 main.addEventListener('click',e=>{
 const c=e.target.closest('.card[data-m],.card[data-s]');
 if(c){const id=c.dataset.m||c.dataset.s;sel=sel===id?null:id;mark();if(sel&&innerWidth<900)$('det').scrollIntoView({block:'start'});return}
+const g=e.target.closest('[data-goto]');if(g){sel=g.dataset.goto;mark();const c=document.querySelector(`.card[data-m="${sel}"]`);(innerWidth<900?$('det'):c||$('det')).scrollIntoView({block:'start',behavior:'smooth'});return}
 const b=e.target.closest('button[data-a]');if(!b)return;const a=b.dataset.a;
 if(a==='eind'){openDlg(DATA.indicatoren[b.closest('[data-ind]').dataset.ind]);return}
 if(a==='aind'){openDlg(null);return}});
@@ -356,9 +363,9 @@ window.addEventListener('beforeunload',e=>{if(busy()){Object.keys(pend).forEach(
 // ---------- export ----------
 function rows(){const sub=[],mt=[],act=[],ind=[],met=[],kop=[];const N=id=>DATA.notities[id]||{};
 M.lijnen.forEach(l=>{l.sub.forEach(s=>sub.push({Programmalijn:l.naam,Id:s.id,Subdoel:s.k,Omschrijving:s.t,Duiding:note(s.id,'toelichting'),Bijgewerkt:fmt(N(s.id).bijgewerkt),Door:N(s.id).door||''}));
-l.mt.forEach(m=>{mt.push({Programmalijn:l.naam,Id:m.id,Maatregel:m.k,Naam:m.t,Rol:m.rol,'Verwacht resultaat':m.res,Termijn:m.term,'Verwachte impact':IMP[m.imp][1],'Draagt bij aan':m.viaDoel?'transitiedoel':m.sub.map(clean).join(', '),Aannames:note(m.id,'aannames',m.aan),Status:note(m.id,'status'),Evaluatie:note(m.id,'evaluatie'),'Bijdrage en effect':note(m.id,'effect'),Bijgewerkt:fmt(N(m.id).bijgewerkt),Door:N(m.id).door||''});
-(m.viaDoel?[['transitiedoel '+l.id,false]]:m.sub.map(s=>[clean(s),s.includes('*')])).forEach(([s,af])=>kop.push({Maatregel:m.id,Subdoel:s,Koppeling:af?'afgeleid':'uit programma'}));
-m.act.forEach(a=>act.push({Programmalijn:l.naam,Maatregel:m.id,Id:a.id,Activiteit:a.naam,Periode:a.periode,Aannames:note(a.id,'aannames'),Status:note(a.id,'status'),Evaluatie:note(a.id,'evaluatie'),Bijdrage:note(a.id,'effect'),Bijgewerkt:fmt(N(a.id).bijgewerkt),Door:N(a.id).door||''}))})});
+l.mt.forEach(m=>{mt.push({Programmalijn:l.naam,Id:m.id,Maatregel:m.k,Naam:m.t,Rol:m.rol,'Verwacht resultaat':m.res,Termijn:m.term,'Verwachte impact':IMP[m.imp][1],'Draagt bij aan':m.randvoorwaarde?'randvoorwaarde':m.viaDoel?'transitiedoel (indirect)':m.sub.map(clean).join(', '),Evaluatie:note(m.id,'evaluatie'),'Bijdrage en effect':note(m.id,'effect'),Bijgewerkt:fmt(N(m.id).bijgewerkt),Door:N(m.id).door||''});
+(m.viaDoel?[['transitiedoel '+l.id,'indirect']]:m.sub.map(s=>[clean(s),'direct'])).forEach(([s,k])=>kop.push({Maatregel:m.id,Subdoel:s,Koppeling:k}));
+m.act.forEach(a=>act.push({Programmalijn:l.naam,Maatregel:m.id,Id:a.id,Activiteit:a.naam,Periode:a.periode,Omschrijving:a.omschrijving||'','Dekking en uitvoering':a.dekking||'',Aannames:note(a.id,'aannames'),Status:note(a.id,'status'),Evaluatie:note(a.id,'evaluatie'),Bijdrage:note(a.id,'effect'),Bijgewerkt:fmt(N(a.id).bijgewerkt),Door:N(a.id).door||''}))})});
 Object.values(DATA.indicatoren).sort((a,b)=>(a.nr||0)-(b.nr||0)).forEach(i=>{ind.push({Id:i.id,Subdoel:i.subdoel,Naam:i.naam,Status:i.status,Eenheid:i.eenheid,Categorieën:(i.categorieen||[]).join('; '),Optelbaar:i.optelbaar?'ja':'nee',Streefwaarde:i.streefwaarde,Doellijn:i.doel,Bron:i.bron,Toelichting:i.toelichting,Bijgewerkt:fmt(i.bijgewerkt),Door:i.door||''});
 series(i).forEach(r=>keysOf(i).forEach(k=>met.push({Indicator:i.id,Naam:i.naam,Periode:r.periode,Categorie:k||'',Waarde:r.waarden?.[k]??null,Eenheid:i.eenheid,Toelichting:r.toelichting})))});
 return {Maatregelen:mt,Activiteiten:act,Subdoelen:sub,Koppelingen:kop,Indicatoren:ind,Metingen:met,Aandachtspunten:M.aandacht.map(a=>({Punt:a[0],Toelichting:a[1]}))}}
