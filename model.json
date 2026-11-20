@@ -107,18 +107,21 @@
      "term": "Direct tot lange termijn",
      "imp": "z",
      "act": [
-      [
-       "1.1 Goed voorbeeld doet goed volgen",
-       "2025–2030"
-      ],
-      [
-       "1.2 Kennisdeling en trainingen",
-       "2025–2030"
-      ],
-      [
-       "1.3 Circulaire gronduitgifte",
-       "2025–2030"
-      ]
+      {
+       "id": "OI-M1-A1-1",
+       "naam": "1.1 Goed voorbeeld doet goed volgen",
+       "periode": "2025–2030"
+      },
+      {
+       "id": "OI-M1-A1-2",
+       "naam": "1.2 Kennisdeling en trainingen",
+       "periode": "2025–2030"
+      },
+      {
+       "id": "OI-M1-A1-3",
+       "naam": "1.3 Circulaire gronduitgifte",
+       "periode": "2025–2030"
+      }
      ],
      "aan": "Als circulariteit in het HIOR en in opdrachtformulering het uitgangspunt is, kiezen projectleiders en inkopers vaker de circulaire variant.\nMeer kennis en urgentie leidt ook buiten de openbare ruimte tot andere inkoopkeuzes.\nCirculaire keuzes zijn vaak ook financieel aantrekkelijk (zo stelt het programma)."
     },
@@ -136,14 +139,16 @@
      "term": "Direct tot lange termijn",
      "imp": "z",
      "act": [
-      [
-       "2.1 Samen leren met verbonden partijen",
-       "vanaf 2027"
-      ],
-      [
-       "2.2 Circulaire principes bij ontwikkeling, beheer en onderhoud",
-       "vanaf 2025"
-      ]
+      {
+       "id": "OI-M2-A2-1",
+       "naam": "2.1 Samen leren met verbonden partijen",
+       "periode": "vanaf 2027"
+      },
+      {
+       "id": "OI-M2-A2-2",
+       "naam": "2.2 Circulaire principes bij ontwikkeling, beheer en onderhoud",
+       "periode": "vanaf 2025"
+      }
      ],
      "aan": "Als opdrachtgever en bij verbonden partijen heeft de gemeente genoeg invloed om keuzes te sturen.\nHet goede voorbeeld bij voorzieningen in nieuwe gebieden werkt door naar andere opdrachtgevers."
     },
@@ -161,18 +166,21 @@
      "term": "Direct tot lange termijn",
      "imp": "z",
      "act": [
-      [
-       "3.1 Spend-impactanalyse",
-       "2025"
-      ],
-      [
-       "3.2 Gemeentebrede inkoopstrategie",
-       "2025–2030"
-      ],
-      [
-       "3.3 Maatschappelijk verantwoord opdrachtgeven en inkopen",
-       "2026–2030"
-      ]
+      {
+       "id": "OI-M3-A3-1",
+       "naam": "3.1 Spend-impactanalyse",
+       "periode": "2025"
+      },
+      {
+       "id": "OI-M3-A3-2",
+       "naam": "3.2 Gemeentebrede inkoopstrategie",
+       "periode": "2025–2030"
+      },
+      {
+       "id": "OI-M3-A3-3",
+       "naam": "3.3 Maatschappelijk verantwoord opdrachtgeven en inkopen",
+       "periode": "2026–2030"
+      }
      ],
      "aan": "Gebundeld inkoopvolume (raamovereenkomsten, samen inkopen) geeft leveranciers ruimte voor innovatie en drukt de meerkosten.\nDe dominante stromen leveren de meeste winst op.\nEen eenduidige vraag van meerdere opdrachtgevers beweegt de markt."
     },
@@ -190,18 +198,21 @@
      "term": "Direct tot lange termijn",
      "imp": "z",
      "act": [
-      [
-       "4.1 Schoon en emissieloos bouwen",
-       "2025–2030"
-      ],
-      [
-       "4.2 Expertteam GWW (1× per 3 weken)",
-       "2025–2030"
-      ],
-      [
-       "4.3 Ketenoverleg (1× per 6 weken)",
-       "2025–2030"
-      ]
+      {
+       "id": "OI-M4-A4-1",
+       "naam": "4.1 Schoon en emissieloos bouwen",
+       "periode": "2025–2030"
+      },
+      {
+       "id": "OI-M4-A4-2",
+       "naam": "4.2 Expertteam GWW (1× per 3 weken)",
+       "periode": "2025–2030"
+      },
+      {
+       "id": "OI-M4-A4-3",
+       "naam": "4.3 Ketenoverleg (1× per 6 weken)",
+       "periode": "2025–2030"
+      }
      ],
      "aan": "Een vast multidisciplinair team met een jaarlijks actieplan versnelt de verduurzaming van projecten.\nKetenpartners passen hun werkwijze aan via structureel overleg."
     },
@@ -219,18 +230,21 @@
      "term": "Direct tot lange termijn",
      "imp": "z",
      "act": [
-      [
-       "5.1 Monitoren, rapporteren en evalueren MKI",
-       "2025–2028"
-      ],
-      [
-       "5.2 Areaalmodel (opdracht Eco Monitor, € 7.000)",
-       "2025–2028"
-      ],
-      [
-       "5.3 Inzicht in materiaalgebruik en milieu-impact",
-       "2026–2030"
-      ]
+      {
+       "id": "OI-M5-A5-1",
+       "naam": "5.1 Monitoren, rapporteren en evalueren MKI",
+       "periode": "2025–2028"
+      },
+      {
+       "id": "OI-M5-A5-2",
+       "naam": "5.2 Areaalmodel (opdracht Eco Monitor, € 7.000)",
+       "periode": "2025–2028"
+      },
+      {
+       "id": "OI-M5-A5-3",
+       "naam": "5.3 Inzicht in materiaalgebruik en milieu-impact",
+       "periode": "2026–2030"
+      }
      ],
      "aan": "Meten maakt bijsturen mogelijk. Deze maatregel werkt dus via de andere maatregelen en niet rechtstreeks.\nOok buiten de GWW is data over materiaalgebruik te verzamelen."
     }
@@ -353,22 +367,26 @@
      "term": "2–5 jaar",
      "imp": "a",
      "act": [
-      [
-       "1.1 Quickscan tijdelijk gebruik bij start nieuwe ontwikkeling",
-       "2026–2030"
-      ],
-      [
-       "1.2 Actualisatie leidraad circulair slopen",
-       "2026–2028"
-      ],
-      [
-       "1.3 Leidraad circulariteit bouwrijp maken",
-       "2026–2027"
-      ],
-      [
-       "1.4 Sloopmelding als instrument",
-       "2026–2027"
-      ]
+      {
+       "id": "BG-M1-A1-1",
+       "naam": "1.1 Quickscan tijdelijk gebruik bij start nieuwe ontwikkeling",
+       "periode": "2026–2030"
+      },
+      {
+       "id": "BG-M1-A1-2",
+       "naam": "1.2 Actualisatie leidraad circulair slopen",
+       "periode": "2026–2028"
+      },
+      {
+       "id": "BG-M1-A1-3",
+       "naam": "1.3 Leidraad circulariteit bouwrijp maken",
+       "periode": "2026–2027"
+      },
+      {
+       "id": "BG-M1-A1-4",
+       "naam": "1.4 Sloopmelding als instrument",
+       "periode": "2026–2027"
+      }
      ],
      "aan": "Tijdelijk gebruik (grondstoffendepots, bouwgewassen, ruimte voor circulaire bedrijven) verlaagt de vraag naar primaire grondstoffen.\nParticuliere eigenaren willen meewerken."
     },
@@ -383,30 +401,36 @@
      "term": "2–5 jaar",
      "imp": "z",
      "act": [
-      [
-       "2.1 Robuust kader circulariteit op gebiedsniveau",
-       "2026–2028"
-      ],
-      [
-       "2.2 Samenwerkingsagenda Toekomstbestendige Gebiedsontwikkeling",
-       "2026–2030"
-      ],
-      [
-       "2.3 Verkenning digitalisering",
-       "2025–2030"
-      ],
-      [
-       "2.4 Checklist circulaire gebiedsontwikkeling",
-       "2028–2029"
-      ],
-      [
-       "2.5 Planregels voor het omgevingsplan",
-       "2025–2028"
-      ],
-      [
-       "2.6 Onderzoek materialenpaspoort op gebiedsniveau",
-       "2026–2028"
-      ]
+      {
+       "id": "BG-M2-A2-1",
+       "naam": "2.1 Robuust kader circulariteit op gebiedsniveau",
+       "periode": "2026–2028"
+      },
+      {
+       "id": "BG-M2-A2-2",
+       "naam": "2.2 Samenwerkingsagenda Toekomstbestendige Gebiedsontwikkeling",
+       "periode": "2026–2030"
+      },
+      {
+       "id": "BG-M2-A2-3",
+       "naam": "2.3 Verkenning digitalisering",
+       "periode": "2025–2030"
+      },
+      {
+       "id": "BG-M2-A2-4",
+       "naam": "2.4 Checklist circulaire gebiedsontwikkeling",
+       "periode": "2028–2029"
+      },
+      {
+       "id": "BG-M2-A2-5",
+       "naam": "2.5 Planregels voor het omgevingsplan",
+       "periode": "2025–2028"
+      },
+      {
+       "id": "BG-M2-A2-6",
+       "naam": "2.6 Onderzoek materialenpaspoort op gebiedsniveau",
+       "periode": "2026–2028"
+      }
      ],
      "aan": "Sturen op gebiedsniveau is effectiever dan per kavel of gebouw.\nEén integraal afwegingskader maakt de bestaande instrumenten (MKI, MPG, convenant, leidraad, checklist) eenvoudiger en effectiever.\nDe ambities kunnen worden vastgelegd op de vaste momenten in het ontwikkelproces."
     },
@@ -426,14 +450,16 @@
      "term": "2–5 jaar",
      "imp": "z",
      "act": [
-      [
-       "3.1 Implementatie en naleving Convenant Toekomstbestendige Woningbouw",
-       "2025–2026"
-      ],
-      [
-       "3.2 Belemmeringen vergunningverlening biobased bouwen",
-       "2025–2027"
-      ]
+      {
+       "id": "BG-M3-A3-1",
+       "naam": "3.1 Implementatie en naleving Convenant Toekomstbestendige Woningbouw",
+       "periode": "2025–2026"
+      },
+      {
+       "id": "BG-M3-A3-2",
+       "naam": "3.2 Belemmeringen vergunningverlening biobased bouwen",
+       "periode": "2025–2027"
+      }
      ],
      "aan": "Verankering in ontwikkelkaders en stedenbouwkundige plannen leidt tot meer biobased bouwen.\nDe markt heeft genoeg aanbod (zo stelt het programma). Het knelpunt zit in toepassing, niet in beschikbaarheid."
     },
@@ -451,10 +477,11 @@
      "term": "Direct",
      "imp": "z",
      "act": [
-      [
-       "4.1 Circulaire grondstoffencorridor",
-       "2025–2028"
-      ]
+      {
+       "id": "BG-M4-A4-1",
+       "naam": "4.1 Circulaire grondstoffencorridor",
+       "periode": "2025–2028"
+      }
      ],
      "aan": "Beter inzicht in de bestaande voorraad en vrijkomende materialen leidt tot meer hoogwaardig hergebruik.\nEr komen genoeg aanbod en verwerkingscapaciteit (landelijk was in 2024 maar 0,24% van het bouw- en sloopafval hoogwaardig hergebruikt; het doel is 15% in 2030)."
     },
@@ -474,14 +501,16 @@
      "term": "Lange termijn (vanaf 5 jaar)",
      "imp": "z",
      "act": [
-      [
-       "5.1 Ontwikkelen strategie bestaande bouw",
-       "2028–2030"
-      ],
-      [
-       "5.2 Circulair verduurzamen bestaande bouw",
-       "2025–2027"
-      ]
+      {
+       "id": "BG-M5-A5-1",
+       "naam": "5.1 Ontwikkelen strategie bestaande bouw",
+       "periode": "2028–2030"
+      },
+      {
+       "id": "BG-M5-A5-2",
+       "naam": "5.2 Circulair verduurzamen bestaande bouw",
+       "periode": "2025–2027"
+      }
      ],
      "aan": "Voor ontwikkelaars, corporaties en eigenaren is circulair renoveren en transformeren een reëel alternatief voor sloop en nieuwbouw.\nTot 2028 ligt de focus bewust ergens anders (zie ‘Wat doen we niet’), dus het effect komt later."
     },
@@ -501,26 +530,31 @@
      "term": "Direct",
      "imp": "z",
      "act": [
-      [
-       "6.1 Strategie nieuwbouw utiliteit",
-       "2025–2027"
-      ],
-      [
-       "6.2 Circulaire en sociale woningbouw",
-       "2026–2028"
-      ],
-      [
-       "6.3 Interne kennisdeling circulair bouwen",
-       "2027–2030"
-      ],
-      [
-       "6.4 Circulair businessmodel gemeentelijk vastgoed",
-       "2027–2030"
-      ],
-      [
-       "6.5 Ketensamenwerking",
-       "2025–2027"
-      ]
+      {
+       "id": "BG-M6-A6-1",
+       "naam": "6.1 Strategie nieuwbouw utiliteit",
+       "periode": "2025–2027"
+      },
+      {
+       "id": "BG-M6-A6-2",
+       "naam": "6.2 Circulaire en sociale woningbouw",
+       "periode": "2026–2028"
+      },
+      {
+       "id": "BG-M6-A6-3",
+       "naam": "6.3 Interne kennisdeling circulair bouwen",
+       "periode": "2027–2030"
+      },
+      {
+       "id": "BG-M6-A6-4",
+       "naam": "6.4 Circulair businessmodel gemeentelijk vastgoed",
+       "periode": "2027–2030"
+      },
+      {
+       "id": "BG-M6-A6-5",
+       "naam": "6.5 Ketensamenwerking",
+       "periode": "2025–2027"
+      }
      ],
      "aan": "De beschikbare beleidsinstrumenten zijn sterk genoeg, ook al mag de gemeente geen bouwtechnische eisen stellen boven het Bbl.\nCirculair ontwerpen leidt over meerdere levenscycli tot minder vraag naar primaire grondstoffen."
     }
@@ -621,18 +655,21 @@
      "term": "Direct",
      "imp": "b",
      "act": [
-      [
-       "1.1 Toekomstfonds Duurzame Ontwikkeling",
-       "2025–2030"
-      ],
-      [
-       "1.2 Broedplaatsensubsidie",
-       "doorlopend"
-      ],
-      [
-       "1.3 Subsidies van anderen onder de aandacht",
-       "2025–2030"
-      ]
+      {
+       "id": "BE-M1-A1-1",
+       "naam": "1.1 Toekomstfonds Duurzame Ontwikkeling",
+       "periode": "2025–2030"
+      },
+      {
+       "id": "BE-M1-A1-2",
+       "naam": "1.2 Broedplaatsensubsidie",
+       "periode": "doorlopend"
+      },
+      {
+       "id": "BE-M1-A1-3",
+       "naam": "1.3 Subsidies van anderen onder de aandacht",
+       "periode": "2025–2030"
+      }
      ],
      "aan": "Financiering is een belangrijke drempel voor circulaire ondernemers.\nCofinanciering tot € 50.000 is genoeg om een initiatief te laten starten of opschalen (2015–2024: 46 initiatieven gesteund, 32 circulair)."
     },
@@ -648,14 +685,16 @@
      "term": "Direct",
      "imp": "b",
      "act": [
-      [
-       "2.1 Community management (extern, € 30.000)",
-       "2025"
-      ],
-      [
-       "2.2 Impuls Programma (€ 12.500)",
-       "2025, bij succes 2026"
-      ]
+      {
+       "id": "BE-M2-A2-1",
+       "naam": "2.1 Community management (extern, € 30.000)",
+       "periode": "2025"
+      },
+      {
+       "id": "BE-M2-A2-2",
+       "naam": "2.2 Impuls Programma (€ 12.500)",
+       "periode": "2025, bij succes 2026"
+      }
      ],
      "aan": "Pioniers die krachten bundelen, groeien in schaal en impact.\nVia de community ontstaan verbindingen met het reguliere bedrijfsleven."
     },
@@ -671,10 +710,11 @@
      "term": "Direct",
      "imp": "b",
      "act": [
-      [
-       "3.1 Ondersteunen ondernemers met concrete hulpvraag",
-       "2025–2030"
-      ]
+      {
+       "id": "BE-M3-A3-1",
+       "naam": "3.1 Ondersteunen ondernemers met concrete hulpvraag",
+       "periode": "2025–2030"
+      }
      ],
      "aan": "Maatwerk lost concrete belemmeringen op.\nLessen uit individuele gevallen zijn overdraagbaar."
     },
@@ -690,14 +730,16 @@
      "term": "Direct",
      "imp": "b",
      "act": [
-      [
-       "4.1 Ondernemers verbinden aan regionale netwerken",
-       "2025–2030"
-      ],
-      [
-       "4.2 Deelname Circulair Utrecht (€ 5.000 per jaar)",
-       "2025, verlenging bij succes"
-      ]
+      {
+       "id": "BE-M4-A4-1",
+       "naam": "4.1 Ondernemers verbinden aan regionale netwerken",
+       "periode": "2025–2030"
+      },
+      {
+       "id": "BE-M4-A4-2",
+       "naam": "4.2 Deelname Circulair Utrecht (€ 5.000 per jaar)",
+       "periode": "2025, verlenging bij succes"
+      }
      ],
      "aan": "Netwerken leiden tot kennisuitwisseling en gezamenlijke initiatieven.\nPioniers en mkb versterken elkaar (circulaire kennis tegenover ondernemerschap)."
     }
@@ -798,14 +840,16 @@
      "term": "Direct",
      "imp": "b",
      "act": [
-      [
-       "1.1 Bewustwordingscampagne (€ 30.000 uit VSNS)",
-       "2027"
-      ],
-      [
-       "1.2 Aanvulling op trajecten van afdeling afval",
-       "2025–2030"
-      ]
+      {
+       "id": "CG-M1-A1-1",
+       "naam": "1.1 Bewustwordingscampagne (€ 30.000 uit VSNS)",
+       "periode": "2027"
+      },
+      {
+       "id": "CG-M1-A1-2",
+       "naam": "1.2 Aanvulling op trajecten van afdeling afval",
+       "periode": "2025–2030"
+      }
      ],
      "aan": "Bewustwording is de eerste stap naar gedragsverandering.\nKoppeling aan eigen voordeel (portemonnee, gezondheid, schone stad) maakt de boodschap effectiever."
     },
@@ -821,10 +865,11 @@
      "term": "Direct",
      "imp": "b",
      "act": [
-      [
-       "2.1 Pilots digital kiosks (EU-financiering)",
-       "2025–2026"
-      ]
+      {
+       "id": "CG-M2-A2-1",
+       "naam": "2.1 Pilots digital kiosks (EU-financiering)",
+       "periode": "2025–2026"
+      }
      ],
      "aan": "Delen wordt vaker gekozen als het makkelijk is, en vermindert de aanschaf van nieuwe apparaten.\nDit is een leermaatregel: het effect is vooral kennis."
     },
@@ -840,14 +885,16 @@
      "term": "Direct tot lange termijn",
      "imp": "z",
      "act": [
-      [
-       "3.1 Bouw toekomstbestendig milieubrengstation (VSNS)",
-       "2026–2027"
-      ],
-      [
-       "3.2 Aanbesteding exploitant innamepunt",
-       "2025–2026"
-      ]
+      {
+       "id": "CG-M3-A3-1",
+       "naam": "3.1 Bouw toekomstbestendig milieubrengstation (VSNS)",
+       "periode": "2026–2027"
+      },
+      {
+       "id": "CG-M3-A3-2",
+       "naam": "3.2 Aanbesteding exploitant innamepunt",
+       "periode": "2025–2026"
+      }
      ],
      "aan": "Een apart innamepunt en meer ruimte voor sorteren en demontage halen herbruikbare producten eruit voordat ze in de recycling verdwijnen.\nInwoners leveren spullen op de nieuwe manier in."
     },
@@ -863,10 +910,11 @@
      "term": "Direct",
      "imp": "a",
      "act": [
-      [
-       "4.1 Grondstoffenregisseur (VSNS)",
-       "2025–2026"
-      ]
+      {
+       "id": "CG-M4-A4-1",
+       "naam": "4.1 Grondstoffenregisseur (VSNS)",
+       "periode": "2025–2026"
+      }
      ],
      "aan": "Voor een deel van de stromen (e-waste, hout, meubels) is een positieve maatschappelijke business case te vinden.\nAfnemers voor secundaire grondstoffen zijn beschikbaar."
     },
@@ -882,10 +930,11 @@
      "term": "Direct",
      "imp": "b",
      "act": [
-      [
-       "5.1 Lessen van pilots implementeren (VSNS)",
-       "2025–2027"
-      ]
+      {
+       "id": "CG-M5-A5-1",
+       "naam": "5.1 Lessen van pilots implementeren (VSNS)",
+       "periode": "2025–2027"
+      }
      ],
      "aan": "Lessen uit de VSNS-pilots zijn breder toe te passen.\nInwoners zijn te stimuleren producten niet weg te gooien."
     }
@@ -913,14 +962,16 @@
      "term": "Direct tot lange termijn",
      "imp": "z",
      "act": [
-      [
-       "1.1 Onderzoek inrichting grondstoffendepot",
-       "2025–2030"
-      ],
-      [
-       "1.2 Digitale ondersteuning gebruik depot",
-       "2025–2030"
-      ]
+      {
+       "id": "RV-M1-A1-1",
+       "naam": "1.1 Onderzoek inrichting grondstoffendepot",
+       "periode": "2025–2030"
+      },
+      {
+       "id": "RV-M1-A1-2",
+       "naam": "1.2 Digitale ondersteuning gebruik depot",
+       "periode": "2025–2030"
+      }
      ],
      "aan": "Materialen vallen niet langer aan de aannemer toe maar komen beschikbaar voor hergebruik.\nVrijkomende materialen en projectplanning zijn op tijd op elkaar af te stemmen."
     },
@@ -936,18 +987,21 @@
      "term": "Direct tot lange termijn",
      "imp": "a",
      "act": [
-      [
-       "2.1 Verkenning regionaal bedrijventerrein",
-       "2025–2030"
-      ],
-      [
-       "2.2 Trends en ontwikkelingen bij Amersfoortse bedrijven",
-       "2025–2030"
-      ],
-      [
-       "2.3 Verkennen circulariteit in Bovenduist",
-       "2025–2030"
-      ]
+      {
+       "id": "RV-M2-A2-1",
+       "naam": "2.1 Verkenning regionaal bedrijventerrein",
+       "periode": "2025–2030"
+      },
+      {
+       "id": "RV-M2-A2-2",
+       "naam": "2.2 Trends en ontwikkelingen bij Amersfoortse bedrijven",
+       "periode": "2025–2030"
+      },
+      {
+       "id": "RV-M2-A2-3",
+       "naam": "2.3 Verkennen circulariteit in Bovenduist",
+       "periode": "2025–2030"
+      }
      ],
      "aan": "Zonder reservering is de ruimte later niet meer beschikbaar (tot 2050 is 0–22 ha extra nodig; uitgeefbaar is nu 11 ha).\nProvincie en buurgemeenten willen samen ruimte vinden."
     }

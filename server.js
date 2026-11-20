@@ -53,11 +53,94 @@ function seed() {
 }
 function rid() { return crypto.randomBytes(5).toString('hex'); }
 
+// ---------- migratie naar versie 2: indicatoren met categorieën ----------
+// Een meting is { id, periode, waarden: { categorie: getal|null }, toelichting }.
+// Zonder categorieën staat de waarde onder de lege sleutel ''.
+function parseNum(v) {
+  if (typeof v === 'number') return isFinite(v) ? v : null;
+  let t = String(v ?? '').replace(/ca\.|ca\s|±|~|>|</gi, '').trim();
+  const m = t.match(/-?\d[\d.,]*/); if (!m) return null;
+  t = m[0];
+  if (t.includes(',')) t = t.replace(/\./g, '').replace(',', '.');
+  else if (/\.\d{3}(\.|$)/.test(t)) t = t.replace(/\./g, '');
+  const n = parseFloat(t); return isFinite(n) ? n : null;
+}
+function migrate(d) {
+  if ((d.versie || 1) >= 2) return false;
+  fs.writeFileSync(DATA_FILE + '.v1-backup', JSON.stringify(d, null, 1));
+  const labels = i => (i.metingen || []).map(r => r.periode).join('|');
+  const val = (i, p) => parseNum((i.metingen.find(r => r.periode === p) || {}).waarde);
+  const base = i => ({ categorieen: [], optelbaar: false, doel: null, eenheid: i.eenheid || '', streefwaarde: i.streefwaarde || '' });
+  const out = {};
+  let maxNr = Math.max(0, ...Object.values(d.indicatoren).map(i => i.nr || 0));
+  for (const i of Object.values(d.indicatoren)) {
+    const v1 = labels(i);
+    // Herkende beginreeksen netjes omzetten; al het andere generiek.
+    if (i.id === 'BE-S1-I1' && (i.metingen || []).some(r => /Rethink\s[\d.]+,\sReuse/.test(r.toelichting || ''))) {
+      const cats = ['Rethink', 'Reuse', 'Repair', 'Recycle'];
+      out[i.id] = { ...i, ...base(i), streefwaarde: '', naam: 'Circulaire arbeidsplaatsen naar R-strategie', eenheid: 'arbeidsplaatsen', categorieen: cats, optelbaar: true,
+        metingen: i.metingen.filter(r => /Rethink/.test(r.toelichting || '')).map(r => ({ id: r.id, periode: r.periode, toelichting: '',
+          waarden: Object.fromEntries(cats.map(c => [c, parseNum(((r.toelichting || '').match(new RegExp(c + '\\s([\\d.]+)')) || [])[1])])) })) };
+      const nid = 'BE-S1-I2';
+      if (!d.indicatoren[nid]) out[nid] = { id: nid, subdoel: 'BE-S1', nr: ++maxNr, naam: 'Aandeel circulaire arbeidsplaatsen', status: i.status, bron: i.bron, ...base({}), eenheid: '%', streefwaarde: i.streefwaarde || '',
+        toelichting: 'Aandeel van alle arbeidsplaatsen in Amersfoort bij vestigingen met een circulaire activiteit (KVK). Ter vergelijking: provincie Utrecht 2,8% in 2022.',
+        metingen: i.metingen.map(r => ({ id: rid(), periode: r.periode, waarden: { '': parseNum(r.waarde) }, toelichting: '' })), bijgewerkt: '', door: '' };
+      continue;
+    }
+    if (v1 === 'Apparaten|Kleding en textiel|Meubels') {
+      out[i.id] = { ...i, ...base(i), eenheid: '%', categorieen: ['Apparaten', 'Kleding en textiel', 'Meubels'],
+        metingen: [{ id: rid(), periode: '2025', toelichting: 'Amersfoorts panel 2025', waarden: { 'Apparaten': val(i, 'Apparaten'), 'Kleding en textiel': val(i, 'Kleding en textiel'), 'Meubels': val(i, 'Meubels') } }] };
+      continue;
+    }
+    if (v1 === 'Baseline, primair|Baseline, totaal|Optimalisatie, primair|Biobased') {
+      const bp = val(i, 'Baseline, primair'), bt = val(i, 'Baseline, totaal'), op = val(i, 'Optimalisatie, primair');
+      out[i.id] = { ...i, ...base(i), eenheid: 'ton', categorieen: ['Primair', 'Secundair', 'Biobased'], optelbaar: true,
+        metingen: [
+          { id: rid(), periode: 'Baseline', toelichting: '', waarden: { Primair: bp, Secundair: bt != null && bp != null ? bt - bp : null, Biobased: 0 } },
+          { id: rid(), periode: 'Optimalisatie', toelichting: '', waarden: { Primair: op, Secundair: null, Biobased: 0 } }],
+        toelichting: (i.toelichting ? i.toelichting + ' ' : '') + 'Secundair bij optimalisatie nog niet afgelezen.' };
+      continue;
+    }
+    if (v1 === 'Baseline|Optimalisatie|Doel: >50% reductie') {
+      out[i.id] = { ...i, ...base(i), eenheid: 'ton CO₂', doel: val(i, 'Doel: >50% reductie'), streefwaarde: i.streefwaarde || 'meer dan 50% reductie t.o.v. baseline',
+        metingen: ['Baseline', 'Optimalisatie'].map(p => ({ id: rid(), periode: p, waarden: { '': val(i, p) }, toelichting: '' })) };
+      continue;
+    }
+    if (/^Nieuwbouwwoningen met ≥30% biobased, 2024\|Streefwaarde 2030, grondgebonden\|Streefwaarde 2030, gestapeld$/.test(v1)) {
+      out[i.id] = { ...i, ...base(i), naam: 'Aandeel nieuwbouwwoningen met ≥30% biobased materiaal', eenheid: '%',
+        streefwaarde: i.streefwaarde || 'in 2030: 50% biobased bij grondgebonden, 30% bij gestapelde bouw',
+        metingen: [{ id: rid(), periode: '2024', waarden: { '': val(i, v1.split('|')[0]) }, toelichting: 'Gemeten naar totale massa exclusief fundering' }] };
+      continue;
+    }
+    if (v1 === 'Per inwoner, 2023|Hergebruikt (Afvalspiegel 2022)') {
+      out[i.id] = { ...i, ...base(i), naam: 'Grof huishoudelijk afval per inwoner', eenheid: 'kg',
+        metingen: [{ id: rid(), periode: '2023', waarden: { '': val(i, 'Per inwoner, 2023') }, toelichting: '' }] };
+      const nid = i.id + 'b';
+      out[nid] = { id: nid, subdoel: i.subdoel, nr: ++maxNr, naam: 'Aandeel grof huishoudelijk afval dat wordt hergebruikt', status: i.status, bron: 'Afvalspiegel', ...base({}), eenheid: '%', toelichting: '',
+        metingen: [{ id: rid(), periode: '2022', waarden: { '': val(i, 'Hergebruikt (Afvalspiegel 2022)') }, toelichting: '' }], bijgewerkt: '', door: '' };
+      continue;
+    }
+    // Generiek
+    const ws = (i.metingen || []).map(r => String(r.waarde || '')).filter(Boolean);
+    const unit = i.eenheid || (ws.length && ws.every(w => /%/.test(w)) ? '%' : ws.length && ws.every(w => /\bton\b/.test(w)) ? 'ton' : ws.length && ws.every(w => /\bkg\b/.test(w)) ? 'kg' : '');
+    out[i.id] = { ...i, ...base(i), eenheid: unit, metingen: (i.metingen || []).map(r => {
+      const n = parseNum(r.waarde);
+      const extra = n === null && r.waarde ? `Oorspronkelijke waarde: ${r.waarde}` : (/ca\./i.test(r.waarde || '') ? 'bij benadering' : '');
+      return { id: r.id || rid(), periode: r.periode, waarden: { '': n }, toelichting: [r.toelichting, extra].filter(Boolean).join('. ') };
+    }) };
+  }
+  for (const i of Object.values(out)) { delete i.rows; }
+  d.indicatoren = out; d.versie = 2;
+  return true;
+}
+
 let data;
 try { data = JSON.parse(fs.readFileSync(DATA_FILE, 'utf8')); }
-catch (e) { data = seed(); save(); }
+catch (e) { data = seed(); }
+if (migrate(data) || !fs.existsSync(DATA_FILE)) save();
 
 function save() {
+  if (!data) return;
   const tmp = DATA_FILE + '.tmp';
   fs.writeFileSync(tmp, JSON.stringify(data, null, 1));
   fs.renameSync(tmp, DATA_FILE);
@@ -69,10 +152,10 @@ function log(door, actie, item, waarde) {
 // ---------- hulpfuncties ----------
 const ID = /^[A-Za-z0-9-]{1,40}$/;
 const NOTE_FIELDS = ['aannames', 'status', 'evaluatie', 'effect', 'toelichting'];
-const IND_FIELDS = ['naam', 'status', 'bron', 'eenheid', 'streefwaarde', 'toelichting', 'subdoel'];
-const MET_FIELDS = ['periode', 'waarde', 'toelichting'];
+const IND_FIELDS = ['naam', 'status', 'bron', 'eenheid', 'streefwaarde', 'toelichting'];
 const str = (v, max = 20000) => String(v ?? '').slice(0, max);
-const knownItems = new Set(model.lijnen.flatMap(l => [...l.sub.map(s => s.id), ...l.mt.map(m => m.id)]));
+const knownItems = new Set(model.lijnen.flatMap(l => [...l.sub.map(s => s.id), ...l.mt.map(m => m.id), ...l.mt.flatMap(m => m.act.map(a => a.id))]));
+const knownSub = new Set(model.lijnen.flatMap(l => l.sub.map(s => s.id)));
 
 function send(res, code, body, type = 'application/json; charset=utf-8') {
   res.writeHead(code, {
@@ -190,44 +273,36 @@ async function handle(req, res) {
     return send(res, 200, n);
   }
 
-  if (p[1] === 'indicatoren') {
-    const id = p[2] || '';
+  // Indicatoren: PUT /api/indicatoren/:id (aanmaken of volledig vervangen, inclusief metingen), DELETE om te verwijderen
+  if (p[1] === 'indicatoren' && p.length === 3) {
+    const id = p[2];
     if (!ID.test(id)) return send(res, 400, { fout: 'Ongeldig id' });
-    // PUT /api/indicatoren/:id  (aanmaken of wijzigen)
-    if (p.length === 3 && m === 'PUT') {
-      const sub = str(body.subdoel ?? data.indicatoren[id]?.subdoel, 40);
-      if (!knownItems.has(sub)) return send(res, 400, { fout: 'Onbekend subdoel' });
-      const i = data.indicatoren[id] || (data.indicatoren[id] = { id, nr: Math.max(0, ...Object.values(data.indicatoren).map(x => x.nr || 0)) + 1, metingen: [] });
-      for (const k of IND_FIELDS) if (k in body) i[k] = str(body[k], 4000);
-      i.subdoel = sub; i.bijgewerkt = now; i.door = door; save();
-      log(door, 'indicator', id, IND_FIELDS.reduce((o, k) => (o[k] = i[k], o), {}));
-      return send(res, 200, i);
-    }
-    const i = data.indicatoren[id];
-    if (!i) return send(res, 404, { fout: 'Indicator niet gevonden' });
-    if (p.length === 3 && m === 'DELETE') {
-      delete data.indicatoren[id]; save(); log(door || str(url.searchParams.get('door'), 80), 'indicator verwijderd', id, i);
+    if (m === 'DELETE') {
+      const i = data.indicatoren[id];
+      if (!i) return send(res, 404, { fout: 'Indicator niet gevonden' });
+      delete data.indicatoren[id]; save(); log(str(url.searchParams.get('door'), 80), 'indicator verwijderd', id, i);
       return send(res, 200, { ok: true });
     }
-    // Metingen
-    if (p[3] === 'metingen') {
-      if (p.length === 4 && m === 'POST') {
-        const r = { id: rid() }; for (const k of MET_FIELDS) r[k] = str(body[k], 2000);
-        i.metingen.push(r); i.bijgewerkt = now; i.door = door; save(); log(door, 'meting toegevoegd', id + '/' + r.id, r);
-        return send(res, 200, i);
-      }
-      const r = i.metingen.find(x => x.id === p[4]);
-      if (!r) return send(res, 404, { fout: 'Meting niet gevonden' });
-      if (m === 'PUT') {
-        for (const k of MET_FIELDS) if (k in body) r[k] = str(body[k], 2000);
-        i.bijgewerkt = now; i.door = door; save(); log(door, 'meting gewijzigd', id + '/' + r.id, r);
-        return send(res, 200, i);
-      }
-      if (m === 'DELETE') {
-        i.metingen = i.metingen.filter(x => x !== r); i.bijgewerkt = now; save();
-        log(str(url.searchParams.get('door'), 80), 'meting verwijderd', id + '/' + r.id, r);
-        return send(res, 200, i);
-      }
+    if (m === 'PUT') {
+      const old = data.indicatoren[id];
+      const sub = str(body.subdoel ?? old?.subdoel, 40);
+      if (!knownSub.has(sub)) return send(res, 400, { fout: 'Onbekend subdoel' });
+      const cats = [...new Set((Array.isArray(body.categorieen) ? body.categorieen : []).map(c => str(c, 80).trim()).filter(Boolean))].slice(0, 12);
+      const keys = cats.length ? cats : [''];
+      const metingen = (Array.isArray(body.metingen) ? body.metingen : []).slice(0, 200).map(r => ({
+        id: ID.test(r?.id || '') ? r.id : rid(),
+        periode: str(r?.periode, 60).trim(),
+        waarden: Object.fromEntries(keys.map(k => { const v = r?.waarden?.[k]; return [k, typeof v === 'number' && isFinite(v) ? v : null]; })),
+        toelichting: str(r?.toelichting, 1000)
+      })).filter(r => r.periode);
+      const i = { id, subdoel: sub, nr: old?.nr || Math.max(0, ...Object.values(data.indicatoren).map(x => x.nr || 0)) + 1 };
+      for (const k of IND_FIELDS) i[k] = str(body[k] ?? old?.[k], 4000);
+      i.categorieen = cats; i.optelbaar = !!body.optelbaar && cats.length > 1;
+      i.doel = typeof body.doel === 'number' && isFinite(body.doel) ? body.doel : null;
+      i.metingen = metingen; i.bijgewerkt = now; i.door = door;
+      data.indicatoren[id] = i; save();
+      log(door, old ? 'indicator gewijzigd' : 'indicator toegevoegd', id, { naam: i.naam, categorieen: cats, metingen: metingen.length });
+      return send(res, 200, i);
     }
   }
   return send(res, 404, { fout: 'Niet gevonden' });

@@ -4,8 +4,9 @@ Een kleine webapp om het Omgevingsprogramma Circulaire Stad te monitoren. Per pr
 
 Wat je in de app kunt invullen:
 
-- **Bij een maatregel:** aannames, stand van uitvoering, evaluatie (wat is er gebeurd) en bijdrage en effect.
-- **Bij een subdoel:** indicatoren toevoegen, wijzigen en verwijderen, metingen per indicator invoeren, en een duiding van de voortgang.
+- **Per activiteit uit het uitvoeringsprogramma:** aannames, stand van uitvoering, evaluatie en bijdrage aan de maatregel.
+- **Per maatregel als geheel:** aannames (waarom leidt de maatregel tot de subdoelen), stand, evaluatie en bijdrage en effect.
+- **Per subdoel:** indicatoren toevoegen en bewerken, en een duiding van de voortgang. Een indicator kan categorieën hebben, bijvoorbeeld banen per R-strategie of weggooigedrag per productgroep. Per periode vul je dan een waarde per categorie in. Tellen de categorieën op tot een totaal, dan toont de app gestapelde staven met het totaal; anders gegroepeerde staven of lijnen. Een doellijn kan als stippellijn in de grafiek.
 - **Historie:** elke wijziging wordt met tijd en naam vastgelegd.
 - **Export:** de knoppen onderaan downloaden alles als Excel (een tabblad per onderdeel) of als JSON.
 
@@ -87,10 +88,12 @@ Velden per maatregel in `model.json`:
 | `sub` | Subdoelen waaraan de maatregel bijdraagt. Een `*` achter het id betekent: afgeleide koppeling, getoond als stippellijn. |
 | `viaDoel` | `true` als de maatregel alleen aan het transitiedoel is gekoppeld |
 | `imp` | Verwachte impact: `z` = zeer veel, `a` = aanzienlijk, `b` = beperkt |
-| `act` | Activiteiten als `[naam, periode]` |
+| `act` | Activiteiten als `{ "id": "BG-M3-A3-1", "naam": "...", "periode": "2025–2026" }`. Het id koppelt de invoer per activiteit; houd het gelijk. |
 | `aan` | Standaardtekst voor de aannames, zolang niemand die heeft aangepast |
 
 Indicatoren en metingen beheer je in de app zelf. De `ind`-blokken in `model.json` worden alleen bij de allereerste start gebruikt.
+
+Bij de overstap naar indicatoren met categorieën (dataversie 2) zet de server bestaande gegevens bij de eerste start automatisch om. Een kopie van de oude gegevens staat dan in `data/data.json.v1-backup`.
 
 ## API
 
@@ -101,10 +104,9 @@ Handig als je de data later ook in R of Power BI wilt gebruiken. Gebruik dezelfd
 | GET | `/api/model` | Programma-inhoud |
 | GET | `/api/data` | Alle invoer |
 | GET | `/api/historie?item=BG-M3` | Wijzigingen per onderdeel |
-| PATCH | `/api/notities/:id` | Velden `aannames`, `status`, `evaluatie`, `effect`, `toelichting`, `door` |
-| PUT / DELETE | `/api/indicatoren/:id` | Indicator aanmaken, wijzigen of verwijderen |
-| POST | `/api/indicatoren/:id/metingen` | Meting toevoegen |
-| PUT / DELETE | `/api/indicatoren/:id/metingen/:mid` | Meting wijzigen of verwijderen |
+| PATCH | `/api/notities/:id` | Voor een maatregel, activiteit of subdoel: velden `aannames`, `status`, `evaluatie`, `effect`, `toelichting`, `door` |
+| PUT | `/api/indicatoren/:id` | Indicator aanmaken of volledig vervangen, inclusief `categorieen`, `optelbaar`, `doel` en `metingen` (`[{ periode, waarden: { categorie: getal }, toelichting }]`; zonder categorieën is de sleutel `""`) |
+| DELETE | `/api/indicatoren/:id` | Indicator verwijderen |
 
 Voorbeeld in R:
 

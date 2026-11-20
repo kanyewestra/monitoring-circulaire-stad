@@ -99,6 +99,52 @@ footer .row{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-botto
 @media(prefers-reduced-motion:reduce){#toast{transition:none}}
 @media(max-width:900px){.board{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:16px 48px}.detail{grid-column:1/-1;border-left:0;border-top:1px solid var(--rule);padding:16px 0 0}}
 @media(max-width:600px){nav{flex-wrap:nowrap;overflow-x:auto}nav a{flex:none}.board{grid-template-columns:minmax(0,1fr);gap:8px}.board>svg{display:none}.mob{display:block}dl{grid-template-columns:minmax(0,1fr)}dt{margin-top:6px}.form .g{grid-template-columns:minmax(0,1fr)}}
+:root{--c1:light-dark(#1f5fbf,#80aaff);--c2:light-dark(#0f8b8d,#4fd1c5);--c3:light-dark(#d9822b,#f6ad55);--c4:light-dark(#7b5ea7,#b794f4);--c5:light-dark(#8a8f98,#a0a4ad);--c6:light-dark(#b8423a,#fc8181)}
+.ih{display:flex;justify-content:space-between;align-items:baseline;gap:8px}
+.badge{display:inline-block;font-size:12px;line-height:1.5;border:1px solid var(--rule);border-radius:99px;padding:0 8px;color:var(--mut);white-space:nowrap}
+.badge.s-loopt,.badge.i-data{border-color:var(--acc);color:var(--acc)}
+.badge.s-afgerond{background:var(--accs);border-color:var(--acc);color:var(--acc)}
+.badge.s-vertraagd{border-color:var(--bad);color:var(--bad)}
+.kpi{margin:10px 0 4px}
+.kpi .big{display:block;font-size:28px;line-height:1.1;font-weight:600;letter-spacing:-.02em}
+.kpi .kl{display:block;font-size:13px;color:var(--mut);line-height:1.4;margin-top:2px}
+.fig{position:relative;width:100%;min-height:190px;margin:6px 0 2px}
+.fig svg{display:block}
+.fig .ax{font-size:12px;fill:var(--mut)}
+.fig .vl{font-size:12px;fill:var(--ink);paint-order:stroke;stroke:var(--bg);stroke-width:3px}
+.fig .base{stroke:var(--rule)}
+.fig .goal{stroke:var(--ink);stroke-dasharray:4 4;opacity:.6}
+.fig .gl{font-size:12px;fill:var(--mut);paint-order:stroke;stroke:var(--bg);stroke-width:3px}
+.leg{display:flex;flex-wrap:wrap;gap:4px 12px;font-size:13px;color:var(--mut);margin:2px 0 6px}
+.leg i{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:5px;vertical-align:-1px}
+.leg i.dl{width:16px;height:0;border-top:2px dashed var(--ink);opacity:.6;border-radius:0;vertical-align:3px}
+.hbars{display:grid;grid-template-columns:minmax(5em,auto) minmax(40px,1fr) auto;gap:5px 10px;align-items:center;font-size:14px;margin:4px 0 8px}
+.hbars i{display:block;height:10px;border-radius:2px}
+.hbars span:nth-child(3n){white-space:nowrap;color:var(--mut)}
+details.tbl{margin-top:6px}
+th.num,td.num{text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums}
+.acts{border-top:1px solid var(--rule)}
+details.actd{margin:0;border-bottom:1px solid var(--rule)}
+details.actd>summary{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:2px 10px;padding:8px 0;color:var(--ink);font-size:15px;list-style-position:outside}
+details.actd>summary .ap{color:var(--mut);font-size:13px;white-space:nowrap}
+details.actd>summary [data-ast]{grid-column:1/-1}
+details.actd>summary [data-ast]:empty{display:none}
+details.actd .ab{padding:0 0 12px 14px;border-left:2px solid var(--rule);margin-left:4px}
+details.actd .ab label:first-child{margin-top:4px}
+dialog{border:1px solid var(--rule);border-radius:8px;background:var(--bg);color:var(--ink);padding:20px 22px;width:min(860px,calc(100vw - 24px));max-height:calc(100vh - 32px)}
+dialog::backdrop{background:rgba(0,0,0,.35)}
+dialog h2{margin-bottom:4px}
+.g3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0 12px}
+label.chk{display:flex;gap:8px;align-items:center;font-weight:400;font-size:15px}
+label.chk input{width:auto;min-height:0}
+table.grid td{padding:3px 4px;border:0}
+table.grid th{padding:3px 4px;font-size:13px}
+table.grid input{min-height:38px;padding:6px 8px;font-size:15px}
+.w-p{width:7em}.w-v{width:7.5em;text-align:right}.w-t{min-width:12em}
+input.bad{border-color:var(--bad)}
+.btns.end{margin-top:20px}
+button.del{color:var(--bad)}
+@media(max-width:600px){.g3{grid-template-columns:minmax(0,1fr)}.g3>div{grid-column:auto!important}dialog{padding:16px}}
 </style>
 </head>
 <body>
@@ -118,6 +164,7 @@ footer .row{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-botto
 <p id="bron"></p>
 </footer>
 </div>
+<dialog id="dlg" aria-label="Indicator bewerken"><form id="dlgform" method="dialog" novalidate><div id="dlgbody"></div></form></dialog>
 <div id="toast" role="status"></div>
 <script src="vendor/xlsx.full.min.js"></script>
 <script>
@@ -125,7 +172,8 @@ footer .row{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-botto
 const IMP={z:['●●●','zeer veel impact'],a:['●●○','aanzienlijke impact'],b:['●○○','beperkte impact']};
 const STATUS=['niet ingevuld','niet gestart','loopt','vertraagd','afgerond','gestopt'];
 const ISTATUS=['data','nulmeting','in opbouw','nog geen data'];
-let M=null,DATA={notities:{},indicatoren:{}},cur='oi',sel=null,ro=null,form=null,allSub={},inflight=0;
+let M=null,DATA={notities:{},indicatoren:{}},cur='oi',sel=null,ro=null,allSub={},inflight=0,draft=null;
+const openActs=new Set();
 const $=id=>document.getElementById(id);
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const clean=id=>id.replace('*','');
@@ -137,9 +185,18 @@ const tabs=()=>[...M.lijnen.map(l=>[l.id,l.naam]),['aandacht','Aandachtspunten']
 const lijn=()=>M.lijnen.find(x=>x.id===cur);
 const indsOf=sid=>Object.values(DATA.indicatoren).filter(i=>i.subdoel===sid).sort((a,b)=>(a.nr||0)-(b.nr||0));
 const note=(id,k,def)=>DATA.notities[id]?.[k]??def??'';
-const num=v=>{const m=String(v).replace(/ca\.\s*/i,'').match(/-?[\d.]*\d(,\d+)?/);if(!m)return null;const n=parseFloat(m[0].replace(/\.(?=\d{3}(\D|$))/g,'').replace(',','.'));return isFinite(n)?n:null};
+const slug=s=>String(s||'').replace(/\s+/g,'-');
 
-// ---------- notities (aannames, evaluatie, effect, duiding) ----------
+// ---------- getallen ----------
+const parseNum=v=>{let t=String(v??'').trim();if(!t)return null;const m=t.match(/-?\d[\d.,]*/);if(!m)return null;t=m[0];if(t.includes(','))t=t.replace(/\./g,'').replace(',','.');else if(/\.\d{3}(\.|$)/.test(t))t=t.replace(/\./g,'');const n=parseFloat(t);return isFinite(n)?n:null};
+const fnum=n=>n==null?'–':n.toLocaleString('nl-NL',{maximumFractionDigits:Math.abs(n)<100?1:0});
+const fval=(n,u)=>n==null?'–':u==='%'?fnum(n)+'%':u?fnum(n)+' '+u:fnum(n);
+const keysOf=i=>i.categorieen&&i.categorieen.length?i.categorieen:[''];
+const isYears=ms=>ms.length>1&&ms.every(r=>/^\d{4}$/.test(r.periode));
+const series=i=>{const ms=[...(i.metingen||[])];if(isYears(ms))ms.sort((a,b)=>a.periode-b.periode);return ms};
+const total=(i,r)=>{const v=keysOf(i).map(k=>r.waarden?.[k]).filter(x=>x!=null);return v.length?v.reduce((a,b)=>a+b,0):null};
+
+// ---------- notities (maatregelen, activiteiten, subdoelen) ----------
 const pend={},tm={};const busy=()=>inflight>0||Object.keys(pend).length>0;
 function queue(id,k,v){(pend[id]??={})[k]=v;$('sync').textContent='Opslaan…';clearTimeout(tm[id]);tm[id]=setTimeout(()=>flush(id),k==='status'?0:700)}
 async function flush(id){clearTimeout(tm[id]);const ch=pend[id];delete pend[id];if(!ch)return;inflight++;
@@ -147,55 +204,127 @@ try{const n=await api('PATCH','/api/notities/'+id,{...ch,door:nm()});DATA.notiti
 catch(e){$('sync').textContent='Niet opgeslagen, nieuwe poging over 5 seconden';toast(e.message,true);pend[id]={...ch,...(pend[id]||{})};tm[id]=setTimeout(()=>flush(id),5000)}
 finally{inflight--}}
 const updLine=n=>n?.bijgewerkt?`Laatst bijgewerkt ${fmt(n.bijgewerkt)}${n.door?' door '+n.door:''}`:'Nog niet bijgewerkt';
+const stOf=id=>pend[id]?.status??note(id,'status','niet ingevuld');
 function field(id,k,lab,hint,def){const v=pend[id]?.[k]??note(id,k,def);return `<label for="f-${id}-${k}">${lab} <small>${hint}</small></label><textarea id="f-${id}-${k}" data-id="${id}" data-k="${k}">${esc(v)}</textarea>`}
+function statusSel(id,lab){const st=stOf(id);return `<label for="f-${id}-status">${lab}</label><select id="f-${id}-status" data-id="${id}" data-k="status">${STATUS.map(o=>`<option${o===st?' selected':''}>${o}</option>`).join('')}</select>`}
+const badge=id=>{const s=stOf(id);return s&&s!=='niet ingevuld'?`<span class="badge s-${slug(s)}">${esc(s)}</span>`:''};
+
+// ---------- grafieken ----------
+const COLS=['var(--c1)','var(--c2)','var(--c3)','var(--c4)','var(--c5)','var(--c6)'];
+function kpi(i){const ms=series(i).filter(r=>keysOf(i).some(k=>r.waarden?.[k]!=null));if(!ms.length)return '';const cats=i.categorieen?.length;
+if(cats&&!i.optelbaar)return '';
+const v=r=>cats?total(i,r):r.waarden?.[''];const last=ms[ms.length-1],prev=ms.length>1?ms[ms.length-2]:null;const lv=v(last),pv=prev?v(prev):null;
+let ch='';if(lv!=null&&pv!=null){const d=lv-pv;const s=(d>0?'+':d<0?'−':'±')+fnum(Math.abs(d));ch=i.eenheid==='%'?`${s} procentpunt t.o.v. ${esc(prev.periode)}`:`${s}${i.eenheid?' '+esc(i.eenheid):''}${pv?` (${d>0?'+':d<0?'−':''}${fnum(Math.abs(d/pv*100))}%)`:''} t.o.v. ${esc(prev.periode)}`}
+return `<div class="kpi"><span class="big">${esc(fval(lv,i.eenheid))}</span><span class="kl">${cats?'Totaal ':''}${esc(last.periode)}${ch?` · ${ch}`:''}</span></div>`}
+function legend(i){const it=(i.categorieen||[]).length>1?i.categorieen.map((c,n)=>`<span><i style="background:${COLS[n%6]}"></i>${esc(c)}</span>`):[];if(i.doel!=null)it.push(`<span><i class="dl"></i>doel ${esc(fval(i.doel,i.eenheid))}</span>`);return it.length?`<div class="leg">${it.join('')}</div>`:''}
+function chartHtml(i){const ms=series(i);const ks=keysOf(i);const has=ms.filter(r=>ks.some(k=>r.waarden?.[k]!=null));if(!has.length)return '';
+if(ks.length>1&&has.length===1){const r=has[0];const mx=Math.max(...ks.map(k=>Math.abs(r.waarden[k]??0)),i.doel??0)||1;
+return `<p class="note">${esc(r.periode)}</p><div class="hbars">${ks.map((k,n)=>`<span>${esc(k)}</span><i style="width:${Math.max(1,Math.abs(r.waarden[k]??0)/mx*100)}%;background:${COLS[n%6]}"></i><span>${esc(fval(r.waarden[k],i.eenheid))}</span>`).join('')}</div>`}
+if(has.length<2)return '';
+return `<div class="fig" data-chart="${i.id}"></div>${legend(i)}`}
+function drawChart(el){const i=DATA.indicatoren[el.dataset.chart];if(!i)return;const ks=keysOf(i);const ms=series(i).filter(r=>ks.some(k=>r.waarden?.[k]!=null));
+const W=el.clientWidth,H=190,L=6,R=6,T=20,B=24,iw=W-L-R,ih=H-T-B;if(W<50)return;
+const multi=ks.length>1,stack=multi&&i.optelbaar,group=multi&&!stack&&ms.length*ks.length<=16,line=multi&&!stack&&!group;
+const vals=ms.flatMap(r=>stack?[total(i,r)]:ks.map(k=>r.waarden?.[k])).filter(v=>v!=null&&isFinite(v));
+const mx=Math.max(...vals,i.doel??0,0)*1.08||1;const y=v=>T+ih-(Math.max(0,v)/mx)*ih;
+const band=iw/ms.length,mc=Math.max(3,Math.floor(band/7.5)),lab=p=>p.length>mc?p.slice(0,mc-1)+'…':p;
+const vt=v=>i.eenheid==='%'?fnum(v)+'%':fnum(v);let s=`<line x1="${L}" x2="${W-R}" y1="${T+ih}" y2="${T+ih}" class="base"/>`;
+ms.forEach((r,n)=>{s+=`<text x="${L+band*n+band/2}" y="${H-6}" text-anchor="middle" class="ax">${esc(lab(r.periode))}</text>`});
+if(i.doel!=null){const yd=y(i.doel);s+=`<line x1="${L}" x2="${W-R}" y1="${yd}" y2="${yd}" class="goal"/>`}
+if(line){ks.forEach((k,c)=>{let d='',gap=true;const pts=ms.map((r,n)=>r.waarden?.[k]==null?null:[L+band*n+band/2,y(r.waarden[k])]);pts.forEach(p=>{if(!p){gap=true;return}d+=(gap?'M':'L')+p[0]+','+p[1];gap=false});s+=`<path d="${d}" fill="none" stroke="${COLS[c%6]}" stroke-width="2"/>`;pts.forEach(p=>{if(p)s+=`<circle cx="${p[0]}" cy="${p[1]}" r="3" fill="${COLS[c%6]}"/>`})})}
+else if(group){const gw=Math.min(band*.8,ks.length*30),bw=gw/ks.length;ms.forEach((r,n)=>{const x0=L+band*n+band/2-gw/2;ks.forEach((k,c)=>{const v=r.waarden?.[k];if(v==null)return;const x=x0+bw*c;s+=`<rect x="${x+1}" y="${y(v)}" width="${Math.max(1,bw-2)}" height="${Math.max(1,T+ih-y(v))}" fill="${COLS[c%6]}"/>`;if(bw>=22)s+=`<text x="${x+bw/2}" y="${y(v)-5}" text-anchor="middle" class="vl">${esc(vt(v))}</text>`})})}
+else{const bw=Math.min(44,band*.62);ms.forEach((r,n)=>{const cx=L+band*n+band/2,x=cx-bw/2;let acc=0;
+(stack?ks:[ks[0]]).forEach((k,c)=>{const v=r.waarden?.[k];if(v==null)return;const y0=y(acc),y1=y(acc+v);s+=`<rect x="${x}" y="${Math.min(y0,y1)}" width="${bw}" height="${Math.max(1,Math.abs(y0-y1))}" fill="${stack?COLS[c%6]:'var(--acc)'}"/>`;acc+=v});
+const tv=stack?total(i,r):r.waarden?.[ks[0]];if(tv!=null&&band>=30)s+=`<text x="${cx}" y="${y(tv)-6}" text-anchor="middle" class="vl">${esc(vt(tv))}</text>`})}
+el.innerHTML=`<svg width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" role="img" aria-label="${esc(i.naam)}">${s}</svg>`;el.style.height=H+'px'}
+const drawCharts=()=>document.querySelectorAll('[data-chart]').forEach(drawChart);
+function tableHtml(i){const ms=series(i);if(!ms.length)return '';const ks=keysOf(i);const multi=ks.length>1;
+return `<details class="tbl"><summary>Tabel met ${ms.length} meting${ms.length>1?'en':''}</summary><div class="scroll"><table><tr><th>Periode</th>${multi?ks.map(k=>`<th class="num">${esc(k)}</th>`).join(''):`<th class="num">Waarde${i.eenheid?` (${esc(i.eenheid)})`:''}</th>`}${i.optelbaar?'<th class="num">Totaal</th>':''}</tr>
+${ms.map(r=>`<tr><td>${esc(r.periode)}${r.toelichting?`<div class="note">${esc(r.toelichting)}</div>`:''}</td>${ks.map(k=>`<td class="num">${esc(fnum(r.waarden?.[k]))}</td>`).join('')}${i.optelbaar?`<td class="num"><b>${esc(fnum(total(i,r)))}</b></td>`:''}</tr>`).join('')}</table></div></details>`}
+function indHtml(i){const ms=i.metingen||[];
+return `<div class="ind" data-ind="${i.id}"><div class="ih"><div class="nm">${esc(i.naam)}</div><button class="l" type="button" data-a="eind">Bewerken</button></div>
+<div class="meta"><span class="badge i-${slug(i.status)}">${esc(i.status)}</span>${i.bron?`<span>${esc(i.bron)}</span>`:''}${i.streefwaarde?`<span>streefwaarde: ${esc(i.streefwaarde)}</span>`:''}</div>
+${kpi(i)}${chartHtml(i)}${i.toelichting?`<p class="note">${esc(i.toelichting)}</p>`:''}${ms.length?tableHtml(i):'<p class="note">Nog geen metingen. Kies Bewerken om ze in te vullen.</p>'}
+${i.bijgewerkt?`<p class="note">${updLine(i)}</p>`:''}</div>`}
+
+// ---------- bewerkvenster indicator ----------
+const dlg=$('dlg');
+function openDlg(i){draft=i?JSON.parse(JSON.stringify(i)):{id:sel+'-I'+Date.now().toString(36),subdoel:sel,naam:'',status:'nog geen data',bron:'',eenheid:'',streefwaarde:'',doel:null,toelichting:'',categorieen:[],optelbaar:false,metingen:[]};draft._nieuw=!i;
+if(!draft.metingen.length)draft.metingen.push({id:'',periode:String(new Date().getFullYear()),waarden:{},toelichting:''});renderDlg();dlg.showModal();$('d-naam').focus()}
+function renderDlg(){const d=draft;$('dlgbody').innerHTML=`<h2>${d._nieuw?'Indicator toevoegen':'Indicator bewerken'}</h2>
+<label for="d-naam">Naam</label><input id="d-naam" data-d="naam" value="${esc(d.naam)}" required>
+<div class="g3"><div><label for="d-status">Status</label><select id="d-status" data-d="status">${ISTATUS.map(o=>`<option${o===d.status?' selected':''}>${o}</option>`).join('')}</select></div>
+<div><label for="d-eenheid">Eenheid</label><input id="d-eenheid" data-d="eenheid" value="${esc(d.eenheid)}" placeholder="%, ton, kg, arbeidsplaatsen"></div>
+<div><label for="d-bron">Bron</label><input id="d-bron" data-d="bron" value="${esc(d.bron)}"></div></div>
+<div class="g3"><div style="grid-column:span 2"><label for="d-streef">Streefwaarde <small>in woorden</small></label><input id="d-streef" data-d="streefwaarde" value="${esc(d.streefwaarde)}" placeholder="bijv. 55% in 2030"></div>
+<div><label for="d-doel">Doellijn <small>getal in grafiek</small></label><input id="d-doel" data-d="doel" inputmode="decimal" value="${d.doel==null?'':esc(fnum(d.doel))}"></div></div>
+<label for="d-cats">Categorieën <small>één per regel; leeg laten voor één waarde per periode</small></label><textarea id="d-cats" rows="3" placeholder="bijv.&#10;Apparaten&#10;Kleding en textiel">${esc((d.categorieen||[]).join('\n'))}</textarea>
+<label class="chk"><input type="checkbox" id="d-opt" ${d.optelbaar?'checked':''}> Categorieën tellen op tot een totaal <small>(gestapelde staven met totaal)</small></label>
+<h3>Metingen</h3><div class="scroll" id="grid"></div><div class="btns"><button class="b" type="button" data-g="add">Periode toevoegen</button></div>
+<label for="d-toel">Toelichting <small>definitie, kanttekeningen</small></label><textarea id="d-toel" data-d="toelichting">${esc(d.toelichting)}</textarea>
+<div class="btns end"><button class="b p" type="submit">Opslaan</button><button class="b" type="button" data-g="close">Annuleren</button>${d._nieuw?'':`<button class="b del" type="button" data-g="del">Indicator verwijderen</button>`}</div>`;renderGrid()}
+function renderGrid(){const d=draft;const ks=keysOf(d);$('grid').innerHTML=`<table class="grid"><tr><th>Periode</th>${ks.map(k=>`<th>${k?esc(k):`Waarde${d.eenheid?` (${esc(d.eenheid)})`:''}`}</th>`).join('')}<th>Toelichting</th><th></th></tr>
+${d.metingen.map((r,n)=>`<tr><td><input data-r="${n}" data-f="periode" value="${esc(r.periode)}" aria-label="Periode" class="w-p"></td>${ks.map(k=>`<td><input data-r="${n}" data-k="${esc(k)}" inputmode="decimal" value="${r.waarden?.[k]==null?'':esc(fnum(r.waarden[k]))}" aria-label="${esc(k||'Waarde')} ${esc(r.periode)}" class="w-v"></td>`).join('')}<td><input data-r="${n}" data-f="toelichting" value="${esc(r.toelichting)}" aria-label="Toelichting" class="w-t"></td><td><button class="l del" type="button" data-g="rm" data-r="${n}" aria-label="Rij verwijderen">×</button></td></tr>`).join('')}</table>`}
+dlg.addEventListener('input',e=>{const t=e.target,d=draft;if(!d)return;
+if(t.dataset.d){d[t.dataset.d]=t.dataset.d==='doel'?parseNum(t.value):t.value;if(t.dataset.d==='eenheid')renderGridHeads();return}
+if(t.id==='d-opt'){d.optelbaar=t.checked;return}
+if(t.id==='d-cats'){d.categorieen=[...new Set(t.value.split('\n').map(s=>s.trim()).filter(Boolean))];clearTimeout(renderGrid.h);renderGrid.h=setTimeout(renderGrid,400);return}
+if(t.dataset.r!=null){const r=d.metingen[+t.dataset.r];if(t.dataset.f)r[t.dataset.f]=t.value;else{(r.waarden??={})[t.dataset.k]=parseNum(t.value);t.classList.toggle('bad',t.value.trim()!==''&&parseNum(t.value)==null)}}});
+function renderGridHeads(){clearTimeout(renderGrid.h);renderGrid.h=setTimeout(renderGrid,400)}
+dlg.addEventListener('click',async e=>{const b=e.target.closest('[data-g]');if(!b)return;const g=b.dataset.g;
+if(g==='add'){const ms=draft.metingen;const last=ms[ms.length-1]?.periode;draft.metingen.push({id:'',periode:/^\d{4}$/.test(last||'')?String(+last+1):'',waarden:{},toelichting:''});renderGrid();const ins=$('grid').querySelectorAll('.w-p');ins[ins.length-1]?.focus();return}
+if(g==='rm'){draft.metingen.splice(+b.dataset.r,1);renderGrid();return}
+if(g==='close'){dlg.close();return}
+if(g==='del'){if(b.dataset.c!=='1'){b.dataset.c='1';b.textContent='Klik nog eens om te verwijderen';return}
+try{await api('DELETE',`/api/indicatoren/${draft.id}?door=${encodeURIComponent(nm())}`);delete DATA.indicatoren[draft.id];dlg.close();detail();chips();toast('Indicator verwijderd')}catch(err){toast(err.message,true)}}});
+$('dlgform').addEventListener('submit',async e=>{e.preventDefault();const d=draft;if(!d.naam.trim()){$('d-naam').focus();return}
+if($('dlg').querySelector('input.bad')){toast('Er staat een waarde die geen getal is',true);return}
+const body={...d,door:nm(),metingen:d.metingen.filter(r=>r.periode.trim())};delete body._nieuw;
+try{DATA.indicatoren[d.id]=await api('PUT','/api/indicatoren/'+d.id,body);dlg.close();detail();chips();lines();toast('Opgeslagen')}catch(err){toast(err.message,true)}});
+dlg.addEventListener('close',()=>{draft=null});
 
 // ---------- weergave ----------
 function goal(){$('goal').innerHTML=`<span><b>Hoofddoel 2050</b> ${esc(M.hoofddoel)}</span><span><b>Tussendoel 2030</b> ${esc(M.tussendoel)}</span><span><b>Monitoring</b> ${esc(M.monitoring)}</span>`;$('bron').textContent='Bron: '+M.bron+'. De aannames zijn een eerste opzet, afgeleid uit de programmatekst.'}
 function histBlock(item){return `<details data-hist="${item}"><summary>Historie van wijzigingen</summary><ul class="hist" style="padding-left:18px"><li>Laden…</li></ul></details>`}
 async function loadHist(d){try{const r=await api('GET','/api/historie?item='+encodeURIComponent(d.dataset.hist));d.querySelector('ul').innerHTML=r.length?r.map(h=>`<li>${fmt(h.t)} · <b>${esc(h.door||'onbekend')}</b> · ${esc(h.actie)} ${esc(String(h.item).split('/').slice(1).join('/'))}${typeof h.waarde==='string'&&h.waarde?`: ${esc(h.waarde.length>140?h.waarde.slice(0,140)+'…':h.waarde)}`:''}</li>`).join(''):'<li>Nog geen wijzigingen.</li>'}catch(e){d.querySelector('ul').innerHTML='<li class="err">Historie niet beschikbaar.</li>'}}
-
-function indHtml(i){
-const ms=i.metingen||[];const ns=ms.map(r=>num(r.waarde));const ok=ns.filter(n=>n!==null);const mx=Math.max(...ok.map(Math.abs),0);
-const bars=ok.length>=2&&mx>0?`<div class="bars">${ms.map((r,k)=>ns[k]===null?'':`<div class="bar"><span>${esc(r.periode)}</span><i style="width:${Math.max(2,Math.abs(ns[k])/mx*100)}%"></i><span>${esc(r.waarde)}</span></div>`).join('')}</div>`:'';
-const f=form&&form.ind===i.id?form:null;
-return `<div class="ind" data-ind="${i.id}"><div class="nm">${esc(i.naam)}</div><div class="meta"><span>${esc(i.status)}</span>${i.bron?`<span>${esc(i.bron)}</span>`:''}${i.eenheid?`<span>eenheid: ${esc(i.eenheid)}</span>`:''}${i.streefwaarde?`<span>streefwaarde: ${esc(i.streefwaarde)}</span>`:''}</div>${i.toelichting?`<p class="note">${esc(i.toelichting)}</p>`:''}
-${bars}${ms.length?`<div class="scroll"><table><tr><th>Periode</th><th>Waarde</th><th></th></tr>${ms.map(r=>`<tr><td>${esc(r.periode)}${r.toelichting?`<div class="note">${esc(r.toelichting)}</div>`:''}</td><td class="num">${esc(r.waarde)}</td><td class="act"><button class="l" type="button" data-a="emet" data-m="${r.id}">Wijzig</button><button class="l del" type="button" data-a="dmet" data-m="${r.id}">Verwijder</button></td></tr>`).join('')}</table></div>`:'<p class="note">Nog geen metingen.</p>'}
-${f&&f.type==='met'?metForm(i,f):''}${f&&f.type==='ind'?indForm(i):''}
-${f?'':`<div class="btns"><button class="b" type="button" data-a="nmet">Meting toevoegen</button><button class="b" type="button" data-a="eind">Indicator wijzigen</button></div>`}
-<p class="note">${i.bijgewerkt?updLine(i):''}</p></div>`}
-function metForm(i,f){const r=(i.metingen||[]).find(x=>x.id===f.mid)||{};return `<form class="form" data-f="met"><div class="g"><div><label for="mp">Periode</label><input id="mp" name="periode" value="${esc(r.periode)}" placeholder="bijv. 2026" required></div><div><label for="mw">Waarde</label><input id="mw" name="waarde" value="${esc(r.waarde)}" placeholder="bijv. 3,4%" required></div></div><label for="mt">Toelichting <small>bron, peildatum, bijzonderheden</small></label><input id="mt" name="toelichting" value="${esc(r.toelichting)}"><div class="btns"><button class="b p" type="submit">${f.mid?'Wijziging opslaan':'Meting opslaan'}</button><button class="b" type="button" data-a="cancel">Annuleren</button></div></form>`}
-function indForm(i){i=i||{};return `<form class="form" data-f="ind"><label for="in">Naam</label><input id="in" name="naam" value="${esc(i.naam)}" required><div class="g"><div><label for="is">Status</label><select id="is" name="status">${ISTATUS.map(o=>`<option${o===(i.status||'nog geen data')?' selected':''}>${o}</option>`).join('')}</select></div><div><label for="ie">Eenheid</label><input id="ie" name="eenheid" value="${esc(i.eenheid)}" placeholder="bijv. %, ton, kg/inwoner"></div></div><div class="g"><div><label for="ib">Bron</label><input id="ib" name="bron" value="${esc(i.bron)}"></div><div><label for="iw">Streefwaarde</label><input id="iw" name="streefwaarde" value="${esc(i.streefwaarde)}" placeholder="bijv. 55% in 2030"></div></div><label for="it">Toelichting <small>definitie, kanttekeningen</small></label><textarea id="it" name="toelichting">${esc(i.toelichting)}</textarea><div class="btns"><button class="b p" type="submit">Indicator opslaan</button><button class="b" type="button" data-a="cancel">Annuleren</button>${i.id?`<button class="b" type="button" data-a="dind" style="color:var(--bad)">Indicator verwijderen</button>`:''}</div></form>`}
-
+function actHtml(a){return `<details class="actd" data-aid="${a.id}"${openActs.has(a.id)?' open':''}><summary><span class="an">${esc(a.naam)}</span><span class="ap">${esc(a.periode)}</span><span data-ast="${a.id}">${badge(a.id)}</span></summary><div class="ab">
+${field(a.id,'aannames','Aannames','waarom draagt deze activiteit bij aan de maatregel?')}
+${statusSel(a.id,'Stand van uitvoering')}
+${field(a.id,'evaluatie','Evaluatie','wat is er gebeurd?')}
+${field(a.id,'effect','Bijdrage','wat heeft het opgeleverd voor de maatregel?')}
+<p class="note" id="upd-${a.id}">${updLine(DATA.notities[a.id])}</p>${histBlock(a.id)}</div></details>`}
 function detail(){
 const l=lijn(),box=$('det');if(!box)return;
 if(!sel){box.innerHTML=`<p class="empty">Kies een maatregel of subdoel.</p><h3>Fase van de transitie</h3><p>${esc(l.fase)}</p><h3>Invloed van de gemeente</h3><p>${esc(l.invloed)}</p>`;return}
 const m=l.mt.find(x=>x.id===sel);
-if(m){const st=pend[m.id]?.status??note(m.id,'status','niet ingevuld');
-box.innerHTML=`<h2>${m.k}. ${esc(m.t)}</h2><dl><dt>Rol</dt><dd>${esc(m.rol)}</dd><dt>Verwacht resultaat</dt><dd>${esc(m.res)}</dd><dt>Termijn</dt><dd>${esc(m.term)}</dd><dt>Verwachte impact</dt><dd><span class="dots">${IMP[m.imp][0]}</span> ${IMP[m.imp][1]}</dd><dt>Draagt bij aan</dt><dd>${m.viaDoel?'Transitiedoel (geen subdoel genoemd)':m.sub.map(clean).map(s=>`${allSub[s].lijn===l.naam?'':esc(allSub[s].lijn)+' '}subdoel ${allSub[s].k}`).join(', ')}</dd></dl>
-<h3>Activiteiten (uitvoeringsprogramma)</h3><ul class="acts">${m.act.map(a=>`<li><span>${esc(a[0])}</span><span>${esc(a[1])}</span></li>`).join('')}</ul>
-${field(m.id,'aannames','Aannames','waarom leidt deze maatregel tot het resultaat?',m.aan)}
-<label for="f-${m.id}-status">Stand van uitvoering</label><select id="f-${m.id}-status" data-id="${m.id}" data-k="status">${STATUS.map(o=>`<option${o===st?' selected':''}>${o}</option>`).join('')}</select>
+if(m){box.innerHTML=`<h2>${m.k}. ${esc(m.t)}</h2><dl><dt>Rol</dt><dd>${esc(m.rol)}</dd><dt>Verwacht resultaat</dt><dd>${esc(m.res)}</dd><dt>Termijn</dt><dd>${esc(m.term)}</dd><dt>Verwachte impact</dt><dd><span class="dots">${IMP[m.imp][0]}</span> ${IMP[m.imp][1]}</dd><dt>Draagt bij aan</dt><dd>${m.viaDoel?'Transitiedoel (geen subdoel genoemd)':m.sub.map(clean).map(s=>`${allSub[s].lijn===l.naam?'':esc(allSub[s].lijn)+' '}subdoel ${allSub[s].k}`).join(', ')}</dd></dl>
+<h3>Activiteiten (uitvoeringsprogramma)</h3><p class="note" style="margin-top:-2px">Klik op een activiteit om aannames, uitvoering, evaluatie en bijdrage in te vullen.</p><div class="acts">${m.act.map(actHtml).join('')}</div>
+<h3>Maatregel als geheel</h3>
+${field(m.id,'aannames','Aannames','waarom leidt deze maatregel tot de subdoelen?',m.aan)}
+${statusSel(m.id,'Stand van uitvoering')}
 ${field(m.id,'evaluatie','Evaluatie','wat is er gebeurd?')}
 ${field(m.id,'effect','Bijdrage en effect','wat heeft het opgeleverd voor de subdoelen, en klopten de aannames?')}
 <p class="note" id="upd-${m.id}">${updLine(DATA.notities[m.id])}</p>${histBlock(m.id)}`;grow();return}
 const s=allSub[sel];const ms=M.lijnen.flatMap(x=>x.mt).filter(x=>x.sub.map(clean).includes(sel));const inds=indsOf(sel);
 box.innerHTML=`<h2>Subdoel ${s.k}</h2><p>${esc(s.t)}</p><h3>Maatregelen die bijdragen</h3><p>${ms.length?ms.map(x=>`${x.id.startsWith('RV')?'Randvoorwaarde ':'Maatregel '}${x.k}. ${esc(x.t)}`).join('<br>'):'Geen maatregel gekoppeld.'}</p>
 <h3>Indicatoren</h3>${inds.map(indHtml).join('')||'<p class="note">Nog geen indicatoren.</p>'}
-${form&&form.type==='newind'?indForm(null):`<div class="btns"><button class="b" type="button" data-a="aind">Indicator toevoegen</button></div>`}
-${field(s.id,'toelichting','Duiding','wat zeggen de indicatoren over de voortgang?')}<p class="note" id="upd-${s.id}">${updLine(DATA.notities[s.id])}</p>${histBlock(s.id)}`;grow()}
-function grow(){document.querySelectorAll('#det textarea').forEach(t=>{t.style.height='auto';t.style.height=Math.max(84,t.scrollHeight+2)+'px'})}
+<div class="btns"><button class="b" type="button" data-a="aind">Indicator toevoegen</button></div>
+${field(s.id,'toelichting','Duiding','wat zeggen de indicatoren over de voortgang?')}<p class="note" id="upd-${s.id}">${updLine(DATA.notities[s.id])}</p>${histBlock(s.id)}`;grow();drawCharts()}
+function grow(){document.querySelectorAll('#det textarea').forEach(t=>{if(!t.offsetParent)return;t.style.height='auto';t.style.height=Math.max(84,t.scrollHeight+2)+'px'})}
 
 function lines(){const b=document.querySelector('.board'),svg=b&&b.querySelector('svg');if(!svg)return;const R=b.getBoundingClientRect();let h='';
 lijn().mt.forEach(m=>{const a=b.querySelector(`[data-m="${m.id}"]`);if(!a)return;const ra=a.getBoundingClientRect();const tg=m.viaDoel?[['__doel',false]]:m.sub.map(s=>[clean(s),s.includes('*')]);
 tg.forEach(([sid,af])=>{const c=sid==='__doel'?b.querySelector('.tdk'):b.querySelector(`.card[data-s="${sid}"]`);if(!c)return;const rc=c.getBoundingClientRect();const x1=ra.right-R.left,y1=ra.top+ra.height/2-R.top,x2=rc.left-R.left,y2=rc.top+Math.min(rc.height/2,22)-R.top,mx=(x1+x2)/2;
 const on=sel&&(sel===m.id||sel===sid);h+=`<path d="M${x1},${y1} C${mx},${y1} ${mx},${y2} ${x2},${y2}" fill="none" stroke="${on?'var(--acc)':'var(--rule)'}" stroke-width="${on?2:1.2}"${af||sid==='__doel'?' stroke-dasharray="4 4"':''}${on?' data-on="1"':''}/>`})});
 svg.innerHTML=h;[...svg.querySelectorAll('[data-on]')].forEach(p=>svg.appendChild(p))}
-function cardStatus(){document.querySelectorAll('[data-st]').forEach(e=>{const s=note(e.dataset.st,'status');e.textContent=s&&s!=='niet ingevuld'?s:''})}
+function cardStatus(){document.querySelectorAll('[data-st]').forEach(e=>{const s=note(e.dataset.st,'status');e.textContent=s&&s!=='niet ingevuld'?s:''});
+document.querySelectorAll('[data-acts]').forEach(e=>{const m=lijn().mt.find(x=>x.id===e.dataset.acts);const c={};m.act.forEach(a=>{const s=note(a.id,'status');if(s&&s!=='niet ingevuld')c[s]=(c[s]||0)+1});const t=Object.entries(c).map(([s,n])=>`${n} ${s}`).join(', ');e.textContent=`${m.act.length} activiteit${m.act.length>1?'en':''}${t?': '+t:''}`});
+document.querySelectorAll('[data-ast]').forEach(e=>{e.innerHTML=badge(e.dataset.ast)})}
 function chips(){document.querySelectorAll('[data-chips]').forEach(e=>{e.innerHTML=indsOf(e.dataset.chips).map(i=>`<span class="chip ${i.status==='data'?'ok':''}">${esc(i.naam.length>38?i.naam.slice(0,36)+'…':i.naam)}</span>`).join('')})}
 function mark(){const l=lijn();const rel=new Set();if(sel){rel.add(sel);l.mt.forEach(m=>{const ss=m.sub.map(clean);if(m.id===sel)ss.forEach(s=>rel.add(s));if(ss.includes(sel))rel.add(m.id)})}
 document.querySelectorAll('.board .card').forEach(c=>{const id=c.dataset.m||c.dataset.s;c.classList.toggle('on',!!id&&id===sel);c.classList.toggle('dim',!!sel&&!rel.has(id));if(id)c.setAttribute('aria-pressed',id===sel)});detail();lines()}
 function render(){
-const h=(location.hash||'').slice(1);cur=tabs().some(t=>t[0]===h)?h:'oi';sel=null;form=null;
+const h=(location.hash||'').slice(1);cur=tabs().some(t=>t[0]===h)?h:'oi';sel=null;
 $('nav').innerHTML=tabs().map(t=>`<a href="#${t[0]}"${t[0]===cur?' aria-current="page"':''}>${esc(t[1])}</a>`).join('');
 if(ro){ro.disconnect();ro=null}
 const main=$('main');
@@ -204,49 +333,41 @@ const l=lijn();
 const subCol=l.sub.length?l.sub.map(s=>`<button type="button" class="card" data-s="${s.id}"><span class="n">Subdoel ${s.k}</span><span class="t">${esc(s.t)}</span><span class="chips" data-chips="${s.id}"></span></button>`).join(''):[...new Set(l.mt.flatMap(m=>m.sub))].map(sid=>{const s=allSub[sid];return `<button type="button" class="card" data-s="${sid}"><span class="n">${esc(s.lijn)}, subdoel ${s.k}</span><span class="t">${esc(s.t)}</span></button>`}).join('');
 main.innerHTML=`<div class="tdoel"><h2>Transitiedoel</h2><p>${esc(l.transitiedoel)}</p><p class="fase">Fase: ${esc(l.fase)}. Invloed van de gemeente: ${esc(l.invloed)}.</p></div>
 <div class="board"><svg aria-hidden="true"></svg>
-<div class="col"><h3>Maatregelen</h3>${l.mt.map(m=>`<button type="button" class="card" data-m="${m.id}"><span class="n">Maatregel ${m.k}</span><span class="t">${esc(m.t)}</span><span class="meta"><span><span class="dots">${IMP[m.imp][0]}</span> ${IMP[m.imp][1]}</span><span>${m.act.length} activiteit${m.act.length>1?'en':''}</span><span data-st="${m.id}"></span></span><span class="mob meta">Draagt bij aan: ${m.viaDoel?'transitiedoel':m.sub.map(s=>allSub[clean(s)].k).join(', ')}</span></button>`).join('')}</div>
+<div class="col"><h3>Maatregelen</h3>${l.mt.map(m=>`<button type="button" class="card" data-m="${m.id}"><span class="n">Maatregel ${m.k}</span><span class="t">${esc(m.t)}</span><span class="meta"><span><span class="dots">${IMP[m.imp][0]}</span> ${IMP[m.imp][1]}</span><span data-st="${m.id}"></span></span><span class="meta" data-acts="${m.id}"></span><span class="mob meta">Draagt bij aan: ${m.viaDoel?'transitiedoel':m.sub.map(s=>allSub[clean(s)].k).join(', ')}</span></button>`).join('')}</div>
 <div class="col"><h3>${l.sub.length?'Subdoelen en indicatoren':'Subdoelen van andere lijnen'}</h3>${l.mt.some(m=>m.viaDoel)?`<div class="card tdk" style="cursor:default"><span class="n">Transitiedoel</span><span class="t">Direct, zonder subdoel</span></div>`:''}${subCol}</div>
 <aside class="detail" id="det" aria-live="polite"></aside></div>`;
 cardStatus();chips();
-ro=new ResizeObserver(()=>lines());ro.observe(main.querySelector('.board'));mark()}
+ro=new ResizeObserver(()=>{lines();drawCharts()});ro.observe(main.querySelector('.board'));mark()}
 
 // ---------- gebeurtenissen ----------
 const main=$('main');
-main.addEventListener('click',async e=>{
+main.addEventListener('click',e=>{
 const c=e.target.closest('.card[data-m],.card[data-s]');
-if(c){const id=c.dataset.m||c.dataset.s;sel=sel===id?null:id;form=null;mark();if(sel&&innerWidth<900)$('det').scrollIntoView({block:'start'});return}
-const b=e.target.closest('button[data-a]');if(!b)return;const a=b.dataset.a;const ind=b.closest('[data-ind]')?.dataset.ind;
-if(a==='cancel'){form=null;detail();return}
-if(a==='nmet'){form={type:'met',ind};detail();$('mp')?.focus();return}
-if(a==='emet'){form={type:'met',ind,mid:b.dataset.m};detail();$('mp')?.focus();return}
-if(a==='eind'){form={type:'ind',ind};detail();$('in')?.focus();return}
-if(a==='aind'){form={type:'newind'};detail();$('in')?.focus();return}
-if(a==='dmet'||a==='dind'){if(b.dataset.c!=='1'){b.dataset.c='1';b.textContent='Klik nog eens om te verwijderen';return}
-try{if(a==='dmet'){DATA.indicatoren[ind]=await api('DELETE',`/api/indicatoren/${ind}/metingen/${b.dataset.m}?door=${encodeURIComponent(nm())}`)}else{await api('DELETE',`/api/indicatoren/${ind}?door=${encodeURIComponent(nm())}`);delete DATA.indicatoren[ind]}form=null;detail();chips();toast('Verwijderd')}catch(err){toast(err.message,true)}}});
-main.addEventListener('submit',async e=>{e.preventDefault();const f=e.target;const v=Object.fromEntries(new FormData(f));v.door=nm();
-try{if(f.dataset.f==='met'){const fi=form;DATA.indicatoren[fi.ind]=await api(fi.mid?'PUT':'POST',`/api/indicatoren/${fi.ind}/metingen${fi.mid?'/'+fi.mid:''}`,v)}
-else{const id=form.type==='newind'?sel+'-I'+Date.now().toString(36):form.ind;DATA.indicatoren[id]=await api('PUT','/api/indicatoren/'+id,{...v,subdoel:form.type==='newind'?sel:DATA.indicatoren[id].subdoel})}
-form=null;detail();chips();lines();toast('Opgeslagen')}catch(err){toast(err.message,true)}});
+if(c){const id=c.dataset.m||c.dataset.s;sel=sel===id?null:id;mark();if(sel&&innerWidth<900)$('det').scrollIntoView({block:'start'});return}
+const b=e.target.closest('button[data-a]');if(!b)return;const a=b.dataset.a;
+if(a==='eind'){openDlg(DATA.indicatoren[b.closest('[data-ind]').dataset.ind]);return}
+if(a==='aind'){openDlg(null);return}});
 main.addEventListener('input',e=>{const t=e.target;if(!t.dataset.id)return;if(t.tagName==='TEXTAREA'){t.style.height='auto';t.style.height=Math.max(84,t.scrollHeight+2)+'px'}queue(t.dataset.id,t.dataset.k,t.value)});
-main.addEventListener('toggle',e=>{const d=e.target;if(d.dataset?.hist&&d.open)loadHist(d)},true);
+main.addEventListener('toggle',e=>{const d=e.target;if(d.dataset?.hist&&d.open)loadHist(d);if(d.dataset?.aid){d.open?openActs.add(d.dataset.aid):openActs.delete(d.dataset.aid);if(d.open)grow();lines()}},true);
 window.addEventListener('hashchange',()=>{if(M)render()});
 $('naam').value=nm();$('naam').addEventListener('input',e=>{try{localStorage.setItem('naam',e.target.value.trim())}catch(err){}});
 window.addEventListener('beforeunload',e=>{if(busy()){Object.keys(pend).forEach(flush);e.preventDefault()}});
 
 // ---------- export ----------
-function rows(){const sub=[],mt=[],act=[],ind=[],met=[],kop=[];
-M.lijnen.forEach(l=>{l.sub.forEach(s=>sub.push({Programmalijn:l.naam,Id:s.id,Subdoel:s.k,Omschrijving:s.t,Duiding:note(s.id,'toelichting'),Bijgewerkt:fmt(DATA.notities[s.id]?.bijgewerkt),Door:DATA.notities[s.id]?.door||''}));
-l.mt.forEach(m=>{mt.push({Programmalijn:l.naam,Id:m.id,Maatregel:m.k,Naam:m.t,Rol:m.rol,'Verwacht resultaat':m.res,Termijn:m.term,'Verwachte impact':IMP[m.imp][1],'Draagt bij aan':m.viaDoel?'transitiedoel':m.sub.map(clean).join(', '),Aannames:note(m.id,'aannames',m.aan),Status:note(m.id,'status'),Evaluatie:note(m.id,'evaluatie'),'Bijdrage en effect':note(m.id,'effect'),Bijgewerkt:fmt(DATA.notities[m.id]?.bijgewerkt),Door:DATA.notities[m.id]?.door||''});
+function rows(){const sub=[],mt=[],act=[],ind=[],met=[],kop=[];const N=id=>DATA.notities[id]||{};
+M.lijnen.forEach(l=>{l.sub.forEach(s=>sub.push({Programmalijn:l.naam,Id:s.id,Subdoel:s.k,Omschrijving:s.t,Duiding:note(s.id,'toelichting'),Bijgewerkt:fmt(N(s.id).bijgewerkt),Door:N(s.id).door||''}));
+l.mt.forEach(m=>{mt.push({Programmalijn:l.naam,Id:m.id,Maatregel:m.k,Naam:m.t,Rol:m.rol,'Verwacht resultaat':m.res,Termijn:m.term,'Verwachte impact':IMP[m.imp][1],'Draagt bij aan':m.viaDoel?'transitiedoel':m.sub.map(clean).join(', '),Aannames:note(m.id,'aannames',m.aan),Status:note(m.id,'status'),Evaluatie:note(m.id,'evaluatie'),'Bijdrage en effect':note(m.id,'effect'),Bijgewerkt:fmt(N(m.id).bijgewerkt),Door:N(m.id).door||''});
 (m.viaDoel?[['transitiedoel '+l.id,false]]:m.sub.map(s=>[clean(s),s.includes('*')])).forEach(([s,af])=>kop.push({Maatregel:m.id,Subdoel:s,Koppeling:af?'afgeleid':'uit programma'}));
-m.act.forEach(a=>act.push({Maatregel:m.id,Activiteit:a[0],Periode:a[1]}))})});
-Object.values(DATA.indicatoren).sort((a,b)=>(a.nr||0)-(b.nr||0)).forEach(i=>{ind.push({Id:i.id,Subdoel:i.subdoel,Naam:i.naam,Status:i.status,Bron:i.bron,Eenheid:i.eenheid,Streefwaarde:i.streefwaarde,Toelichting:i.toelichting,Bijgewerkt:fmt(i.bijgewerkt),Door:i.door||''});(i.metingen||[]).forEach(r=>met.push({Indicator:i.id,Naam:i.naam,Periode:r.periode,Waarde:r.waarde,'Waarde (getal)':num(r.waarde),Toelichting:r.toelichting}))});
+m.act.forEach(a=>act.push({Programmalijn:l.naam,Maatregel:m.id,Id:a.id,Activiteit:a.naam,Periode:a.periode,Aannames:note(a.id,'aannames'),Status:note(a.id,'status'),Evaluatie:note(a.id,'evaluatie'),Bijdrage:note(a.id,'effect'),Bijgewerkt:fmt(N(a.id).bijgewerkt),Door:N(a.id).door||''}))})});
+Object.values(DATA.indicatoren).sort((a,b)=>(a.nr||0)-(b.nr||0)).forEach(i=>{ind.push({Id:i.id,Subdoel:i.subdoel,Naam:i.naam,Status:i.status,Eenheid:i.eenheid,Categorieën:(i.categorieen||[]).join('; '),Optelbaar:i.optelbaar?'ja':'nee',Streefwaarde:i.streefwaarde,Doellijn:i.doel,Bron:i.bron,Toelichting:i.toelichting,Bijgewerkt:fmt(i.bijgewerkt),Door:i.door||''});
+series(i).forEach(r=>keysOf(i).forEach(k=>met.push({Indicator:i.id,Naam:i.naam,Periode:r.periode,Categorie:k||'',Waarde:r.waarden?.[k]??null,Eenheid:i.eenheid,Toelichting:r.toelichting})))});
 return {Maatregelen:mt,Activiteiten:act,Subdoelen:sub,Koppelingen:kop,Indicatoren:ind,Metingen:met,Aandachtspunten:M.aandacht.map(a=>({Punt:a[0],Toelichting:a[1]}))}}
 const stamp=()=>new Date().toISOString().slice(0,10);
 $('xlsx').addEventListener('click',()=>{if(!window.XLSX){toast('Excel-export niet beschikbaar',true);return}const wb=XLSX.utils.book_new();Object.entries(rows()).forEach(([n,r])=>{const ws=XLSX.utils.json_to_sheet(r);ws['!cols']=Object.keys(r[0]||{}).map(k=>({wch:Math.min(60,Math.max(10,k.length+2,...r.map(x=>String(x[k]??'').length).slice(0,200).map(x=>Math.min(x,60))))}));XLSX.utils.book_append_sheet(wb,ws,n)});XLSX.writeFile(wb,`monitoring-circulaire-stad-${stamp()}.xlsx`)});
 $('json').addEventListener('click',()=>{const b=new Blob([JSON.stringify({model:M,data:DATA},null,2)],{type:'application/json'});const a=document.createElement('a');a.href=URL.createObjectURL(b);a.download=`monitoring-circulaire-stad-${stamp()}.json`;a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000)});
 
 // ---------- laden en verversen ----------
-async function refresh(){if(busy()||form||document.activeElement?.closest?.('#det'))return;try{const d=await api('GET','/api/data');if(JSON.stringify(d)!==JSON.stringify(DATA)){DATA=d;if(cur!=='aandacht'){cardStatus();chips();detail();lines()}}}catch(e){}}
+async function refresh(){if(busy()||dlg.open||document.activeElement?.closest?.('#det'))return;try{const d=await api('GET','/api/data');if(JSON.stringify(d)!==JSON.stringify(DATA)){DATA=d;if(cur!=='aandacht'){cardStatus();chips();detail();lines()}}}catch(e){}}
 (async()=>{try{[M,DATA]=await Promise.all([api('GET','/api/model'),api('GET','/api/data')]);
 M.lijnen.forEach(l=>l.sub.forEach(s=>allSub[s.id]={...s,lijn:l.naam}));goal();render();setInterval(refresh,30000)}
 catch(e){$('main').innerHTML='<p class="err" style="padding:24px 0">De gegevens konden niet worden geladen. Draait de server?</p>'}})();
