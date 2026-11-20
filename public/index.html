@@ -114,7 +114,7 @@ footer .row{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-botto
 <nav id="nav"></nav>
 <main id="main"><p class="empty" style="padding:24px 0">Laden…</p></main>
 <footer>
-<div class="row"><button class="b" id="xlsx" type="button">Download als Excel</button><button class="b" id="json" type="button">Download als JSON</button><span id="sync"></span></div>
+<div class="row"><button class="b" id="xlsx" type="button">Download als Excel</button><button class="b" id="json" type="button">Download als JSON</button><span id="sync"></span><a href="/logout" style="margin-left:auto;color:var(--mut)">Uitloggen</a></div>
 <p id="bron"></p>
 </footer>
 </div>
@@ -132,7 +132,7 @@ const clean=id=>id.replace('*','');
 const nm=()=>{try{return localStorage.getItem('naam')||''}catch(e){return ''}};
 const fmt=t=>t?new Date(t).toLocaleString('nl-NL',{day:'numeric',month:'short',year:'numeric',hour:'2-digit',minute:'2-digit'}):'';
 function toast(t,bad){const e=$('toast');e.textContent=t;e.style.background=bad?'var(--bad)':'';e.classList.add('on');clearTimeout(toast.h);toast.h=setTimeout(()=>e.classList.remove('on'),2200)}
-async function api(method,url,body){const r=await fetch(url,{method,headers:{'Content-Type':'application/json'},body:body?JSON.stringify(body):undefined});if(!r.ok){let m='Opslaan mislukt';try{m=(await r.json()).fout||m}catch(e){}throw new Error(m)}return r.json()}
+async function api(method,url,body){const r=await fetch(url,{method,headers:{'Content-Type':'application/json'},body:body?JSON.stringify(body):undefined});if(r.status===401){location.reload();throw new Error('Sessie verlopen, opnieuw inloggen')}if(!r.ok){let m='Opslaan mislukt';try{m=(await r.json()).fout||m}catch(e){}throw new Error(m)}return r.json()}
 const tabs=()=>[...M.lijnen.map(l=>[l.id,l.naam]),['aandacht','Aandachtspunten']];
 const lijn=()=>M.lijnen.find(x=>x.id===cur);
 const indsOf=sid=>Object.values(DATA.indicatoren).filter(i=>i.subdoel===sid).sort((a,b)=>(a.nr||0)-(b.nr||0));

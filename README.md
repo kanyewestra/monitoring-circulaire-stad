@@ -60,7 +60,11 @@ Bijwerken naar een nieuwe versie: `git pull && pm2 restart circulair`. De map `d
 
 ## Delen met collega's
 
-Geef collega's de URL en de inloggegevens. Iedereen met de inloggegevens kan lezen en wijzigen. Bij de historie gebruikt de app de naam die iemand rechtsboven invult.
+Geef collega's de URL en het wachtwoord. Ze loggen in via de inlogpagina en blijven dan 30 dagen ingelogd op dat apparaat. Rechtsonder staat een link om uit te loggen. Iedereen met het wachtwoord kan lezen en wijzigen. Bij de historie gebruikt de app de naam die iemand rechtsboven invult.
+
+Wachtwoord wijzigen: pas `APP_PASSWORD` aan in `.env` en herstart de app met `pm2 restart circulair`. Iedereen moet daarna opnieuw inloggen. Na 10 mislukte pogingen blokkeert de app inlogpogingen van dat adres een kwartier.
+
+Scripts (R, curl) kunnen ook inloggen met basic auth: gebruikersnaam `APP_USER` en het wachtwoord.
 
 ## Back-up
 

@@ -92,21 +92,69 @@ function readBody(req) {
     req.on('error', fail);
   });
 }
-function authorized(req) {
-  if (!APP_PASSWORD) return true;
+// ---------- inloggen ----------
+// Inlogpagina met sessiecookie (werkt in elke browser); basic auth blijft werken voor scripts (R, curl).
+const SECRET_FILE = path.join(DATA_DIR, 'secret');
+let SECRET;
+try { SECRET = fs.readFileSync(SECRET_FILE, 'utf8').trim(); } catch (e) { SECRET = crypto.randomBytes(32).toString('hex'); fs.writeFileSync(SECRET_FILE, SECRET, { mode: 0o600 }); }
+const KEY = crypto.createHash('sha256').update(SECRET + ':' + APP_PASSWORD).digest(); // nieuw wachtwoord = iedereen opnieuw inloggen
+const SESSION_DAYS = 30;
+const sign = v => crypto.createHmac('sha256', KEY).update(v).digest('base64url');
+const eq = (a, b) => { const x = Buffer.from(String(a)), y = Buffer.from(String(b)); return x.length === y.length && crypto.timingSafeEqual(x, y); };
+function cookies(req) { return Object.fromEntries((req.headers.cookie || '').split(';').map(c => c.trim().split('=')).filter(c => c[0]).map(([k, ...v]) => [k, v.join('=')])); }
+function sessionOk(req) {
+  const c = cookies(req).sessie || '';
+  const [exp, sig] = c.split('.');
+  return !!exp && !!sig && Number(exp) > Date.now() && eq(sig, sign(exp));
+}
+function basicOk(req) {
   const h = req.headers.authorization || '';
   if (!h.startsWith('Basic ')) return false;
   const [u, ...p] = Buffer.from(h.slice(6), 'base64').toString('utf8').split(':');
-  const a = Buffer.from(u + ':' + p.join(':')), b = Buffer.from(APP_USER + ':' + APP_PASSWORD);
-  return a.length === b.length && crypto.timingSafeEqual(a, b);
+  return eq(u + ':' + p.join(':'), APP_USER + ':' + APP_PASSWORD);
+}
+function authorized(req) { return !APP_PASSWORD || sessionOk(req) || basicOk(req); }
+const secure = req => (req.headers['x-forwarded-proto'] || '').split(',')[0].trim() === 'https';
+const clientIp = req => (req.headers['x-forwarded-for'] || '').split(',')[0].trim() || req.socket.remoteAddress;
+const fails = new Map(); // ip -> {n, t}
+function loginPage(res, fout, code = 200) {
+  const html = fs.readFileSync(path.join(PUBLIC_DIR, 'login.html'), 'utf8').replace('<!--FOUT-->', fout ? `<p class="fout" role="alert">${fout}</p>` : '');
+  send(res, code, html, 'text/html; charset=utf-8');
+}
+async function readForm(req) {
+  const chunks = []; let n = 0;
+  for await (const c of req) { n += c.length; if (n > 10000) break; chunks.push(c); }
+  return new URLSearchParams(Buffer.concat(chunks).toString('utf8'));
 }
 const MIME = { '.html': 'text/html; charset=utf-8', '.js': 'text/javascript; charset=utf-8', '.css': 'text/css; charset=utf-8', '.json': 'application/json; charset=utf-8', '.svg': 'image/svg+xml' };
 
 // ---------- routes ----------
 async function handle(req, res) {
+  const path0 = req.url.split('?')[0];
+  if (APP_PASSWORD && path0 === '/login' && req.method === 'POST') {
+    const ip = clientIp(req), f = fails.get(ip);
+    if (f && f.n >= 10 && Date.now() - f.t < 15 * 60e3) return loginPage(res, 'Te veel mislukte pogingen. Probeer het over een kwartier opnieuw.', 429);
+    const form = await readForm(req);
+    if (eq(form.get('wachtwoord') || '', APP_PASSWORD)) {
+      fails.delete(ip);
+      const exp = String(Date.now() + SESSION_DAYS * 864e5);
+      res.writeHead(303, {
+        'Location': '/',
+        'Set-Cookie': `sessie=${exp}.${sign(exp)}; Path=/; HttpOnly; SameSite=Lax; Max-Age=${SESSION_DAYS * 86400}${secure(req) ? '; Secure' : ''}`
+      });
+      return res.end();
+    }
+    fails.set(ip, { n: (f && Date.now() - f.t < 15 * 60e3 ? f.n : 0) + 1, t: Date.now() });
+    await new Promise(r => setTimeout(r, 800));
+    return loginPage(res, 'Dat wachtwoord klopt niet.', 401);
+  }
+  if (path0 === '/logout') {
+    res.writeHead(303, { 'Location': '/', 'Set-Cookie': 'sessie=; Path=/; HttpOnly; SameSite=Lax; Max-Age=0' });
+    return res.end();
+  }
   if (!authorized(req)) {
-    res.writeHead(401, { 'WWW-Authenticate': 'Basic realm="Monitoring Circulaire Stad", charset="UTF-8"' });
-    return res.end('Inloggen vereist');
+    if (path0.startsWith('/api/')) return send(res, 401, { fout: 'Niet ingelogd' });
+    return loginPage(res, '');
   }
   const url = new URL(req.url, 'http://x');
   const p = url.pathname.split('/').filter(Boolean);
