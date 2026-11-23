@@ -373,8 +373,9 @@ function actHtml(a){return `<details class="actd" data-aid="${a.id}"${openActs.h
 ${a.omschrijving?`<details class="omsch"><summary>Omschrijving uit het uitvoeringsprogramma</summary><p>${esc(a.omschrijving)}</p></details>`:''}${a.dekking?`<p class="note"><b>Dekking en uitvoering:</b> ${esc(a.dekking)}</p>`:''}
 ${field(a.id,'aannames','Aannames','waarom draagt deze activiteit bij aan de maatregel?')}
 ${statusSel(a.id,'Stand van uitvoering')}
-${field(a.id,'evaluatie','Evaluatie','wat is er gebeurd?')}
-${field(a.id,'effect','Bijdrage','wat heeft het opgeleverd voor de maatregel?')}
+${field(a.id,'evaluatie','Evaluatie','wat is er gebeurd en welke input is er geweest?')}
+${field(a.id,'resultaten','Resultaten','welke tastbare resultaten heeft dit opgeleverd?')}
+${field(a.id,'effect','Bijdrage','hoe droeg dit bij aan de gekoppelde subdoelen?')}
 <p class="note" id="upd-${a.id}">${updLine(DATA.notities[a.id])}</p>${histBlock(a.id)}</div></details>`}
 const allMt=()=>M.lijnen.flatMap(l=>l.mt.map(m=>({...m,lijn:l})));
 function titleHtml(id,label,txt){return full?`<p class="eyebrow">${esc(lijn().naam)} · ${label}</p><h2 class="ptitle">${txt}</h2>`:`<h2><a class="tl" href="#${cur}/${id}" title="Open als pagina">${txt}</a></h2><a class="openp" href="#${cur}/${id}">Open als pagina</a>`}
@@ -384,8 +385,9 @@ const l=lijn(),box=$('det');if(!box)return;
 if(!sel){box.innerHTML=`<p class="empty">Kies een maatregel of subdoel.</p>`;return}
 const m=l.mt.find(x=>x.id===sel);
 if(m){box.innerHTML=`${titleHtml(m.id,'Maatregel '+m.k,`${m.k}. ${esc(m.t)}`)}<dl><dt>Rol</dt><dd>${esc(m.rol)}</dd><dt>Verwacht resultaat</dt><dd>${esc(m.res)}</dd><dt>Termijn</dt><dd>${esc(m.term)}</dd><dt>Verwachte impact</dt><dd><span class="dots">${IMP[m.imp][0]}</span> ${IMP[m.imp][1]}</dd><dt>Draagt bij aan</dt><dd>${m.randvoorwaarde?'Geen directe koppeling met subdoelen: voorwaarde voor de andere programmalijnen':m.viaDoel?'Indirect aan het transitiedoel (geen subdoel genoemd)':`<ul class="mlist">${m.sub.map(clean).map(s=>`<li>${goto(s,`Subdoel ${allSub[s].k}. ${esc(allSub[s].t)}`)}</li>`).join('')}</ul>`}</dd></dl>
-<h3>Activiteiten</h3><p class="note">Uit het uitvoeringsprogramma. Klik op een activiteit om aannames, uitvoering, evaluatie en bijdrage in te vullen.</p><div class="acts">${m.act.map(actHtml).join('')}</div>
+<h3>Activiteiten</h3><p class="note">Uit het uitvoeringsprogramma. Klik op een activiteit om aannames, uitvoering, evaluatie, resultaten en bijdrage in te vullen.</p><div class="acts">${m.act.map(actHtml).join('')}</div>
 <h3>Maatregel als geheel</h3>
+${field(m.id,'aannames','Aannames','waarom leidt deze maatregel tot de subdoelen?',m.aan)}
 ${field(m.id,'evaluatie','Evaluatie','wat is er gebeurd?')}
 ${field(m.id,'effect','Bijdrage en effect','wat heeft het opgeleverd voor de subdoelen, en klopten de aannames?')}
 <p class="note" id="upd-${m.id}">${updLine(DATA.notities[m.id])}</p>${histBlock(m.id)}`;grow();return}
@@ -447,9 +449,9 @@ window.addEventListener('beforeunload',e=>{if(busy()){Object.keys(pend).forEach(
 // ---------- export ----------
 function rows(){const sub=[],mt=[],act=[],ind=[],met=[],kop=[];const N=id=>DATA.notities[id]||{};
 M.lijnen.forEach(l=>{l.sub.forEach(s=>sub.push({Programmalijn:l.naam,Id:s.id,Subdoel:s.k,Omschrijving:s.t,Duiding:note(s.id,'toelichting'),Bijgewerkt:fmt(N(s.id).bijgewerkt),Door:N(s.id).door||''}));
-l.mt.forEach(m=>{mt.push({Programmalijn:l.naam,Id:m.id,Maatregel:m.k,Naam:m.t,Rol:m.rol,'Verwacht resultaat':m.res,Termijn:m.term,'Verwachte impact':IMP[m.imp][1],'Draagt bij aan':m.randvoorwaarde?'randvoorwaarde':m.viaDoel?'transitiedoel (indirect)':m.sub.map(clean).join(', '),Evaluatie:note(m.id,'evaluatie'),'Bijdrage en effect':note(m.id,'effect'),Bijgewerkt:fmt(N(m.id).bijgewerkt),Door:N(m.id).door||''});
+l.mt.forEach(m=>{mt.push({Programmalijn:l.naam,Id:m.id,Maatregel:m.k,Naam:m.t,Rol:m.rol,'Verwacht resultaat':m.res,Termijn:m.term,'Verwachte impact':IMP[m.imp][1],'Draagt bij aan':m.randvoorwaarde?'randvoorwaarde':m.viaDoel?'transitiedoel (indirect)':m.sub.map(clean).join(', '),Aannames:note(m.id,'aannames',m.aan),Evaluatie:note(m.id,'evaluatie'),'Bijdrage en effect':note(m.id,'effect'),Bijgewerkt:fmt(N(m.id).bijgewerkt),Door:N(m.id).door||''});
 (m.viaDoel?[['transitiedoel '+l.id,'indirect']]:m.sub.map(s=>[clean(s),'direct'])).forEach(([s,k])=>kop.push({Maatregel:m.id,Subdoel:s,Koppeling:k}));
-m.act.forEach(a=>act.push({Programmalijn:l.naam,Maatregel:m.id,Id:a.id,Activiteit:a.naam,Periode:a.periode,Omschrijving:a.omschrijving||'','Dekking en uitvoering':a.dekking||'',Aannames:note(a.id,'aannames'),Status:note(a.id,'status'),Evaluatie:note(a.id,'evaluatie'),Bijdrage:note(a.id,'effect'),Bijgewerkt:fmt(N(a.id).bijgewerkt),Door:N(a.id).door||''}))})});
+m.act.forEach(a=>act.push({Programmalijn:l.naam,Maatregel:m.id,Id:a.id,Activiteit:a.naam,Periode:a.periode,Omschrijving:a.omschrijving||'','Dekking en uitvoering':a.dekking||'',Aannames:note(a.id,'aannames'),Status:note(a.id,'status'),Evaluatie:note(a.id,'evaluatie'),Resultaten:note(a.id,'resultaten'),Bijdrage:note(a.id,'effect'),Bijgewerkt:fmt(N(a.id).bijgewerkt),Door:N(a.id).door||''}))})});
 Object.values(DATA.indicatoren).sort((a,b)=>(a.nr||0)-(b.nr||0)).forEach(i=>{ind.push({Id:i.id,Subdoel:i.subdoel,Naam:i.naam,Status:i.status,Eenheid:i.eenheid,Categorieën:(i.categorieen||[]).join('; '),Optelbaar:i.optelbaar?'ja':'nee',Streefwaarde:i.streefwaarde,Doellijn:i.doel,Bron:i.bron,Toelichting:i.toelichting,Bijgewerkt:fmt(i.bijgewerkt),Door:i.door||''});
 series(i).forEach(r=>keysOf(i).forEach(k=>met.push({Indicator:i.id,Naam:i.naam,Periode:r.periode,Categorie:k||'',Waarde:r.waarden?.[k]??null,Eenheid:i.eenheid,Toelichting:r.toelichting})))});
 return {Maatregelen:mt,Activiteiten:act,Subdoelen:sub,Koppelingen:kop,Indicatoren:ind,Metingen:met,Aandachtspunten:M.aandacht.map(a=>({Punt:a[0],Toelichting:a[1]}))}}

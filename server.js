@@ -151,7 +151,7 @@ function log(door, actie, item, waarde) {
 
 // ---------- hulpfuncties ----------
 const ID = /^[A-Za-z0-9-]{1,40}$/;
-const NOTE_FIELDS = ['aannames', 'status', 'evaluatie', 'effect', 'toelichting'];
+const NOTE_FIELDS = ['aannames', 'status', 'evaluatie', 'resultaten', 'effect', 'toelichting'];
 const IND_FIELDS = ['naam', 'status', 'bron', 'eenheid', 'streefwaarde', 'toelichting'];
 const str = (v, max = 20000) => String(v ?? '').slice(0, max);
 const knownItems = new Set(model.lijnen.flatMap(l => [...l.sub.map(s => s.id), ...l.mt.map(m => m.id), ...l.mt.flatMap(m => m.act.map(a => a.id))]));
