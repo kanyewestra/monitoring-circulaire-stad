@@ -10,7 +10,7 @@ Wat je in de app kunt invullen:
 - **Per subdoel:** indicatoren toevoegen en bewerken, en een duiding van de voortgang. Een indicator kan categorieën hebben, bijvoorbeeld banen per R-strategie of weggooigedrag per productgroep. Per periode vul je dan een waarde per categorie in. Tellen de categorieën op tot een totaal, dan toont de app gestapelde staven met het totaal; anders gegroepeerde staven of lijnen. Een doellijn kan als stippellijn in de grafiek.
 - **Paginaweergave:** klik op de titel in het rechterpaneel (of op "Open als pagina") voor een volledige pagina van een maatregel of subdoel, met een eigen adres zoals `#bg/BG-M3` en een knop om af te drukken. Met "Terug" of de terugknop van de browser kom je in het overzicht.
 - **Historie:** elke wijziging wordt met tijd en naam vastgelegd.
-- **Export:** de knoppen onderaan downloaden alles als Excel (een tabblad per onderdeel) of als JSON.
+- **Export:** de knoppen onderaan downloaden een indicatorenverslag in Word (per programmalijn het transitiedoel, de subdoelen met duiding en de indicatoren met kerncijfer, grafiek, tabel en toelichting; zonder maatregelen), alles als Excel (een tabblad per onderdeel) of als JSON.
 
 De app heeft geen externe afhankelijkheden. Hij gebruikt alleen Node, laadt geen externe fonts of scripts en stuurt niets naar derden.
 
@@ -21,6 +21,7 @@ De app heeft geen externe afhankelijkheden. Hij gebruikt alleen Node, laadt geen
 | `server.js` | Webserver en API (Node 18+, geen npm-pakketten) |
 | `public/index.html` | De app |
 | `public/vendor/xlsx.full.min.js` | SheetJS 0.18.5 voor de Excel-export |
+| `public/vendor/docx.umd.js` | docx 9.0.2 voor het Word-verslag (wordt pas geladen bij gebruik) |
 | `model.json` | Programmalijnen, transitiedoelen, subdoelen, maatregelen, activiteiten en aandachtspunten. Bij de eerste start worden hier ook de beginindicatoren uit gehaald. |
 | `data/data.json` | Alle invoer: notities, indicatoren en metingen. Wordt bij de eerste start aangemaakt. |
 | `data/historie.jsonl` | Logboek van alle wijzigingen, één regel per wijziging |

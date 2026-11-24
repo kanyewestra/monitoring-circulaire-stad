@@ -226,7 +226,7 @@ ol.fasen li.na{opacity:.75}
 <nav id="nav"></nav>
 <main id="main"><p class="empty" style="padding:24px 0">Laden…</p></main>
 <footer>
-<div class="row"><button class="b" id="xlsx" type="button">Download als Excel</button><button class="b" id="json" type="button">Download als JSON</button><span id="sync"></span><a href="/logout" style="margin-left:auto;color:var(--mut)">Uitloggen</a></div>
+<div class="row"><button class="b" id="word" type="button">Indicatorenverslag (Word)</button><button class="b" id="xlsx" type="button">Download als Excel</button><button class="b" id="json" type="button">Download als JSON</button><span id="sync"></span><a href="/logout" style="margin-left:auto;color:var(--mut)">Uitloggen</a></div>
 <p id="bron"></p>
 </footer>
 </div>
@@ -459,6 +459,61 @@ return {Maatregelen:mt,Activiteiten:act,Subdoelen:sub,Koppelingen:kop,Indicatore
 const stamp=()=>new Date().toISOString().slice(0,10);
 $('xlsx').addEventListener('click',()=>{if(!window.XLSX){toast('Excel-export niet beschikbaar',true);return}const wb=XLSX.utils.book_new();Object.entries(rows()).forEach(([n,r])=>{const ws=XLSX.utils.json_to_sheet(r);ws['!cols']=Object.keys(r[0]||{}).map(k=>({wch:Math.min(60,Math.max(10,k.length+2,...r.map(x=>String(x[k]??'').length).slice(0,200).map(x=>Math.min(x,60))))}));XLSX.utils.book_append_sheet(wb,ws,n)});XLSX.writeFile(wb,`monitoring-circulaire-stad-${stamp()}.xlsx`)});
 $('json').addEventListener('click',()=>{const b=new Blob([JSON.stringify({model:M,data:DATA},null,2)],{type:'application/json'});const a=document.createElement('a');a.href=URL.createObjectURL(b);a.download=`monitoring-circulaire-stad-${stamp()}.json`;a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000)});
+
+// ---------- Word-verslag indicatoren ----------
+const HEX={c:['#1f5fbf','#0f8b8d','#d9822b','#7b5ea7','#8a8f98','#b8423a'],k:{blauw:'#1f5fbf',turquoise:'#0f8b8d',groen:'#2f8f46',geel:'#c9a400',oranje:'#d9822b',rood:'#c53030',paars:'#7b5ea7',grijs:'#8a8f98'}};
+const hexOf=(i,k,n)=>i.kleuren?.[k]?HEX.k[i.kleuren[k]]:(keysOf(i).length>1?HEX.c[n%6]:HEX.c[0]);
+function kpiText(i){const ks=keysOf(i);const ms=series(i).filter(r=>ks.some(k=>r.waarden?.[k]!=null));if(!ms.length)return '';const cats=i.categorieen?.length;if(cats&&!i.optelbaar)return '';
+const v=r=>cats?total(i,r):r.waarden?.[''];const last=ms[ms.length-1],prev=ms.length>1?ms[ms.length-2]:null;const lv=v(last),pv=prev?v(prev):null;let ch='';
+if(lv!=null&&pv!=null){const d=lv-pv;const sg=(d>0?'+':d<0?'−':'±')+fnum(Math.abs(d));ch=i.eenheid==='%'?`${sg} procentpunt t.o.v. ${prev.periode}`:`${sg}${i.eenheid?' '+i.eenheid:''}${pv?` (${d>0?'+':d<0?'−':''}${fnum(Math.abs(d/pv*100))}%)`:''} t.o.v. ${prev.periode}`}
+return [fval(lv,i.eenheid),`${cats?'totaal ':''}${last.periode}${ch?' · '+ch:''}`]}
+function chartSvg(i){const ks=keysOf(i);const ms=series(i).filter(r=>ks.some(k=>r.waarden?.[k]!=null));const multi=ks.length>1;if(!ms.length||(!multi&&ms.length<2))return null;
+const W=640,leg=multi||i.doel!=null,L=10,R=10;
+const items=[...(multi?ks.map((k,c)=>({k,c,w:26+k.length*7.2})):[]),...(i.doel!=null?[{doel:1,w:34+('doel '+fval(i.doel,i.eenheid)).length*7.2}]:[])];let lx=L,lr=0;items.forEach(it=>{if(lx+it.w>W-R&&lx>L){lr++;lx=L}it.x=lx;it.r=lr;lx+=it.w});const nr=leg?lr+1:0;
+const H=270+nr*20,T=26,B=30+nr*20+(nr?10:0),iw=W-L-R,ih=H-T-B,stack=multi&&i.optelbaar,group=multi&&!stack&&ms.length*ks.length<=16,line=multi&&!stack&&!group;
+const vals=ms.flatMap(r=>stack?[total(i,r)]:ks.map(k=>r.waarden?.[k])).filter(v=>v!=null&&isFinite(v));const mx=Math.max(...vals,i.doel??0,0)*1.08||1;const y=v=>T+ih-(Math.max(0,v)/mx)*ih;
+const band=iw/ms.length,vt=v=>i.eenheid==='%'?fnum(v)+'%':fnum(v),F='font-family="Arial,Helvetica,sans-serif"';
+let s=`<rect width="${W}" height="${H}" fill="#fff"/><line x1="${L}" x2="${W-R}" y1="${T+ih}" y2="${T+ih}" stroke="#ccc"/>`;
+ms.forEach((r,n)=>{s+=`<text x="${L+band*n+band/2}" y="${T+ih+18}" text-anchor="middle" font-size="13" fill="#555" ${F}>${esc(r.periode.length>18?r.periode.slice(0,17)+'…':r.periode)}</text>`});
+if(i.doel!=null){const yd=y(i.doel);s+=`<line x1="${L}" x2="${W-R}" y1="${yd}" y2="${yd}" stroke="#333" stroke-dasharray="5 4" opacity=".6"/>`}
+if(line){ks.forEach((k,c)=>{let d='',gap=true;const pts=ms.map((r,n)=>r.waarden?.[k]==null?null:[L+band*n+band/2,y(r.waarden[k])]);pts.forEach(p=>{if(!p){gap=true;return}d+=(gap?'M':'L')+p[0]+','+p[1];gap=false});s+=`<path d="${d}" fill="none" stroke="${hexOf(i,k,c)}" stroke-width="2.5"/>`;pts.forEach(p=>{if(p)s+=`<circle cx="${p[0]}" cy="${p[1]}" r="3.5" fill="${hexOf(i,k,c)}"/>`})})}
+else if(group){const gw=Math.min(band*.8,ks.length*44),bw=gw/ks.length;ms.forEach((r,n)=>{const x0=L+band*n+band/2-gw/2;ks.forEach((k,c)=>{const v=r.waarden?.[k];if(v==null)return;const x=x0+bw*c;s+=`<rect x="${x+1}" y="${y(v)}" width="${bw-2}" height="${Math.max(1,T+ih-y(v))}" fill="${hexOf(i,k,c)}"/>`;if(bw>=26)s+=`<text x="${x+bw/2}" y="${y(v)-5}" text-anchor="middle" font-size="12" fill="#222" ${F}>${esc(vt(v))}</text>`})})}
+else{const bw=Math.min(56,band*.6);ms.forEach((r,n)=>{const cx=L+band*n+band/2,x=cx-bw/2;let acc=0;(stack?ks:[ks[0]]).forEach((k,c)=>{const v=r.waarden?.[k];if(v==null)return;const y0=y(acc),y1=y(acc+v);s+=`<rect x="${x}" y="${Math.min(y0,y1)}" width="${bw}" height="${Math.max(1,Math.abs(y0-y1))}" fill="${hexOf(i,k,c)}"/>`;acc+=v});
+const tv=stack?total(i,r):r.waarden?.[ks[0]];if(tv!=null)s+=`<text x="${cx}" y="${y(tv)-6}" text-anchor="middle" font-size="13" fill="#222" ${F}>${esc(vt(tv))}</text>`})}
+if(leg){items.forEach(it=>{const ly=T+ih+44+it.r*20,x=it.x;if(it.doel)s+=`<line x1="${x}" x2="${x+20}" y1="${ly-4}" y2="${ly-4}" stroke="#333" stroke-dasharray="5 4" opacity=".6"/><text x="${x+26}" y="${ly}" font-size="13" fill="#444" ${F}>doel ${esc(fval(i.doel,i.eenheid))}</text>`;else s+=`<rect x="${x}" y="${ly-10}" width="11" height="11" rx="2" fill="${hexOf(i,it.k,it.c)}"/><text x="${x+16}" y="${ly}" font-size="13" fill="#444" ${F}>${esc(it.k)}</text>`})}
+return {svg:`<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}">${s}</svg>`,W,H}}
+function svgPng(c){return new Promise((ok,no)=>{const img=new Image();img.onload=()=>{const k=2,cv=document.createElement('canvas');cv.width=c.W*k;cv.height=c.H*k;const x=cv.getContext('2d');x.scale(k,k);x.drawImage(img,0,0);cv.toBlob(b=>b?b.arrayBuffer().then(ok):no(new Error('png')),'image/png')};img.onerror=no;img.src='data:image/svg+xml;charset=utf-8,'+encodeURIComponent(c.svg)})}
+let docxLib=null;const loadDocx=()=>docxLib?Promise.resolve(docxLib):new Promise((ok,no)=>{const sc=document.createElement('script');sc.src='vendor/docx.umd.js';sc.onload=()=>{docxLib=window.docx;ok(docxLib)};sc.onerror=()=>no(new Error('Word-export kon niet laden'));document.head.appendChild(sc)});
+async function wordVerslag(){
+const D=await loadDocx();const {Document,Packer,Paragraph,TextRun,HeadingLevel,Table,TableRow,TableCell,WidthType,AlignmentType,ImageRun,ShadingType,BorderStyle,Footer,PageNumber,TableOfContents}=D;
+const P=(t,o={})=>new Paragraph({spacing:{after:120},...o,children:Array.isArray(t)?t:[new TextRun({text:String(t??''),...(o.run||{})})]});
+const lines=(t,run={})=>String(t||'').split('\n').map(l=>new Paragraph({spacing:{after:60},children:[new TextRun({text:l,...run})]}));
+const grey={color:'666666',size:19};const nb={top:{style:BorderStyle.NONE},bottom:{style:BorderStyle.SINGLE,size:4,color:'DDDDDD'},left:{style:BorderStyle.NONE},right:{style:BorderStyle.NONE}};
+const cell=(t,{head=false,right=false,bold=false}={})=>new TableCell({borders:nb,shading:head?{type:ShadingType.CLEAR,fill:'F2F4F7',color:'auto'}:undefined,margins:{top:60,bottom:60,left:100,right:100},children:[new Paragraph({alignment:right?AlignmentType.RIGHT:AlignmentType.LEFT,children:[new TextRun({text:String(t??''),bold:head||bold,size:19})]})]});
+const kids=[];const today=new Date().toLocaleDateString('nl-NL',{day:'numeric',month:'long',year:'numeric'});
+kids.push(P(M.titel,{heading:HeadingLevel.TITLE}),P('Verslag indicatoren',{run:{size:32,color:'444444'}}),P(`Stand ${today}`,{run:grey}),
+P([new TextRun({text:'Hoofddoel 2050: ',bold:true}),new TextRun(M.hoofddoel)]),P([new TextRun({text:'Tussendoel 2030: ',bold:true}),new TextRun(M.tussendoel)]),
+P('Per programmalijn staan hieronder het transitiedoel, de subdoelen met hun duiding en de indicatoren met de laatste metingen. Maatregelen en activiteiten zijn in dit verslag buiten beschouwing gelaten.',{run:grey}));
+for(const l of M.lijnen){if(!l.sub.length)continue;
+kids.push(P(l.naam,{heading:HeadingLevel.HEADING_1,pageBreakBefore:true}));
+kids.push(P([new TextRun({text:'Transitiedoel. ',bold:true}),new TextRun(l.transitiedoel)]));
+if(l.fase)kids.push(P(`Fase in het uitvoeringsprogramma 2025–2030: ${l.fase} · Invloed: ${l.invloed} · Rol van de gemeente: ${l.rol}`,{run:grey}));
+for(const s of l.sub){kids.push(P(`Subdoel ${s.k}. ${s.t}`,{heading:HeadingLevel.HEADING_2}));
+const du=note(s.id,'toelichting').trim();kids.push(P('Duiding',{run:{bold:true}}));kids.push(...(du?lines(du):[P('Nog geen duiding ingevuld.',{run:{...grey,italics:true}})]));
+const inds=indsOf(s.id);if(!inds.length)kids.push(P('Voor dit subdoel zijn nog geen indicatoren vastgesteld.',{run:{...grey,italics:true}}));
+for(const i of inds){kids.push(P(i.naam,{heading:HeadingLevel.HEADING_3,keepNext:true}));
+const meta=[i.status&&`Status: ${i.status}`,i.bron&&`Bron: ${i.bron}`,i.streefwaarde&&`Streefwaarde: ${i.streefwaarde}`].filter(Boolean).join(' · ');if(meta)kids.push(P(meta,{run:grey}));
+const kp=kpiText(i);if(kp)kids.push(P([new TextRun({text:kp[0]+'  ',bold:true,size:30}),new TextRun({text:kp[1],...grey})]));
+const ch=chartSvg(i);if(ch){try{const png=await svgPng(ch);const w=560;kids.push(new Paragraph({spacing:{after:120},children:[new ImageRun({type:'png',data:png,transformation:{width:w,height:Math.round(w*ch.H/ch.W)}})]}))}catch(e){}}
+const ms=series(i),ks=keysOf(i),multi=ks.length>1;
+if(ms.length){const head=['Periode',...(multi?ks:[`Waarde${i.eenheid?` (${i.eenheid})`:''}`]),...(i.optelbaar?['Totaal']:[]),'Toelichting'];
+const rows=[new TableRow({tableHeader:true,children:head.map((h,n)=>cell(h,{head:true,right:n>0&&n<head.length-1}))}),...ms.map(r=>new TableRow({children:[cell(r.periode),...ks.map(k=>cell(fnum(r.waarden?.[k]),{right:true})),...(i.optelbaar?[cell(fnum(total(i,r)),{right:true,bold:true})]:[]),cell(r.toelichting||'')]}))];
+kids.push(new Table({width:{size:100,type:WidthType.PERCENTAGE},rows}),P('',{spacing:{after:80}}))}else kids.push(P('Nog geen metingen.',{run:{...grey,italics:true}}));
+if(i.toelichting?.trim()){kids.push(P('Toelichting',{run:{bold:true,size:19}}));kids.push(...lines(i.toelichting,{size:19}))}}}}
+const doc=new Document({creator:'Monitoring Circulaire Stad',title:M.titel+' – indicatoren',styles:{default:{document:{run:{font:'Calibri',size:21}}},paragraphStyles:[{id:'Heading1',name:'Heading 1',basedOn:'Normal',next:'Normal',run:{size:34,bold:true,color:'1F5FBF'},paragraph:{spacing:{before:240,after:160}}},{id:'Heading2',name:'Heading 2',basedOn:'Normal',next:'Normal',run:{size:27,bold:true,color:'16181D'},paragraph:{spacing:{before:320,after:120}}},{id:'Heading3',name:'Heading 3',basedOn:'Normal',next:'Normal',run:{size:23,bold:true,color:'16181D'},paragraph:{spacing:{before:360,after:80}}},{id:'Title',name:'Title',basedOn:'Normal',run:{size:44,bold:true},paragraph:{spacing:{after:80}}}]},
+sections:[{properties:{page:{margin:{top:1200,bottom:1200,left:1200,right:1200}}},footers:{default:new Footer({children:[new Paragraph({alignment:AlignmentType.RIGHT,children:[new TextRun({children:['Pagina ',PageNumber.CURRENT],size:16,color:'888888'})]})]})},children:kids}]});
+const blob=await Packer.toBlob(doc);const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=`indicatorenverslag-circulaire-stad-${stamp()}.docx`;a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000)}
+$('word').addEventListener('click',async e=>{const b=e.currentTarget;b.disabled=true;const t=b.textContent;b.textContent='Verslag maken…';try{await wordVerslag()}catch(err){console.error(err);toast(err.message||'Word-export mislukt',true)}finally{b.disabled=false;b.textContent=t}});
 
 // ---------- laden en verversen ----------
 async function refresh(){if(busy()||dlg.open||document.activeElement?.closest?.('#det'))return;try{const d=await api('GET','/api/data');if(JSON.stringify(d)!==JSON.stringify(DATA)){DATA=d;if(cur!=='aandacht'){cardStatus();chips();detail();lines()}}}catch(e){}}
